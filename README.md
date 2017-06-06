@@ -1,3 +1,6 @@
-# My Awesome Book
+# Tisp
 
-This file file serves as your book's preface, a great place to describe your book's content and ideas.
+The "Time is Space" programming language
+
+Tisp is a functional programming language with implicit parallelism and concurrency.
+It aims to be simple, canonical, and practical.
