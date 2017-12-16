@@ -1,8 +1,6 @@
 variable "domain" {}
 
-variable "origin" {
-  default = "raviqqe.github.io"
-}
+variable "origin" {}
 
 provider "aws" {
   region = "us-east-1"
