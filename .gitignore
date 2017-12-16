@@ -4,3 +4,4 @@
 *.svg
 .terraform*
 !favicon.png
+_site
