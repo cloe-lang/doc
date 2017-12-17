@@ -1,0 +1,16 @@
+{
+	"name": "documentation",
+	"version": "0.1.0",
+	"description": "Documentation of Coel programming language",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/coel-lang/coel-lang.github.io.git"
+	},
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/coel-lang/coel-lang.github.io/issues"
+	},
+	"dependencies": {
+		"workbox-cli": "^2.1.2"
+	}
+}

@@ -3,6 +3,12 @@ require 'xml-dsl'
 DOMAIN = 'coel-lang.org'.freeze
 ORIGIN = 'coel-lang.github.io'.freeze
 
+task 'service-worker': :clean do
+  sh 'jekyll build'
+  sh 'npm install'
+  sh 'npx workbox generate:sw'
+end
+
 file 'favicon.png' do |_t|
   sh 'wget https://raw.githubusercontent.com/coel-lang/icon/master/icon.png'
   sh 'convert -resize 16x16 icon.png favicon.png'
