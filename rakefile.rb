@@ -3,7 +3,7 @@ require 'xml-dsl'
 DOMAIN = 'coel-lang.org'.freeze
 ORIGIN = 'coel-lang.github.io'.freeze
 
-task 'service-worker': :clean do
+task 'service-worker' => :clean do
   sh 'jekyll build'
   sh 'npm install'
   sh 'npx workbox generate:sw'
