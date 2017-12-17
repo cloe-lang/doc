@@ -34,3 +34,7 @@ task :lint do
   sh 'go get -u github.com/raviqqe/liche'
   sh "liche -v #{Dir.glob('**/*.md').join ' '}"
 end
+
+task :clean do
+  sh 'git clean -dfx'
+end
