@@ -1,0 +1,9 @@
+#!/usr/bin/env coel
+
+(let files ["src/index.md"])
+
+(let contents (map read files))
+
+..(map
+	(\ (file content) (write content . file file))
+	(zip contents))
