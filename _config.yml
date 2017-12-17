@@ -1,3 +1,10 @@
-exclude: ["README.md"]
 title: Coel programming language
 markdown: kramdown
+exclude:
+  - README.md
+  - node_modules
+  - "package*.json"
+  - "*-config.js"
+  - "*.map"
+  - "*.rb"
+  - "*.tf"
