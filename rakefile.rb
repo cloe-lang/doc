@@ -14,7 +14,9 @@ file 'favicon.png' do |_t|
   sh 'convert -resize 16x16 icon.png favicon.png'
 end
 
-task default: 'favicon.png' do
+task build: %w[favicon.png service-worker]
+
+task 'domain' do
   sh 'terraform init'
   sh "terraform apply -auto-approve -var domain=#{DOMAIN} -var origin=#{ORIGIN}"
 
