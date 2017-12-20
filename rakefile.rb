@@ -6,7 +6,7 @@ ORIGIN = 'coel-lang.github.io'.freeze
 task scripts: :clean do
   sh 'jekyll build'
   sh 'npm install'
-  cp 'node_modules/microlight/microlight.js', 'miscrolight.js'
+  cp 'node_modules/microlight/microlight.js', 'microlight.js'
   sh 'npx workbox generate:sw'
 end
 

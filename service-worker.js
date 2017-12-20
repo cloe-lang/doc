@@ -31,7 +31,7 @@ const fileManifest = [
     "revision": "259bf1bc3cc758e965bfb9eef52a94c0"
   },
   {
-    "url": "miscrolight.js",
+    "url": "microlight.js",
     "revision": "720e012457b8b63a83d60c81bfd7473f"
   },
   {
@@ -40,7 +40,7 @@ const fileManifest = [
   },
   {
     "url": "service-worker.js",
-    "revision": "e4a6a919ec13e194960d74e6578fabe0"
+    "revision": "38b6f3e20fa1f2a9a7b3109c7cfef22e"
   },
   {
     "url": "workbox-sw.prod.v2.1.2.js",
