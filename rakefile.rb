@@ -3,9 +3,10 @@ require 'xml-dsl'
 DOMAIN = 'coel-lang.org'.freeze
 ORIGIN = 'coel-lang.github.io'.freeze
 
-task 'service-worker' => :clean do
+task scripts: :clean do
   sh 'jekyll build'
   sh 'npm install'
+  cp 'node_modules/microlight/microlight.js', 'miscrolight.js'
   sh 'npx workbox generate:sw'
 end
 
@@ -14,7 +15,7 @@ file 'favicon.png' do |_t|
   sh 'convert -resize 16x16 icon.png favicon.png'
 end
 
-task build: %w[favicon.png service-worker]
+task build: %w[favicon.png scripts]
 
 task 'domain' do
   sh 'terraform init'

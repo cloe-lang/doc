@@ -11,6 +11,7 @@
 		"url": "https://github.com/coel-lang/coel-lang.github.io/issues"
 	},
 	"dependencies": {
+		"microlight": "0.0.7",
 		"workbox-cli": "^2.1.2"
 	}
 }
