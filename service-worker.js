@@ -19,12 +19,32 @@ importScripts('workbox-sw.prod.v2.1.2.js');
  */
 const fileManifest = [
   {
+    "url": "contribution-guide.html",
+    "revision": "e2e6aaac8911a3aa5a6e5130d9e459bb"
+  },
+  {
     "url": "favicon.png",
     "revision": "2ad237ac31c8c047fbd725c8db78b1f9"
   },
   {
     "url": "index.html",
-    "revision": "f484a1b323989d9703d1c0b06e43522e"
+    "revision": "259bf1bc3cc758e965bfb9eef52a94c0"
+  },
+  {
+    "url": "miscrolight.js",
+    "revision": "720e012457b8b63a83d60c81bfd7473f"
+  },
+  {
+    "url": "register-service-worker.js",
+    "revision": "75f7fdd9c9739dfeb745c8a69d468618"
+  },
+  {
+    "url": "service-worker.js",
+    "revision": "e4a6a919ec13e194960d74e6578fabe0"
+  },
+  {
+    "url": "workbox-sw.prod.v2.1.2.js",
+    "revision": "685d1ceb6b9a9f94aacf71d6aeef8b51"
   }
 ];
 
