@@ -35,14 +35,6 @@ const fileManifest = [
     "revision": "720e012457b8b63a83d60c81bfd7473f"
   },
   {
-    "url": "register-service-worker.js",
-    "revision": "75f7fdd9c9739dfeb745c8a69d468618"
-  },
-  {
-    "url": "service-worker.js",
-    "revision": "38b6f3e20fa1f2a9a7b3109c7cfef22e"
-  },
-  {
     "url": "workbox-sw.prod.v2.1.2.js",
     "revision": "685d1ceb6b9a9f94aacf71d6aeef8b51"
   }
