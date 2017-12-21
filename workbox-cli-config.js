@@ -1,7 +1,7 @@
 module.exports = {
   'globDirectory': '_site/',
   'globPatterns': [
-    '**/*.{png,html,js,json}'
+    '**/*.{css,html,js,json,png}'
   ],
   'globIgnores': [
     'register-service-worker.js',

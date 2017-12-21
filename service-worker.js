@@ -27,6 +27,14 @@ const fileManifest = [
     "revision": "2ad237ac31c8c047fbd725c8db78b1f9"
   },
   {
+    "url": "highlight.css",
+    "revision": "5133d11fbaf87d3978cf403eba33c764"
+  },
+  {
+    "url": "highlight.js",
+    "revision": "87cfd4f9aaf9cbe85f70454128541748"
+  },
+  {
     "url": "index.html",
     "revision": "259bf1bc3cc758e965bfb9eef52a94c0"
   },
