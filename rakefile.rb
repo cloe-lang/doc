@@ -3,7 +3,7 @@ require 'xml-dsl'
 DOMAIN = 'coel-lang.org'.freeze
 ORIGIN = 'coel-lang.github.io'.freeze
 HIGHLIGHT_CSS_URL = 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js'\
-                    '/9.12.0/styles/default.min.css'.freeze
+                    '/9.12.0/styles/solarized-dark.min.css'.freeze
 HIGHLIGHT_JS_URL = 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/'\
                    '9.12.0/highlight.min.js'.freeze
 

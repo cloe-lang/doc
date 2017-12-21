@@ -28,7 +28,7 @@ const fileManifest = [
   },
   {
     "url": "highlight.css",
-    "revision": "5133d11fbaf87d3978cf403eba33c764"
+    "revision": "f4e20c4f5e211150ceda8709fd25f808"
   },
   {
     "url": "highlight.js",
