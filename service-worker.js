@@ -31,10 +31,6 @@ const fileManifest = [
     "revision": "259bf1bc3cc758e965bfb9eef52a94c0"
   },
   {
-    "url": "microlight.js",
-    "revision": "720e012457b8b63a83d60c81bfd7473f"
-  },
-  {
     "url": "workbox-sw.prod.v2.1.2.js",
     "revision": "685d1ceb6b9a9f94aacf71d6aeef8b51"
   }
