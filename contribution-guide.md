@@ -18,11 +18,11 @@ rake install_deps
   [Gherkin](https://cucumber.io/docs/reference).
 - `rake test` runs both.
 
-## Other utility tasks
+## Other utilities
 
 - `rake format` formats all files including source files in Go and Ruby.
 - `rake lint` lints all source files in Go.
 - `rake clean` cleans up the repository directory deleting some binaries and
   temporary files generated for tests.
 
-For more information, see rakefile.rb.
+For more information, see `rakefile.rb`.
