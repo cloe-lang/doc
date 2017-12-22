@@ -1,2 +1,3 @@
 workbox-sw.prod.*.js binary
 highlight.* binary
+jquery.js binary

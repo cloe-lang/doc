@@ -6,10 +6,12 @@ HIGHLIGHT_CSS_URL = 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js'\
                     '/9.12.0/styles/solarized-dark.min.css'.freeze
 HIGHLIGHT_JS_URL = 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/'\
                    '9.12.0/highlight.min.js'.freeze
+JQUERY_URL = 'https://code.jquery.com/jquery-3.2.1.min.js'.freeze
 
 task scripts: :clean do
   sh "curl #{HIGHLIGHT_CSS_URL} > highlight.css"
   sh "curl #{HIGHLIGHT_JS_URL} > highlight.js"
+  sh "curl #{JQUERY_URL} > jquery.js"
   sh 'jekyll build'
   sh 'npm install'
   sh 'npx workbox generate:sw'
