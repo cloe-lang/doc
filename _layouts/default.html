@@ -43,5 +43,15 @@
 		<script src="/highlight.js"></script>
 		<script>hljs.initHighlightingOnLoad()</script>
 	</head>
-	{{ content }}
+	<body>
+		<div class="main">
+			<div class="toc">
+				{% capture toc %}{% include toc.md %}{% endcapture %}
+				{{ toc | markdownify }}
+			</div>
+			<div class="content">
+				{{ content }}
+			</div>
+		</div>
+	</body>
 </html>
