@@ -14,3 +14,4 @@ exclude:
   - "*.map"
   - "*.rb"
   - "*.tf"
+  - "*.tfstate"
