@@ -3,7 +3,6 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-		<base target="_blank" />
 		<title>{{ site.title }}</title>
 		<link rel="icon" href="/favicon.png" type="image/png" />
 		<script async src="/register-service-worker.js"></script>
@@ -21,5 +20,8 @@
 		<div class="content">
 			{{ content }}
 		</div>
+		<script>
+			$('a[href^="http://"], a[href^="https://"]').attr('target', '_blank')
+		</script>
 	</body>
 </html>
