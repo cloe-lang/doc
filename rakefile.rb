@@ -46,5 +46,5 @@ task :lint do
 end
 
 task :clean do
-  sh 'git clean -dfx'
+  sh 'git clean -dfx --exclude .terraform --exclude terraform.tfstate'
 end
