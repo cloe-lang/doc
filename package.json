@@ -10,7 +10,10 @@
 	"bugs": {
 		"url": "https://github.com/coel-lang/coel-lang.github.io/issues"
 	},
-	"dependencies": {},
+	"dependencies": {
+		"highlight.js": "^9.12.0",
+		"jquery": "^3.2.1"
+	},
 	"standard": {
 		"globals": [
 			"$"
@@ -18,6 +21,8 @@
 	},
 	"devDependencies": {
 		"standard": "^10.0.3",
+		"ts-loader": "^3.2.0",
+		"typescript": "^2.6.2",
 		"workbox-cli": "^2.1.2"
 	}
 }

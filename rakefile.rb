@@ -18,6 +18,8 @@ task scripts: :clean do
 
   sh 'npm install'
   sh 'npx workbox generate:sw'
+
+  sh 'npx webpack'
 end
 
 file 'favicon.png' do |_t|
