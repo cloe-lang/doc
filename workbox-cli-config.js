@@ -14,8 +14,7 @@ module.exports = {
     '**/*.{css,html,js,json,png}'
   ],
   globIgnores: [
-    'register-service-worker.js',
-    'service-worker.js'
+    'register-service-worker.js'
   ],
-  swDest: 'service-worker.js'
+  swDest: '_site/service-worker.js'
 }
