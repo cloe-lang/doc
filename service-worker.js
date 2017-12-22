@@ -53,6 +53,10 @@ const fileManifest = [
   {
     "url": "workbox-sw.prod.v2.1.2.js",
     "revision": "685d1ceb6b9a9f94aacf71d6aeef8b51"
+  },
+  {
+    "url": "contribution-guide",
+    "revision": "13f0f9f6893867eaeac87308feec8790"
   }
 ];
 
