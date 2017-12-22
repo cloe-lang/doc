@@ -20,7 +20,7 @@ importScripts('workbox-sw.prod.v2.1.2.js');
 const fileManifest = [
   {
     "url": "contribution-guide.html",
-    "revision": "a8a6b750b743b61c379d59158be4a783"
+    "revision": "09615f2e8aba431e8bbe844887dd01e5"
   },
   {
     "url": "favicon.png",
@@ -36,11 +36,15 @@ const fileManifest = [
   },
   {
     "url": "index.html",
-    "revision": "ebf11472b3517c6fac810e1821e8031e"
+    "revision": "f9fadeb312a215cf6dd8196d9f6dc1db"
   },
   {
     "url": "jquery.js",
     "revision": "c9f5aeeca3ad37bf2aa006139b935f0a"
+  },
+  {
+    "url": "main.js",
+    "revision": "4ccf143daa2369efa5157d34328f5f61"
   },
   {
     "url": "style.css",
