@@ -1,5 +1,11 @@
 title: Coel programming language
 markdown: kramdown
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: "default"
 exclude:
   - README.md
   - node_modules
