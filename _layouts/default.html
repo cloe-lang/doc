@@ -7,51 +7,18 @@
 		<title>{{ site.title }}</title>
 		<link rel="icon" href="/favicon.png" type="image/png" />
 		<script async src="/register-service-worker.js"></script>
-		<style>
-			@import url("https://fonts.googleapis.com/css?family=Noto+Sans");
-
-			body {
-				color: #333;
-				font: 16px "Noto Sans", sans-serif;
-				max-width: 50em;
-				margin: 0 auto;
-				padding: 1em;
-			}
-
-			a {
-				color: lightseagreen;
-				text-decoration: none;
-			}
-
-			a:visited {
-				color: lightseagreen;
-			}
-
-			a:hover {
-				text-decoration: underline;
-			}
-
-			code {
-				background: #002b36;
-				color: #839496;
-				display: inline-block;
-				padding: 0.3em;
-				margin: 0.15em 0;
-			}
-		</style>
-		<link rel="stylesheet" href="/highlight.css">
+		<link rel="stylesheet" type="text/css" href="/style.css" />
+		<link rel="stylesheet" type="text/css" href="/highlight.css">
 		<script src="/highlight.js"></script>
 		<script>hljs.initHighlightingOnLoad()</script>
 	</head>
 	<body>
-		<div class="main">
-			<div class="toc">
-				{% capture toc %}{% include toc.md %}{% endcapture %}
-				{{ toc | markdownify }}
-			</div>
-			<div class="content">
-				{{ content }}
-			</div>
+		<div class="toc">
+			{% capture toc %}{% include toc.md %}{% endcapture %}
+			{{ toc | markdownify }}
+		</div>
+		<div class="content">
+			{{ content }}
 		</div>
 	</body>
 </html>
