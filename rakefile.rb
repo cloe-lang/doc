@@ -1,7 +1,6 @@
 require 'xml-dsl'
 
 DOMAIN = 'coel-lang.org'.freeze
-ORIGIN = 'coel-lang.github.io'.freeze
 HIGHLIGHT_CSS_URL = 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js'\
                     '/9.12.0/styles/solarized-dark.min.css'.freeze
 HIGHLIGHT_JS_URL = 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/'\
@@ -24,9 +23,21 @@ end
 
 task build: %w[favicon.png scripts]
 
-task 'domain' do
+task default: :build do
   sh 'terraform init'
-  sh "terraform apply -auto-approve -var domain=#{DOMAIN} -var origin=#{ORIGIN}"
+  sh "terraform apply -auto-approve -var domain=#{DOMAIN}"
+
+  bucket = `terraform output bucket`.strip
+
+  sh "aws s3 sync --acl public-read --delete _site s3://#{bucket}"
+
+  Dir.glob('_site/**/*.html').each do |path|
+    next if File.basename(path) == 'index.html'
+
+    sh %W[aws s3 cp --acl public-read --content-type text/html
+          #{path}
+          s3://#{bucket}#{path[5..-1].ext}].join ' '
+  end
 
   name_servers = `terraform output name_servers`
                  .split(/[,\s]+/)
