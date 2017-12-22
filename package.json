@@ -11,6 +11,12 @@
 		"url": "https://github.com/coel-lang/coel-lang.github.io/issues"
 	},
 	"dependencies": {
+		"standard": "^10.0.3",
 		"workbox-cli": "^2.1.2"
+	},
+	"standard": {
+		"globals": [
+			"$"
+		]
 	}
 }

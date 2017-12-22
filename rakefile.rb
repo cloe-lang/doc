@@ -60,6 +60,11 @@ task :lint do
   sh "liche -v #{Dir.glob('**/*.md').join ' '}"
 end
 
+task :format do
+  sh 'npm install'
+  sh 'npx standard --fix'
+end
+
 task :clean do
   sh 'git clean -dfx --exclude .terraform --exclude terraform.tfstate'
 end
