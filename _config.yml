@@ -12,6 +12,7 @@ exclude:
   - tsconfig.json
   - "package*.json"
   - "*config.js"
+  - "*.css"
   - "*.map"
   - "*.rb"
   - "*.tf"
