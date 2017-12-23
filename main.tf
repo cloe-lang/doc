@@ -28,6 +28,7 @@ resource "aws_cloudfront_distribution" "d" {
   default_cache_behavior {
     allowed_methods  = ["GET", "HEAD", "OPTIONS"]
     cached_methods   = ["GET", "HEAD"]
+    compress         = true
     target_origin_id = "${aws_s3_bucket.b.id}"
 
     forwarded_values {
