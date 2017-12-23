@@ -53,6 +53,12 @@ task default: :build do
   ].join ' '
 end
 
+task run: :build do
+  cd '_site' do
+    sh 'python3 -m http.server 8888'
+  end
+end
+
 task :lint do
   sh 'go get -u github.com/raviqqe/liche'
   sh "liche -v #{Dir.glob('**/*.md').join ' '}"
