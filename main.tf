@@ -1,5 +1,7 @@
 variable "domain" {}
 
+variable "ttl" {}
+
 provider "aws" {
   region = "us-east-1"
 }
@@ -41,8 +43,8 @@ resource "aws_cloudfront_distribution" "d" {
 
     viewer_protocol_policy = "redirect-to-https"
     min_ttl                = 0
-    default_ttl            = 3600
-    max_ttl                = 86400
+    default_ttl            = "${var.ttl}"
+    max_ttl                = "${var.ttl}"
   }
 
   price_class = "PriceClass_100"
