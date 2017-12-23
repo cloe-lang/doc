@@ -8,5 +8,5 @@ hljs.initHighlightingOnLoad();
 $('a[href^="http://"], a[href^="https://"]').attr("target", "_blank");
 
 $("a").on("mouseover", function() {
-    $("head").append($("<link/>").attr({ rel: "prerender", href: $(this).attr("href") }));
+    $('head link[rel="prerender"]').attr("href", $(this).attr("href"));
 });
