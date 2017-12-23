@@ -1,7 +1,7 @@
 import hljs = require("highlight.js");
 import $ = require("jquery");
 
-import "./index.css";
+import "./index.scss";
 
 hljs.initHighlightingOnLoad()
 

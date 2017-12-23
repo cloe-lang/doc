@@ -13,6 +13,7 @@ exclude:
   - "package*.json"
   - "*config.js"
   - "*.css"
+  - "*.scss"
   - "*.map"
   - "*.rb"
   - "*.tf"

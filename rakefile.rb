@@ -64,5 +64,8 @@ task :format do
 end
 
 task :clean do
-  sh 'git clean -dfx --exclude .terraform --exclude terraform.tfstate'
+  sh %w[git clean -dfx
+        --exclude .terraform
+        --exclude terraform.tfstate
+        --exclude node_modules].join ' '
 end

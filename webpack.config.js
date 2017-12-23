@@ -1,6 +1,11 @@
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const webpack = require('webpack')
 
+const cssLoader = {
+  loader: 'css-loader',
+  options: { minimize: true }
+}
+
 module.exports = {
   entry: './index.ts',
   output: {
@@ -19,7 +24,14 @@ module.exports = {
         test: /\.css$/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: { loader: 'css-loader', options: { minimize: true } }
+          use: cssLoader
+        })
+      },
+      {
+        test: /\.scss$/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: [cssLoader, { loader: 'sass-loader' }]
         })
       }
     ]
