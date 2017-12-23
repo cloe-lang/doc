@@ -9,8 +9,9 @@ defaults:
 exclude:
   - README.md
   - node_modules
+  - tsconfig.json
   - "package*.json"
-  - "*-config.js"
+  - "*config.js"
   - "*.map"
   - "*.rb"
   - "*.tf"
