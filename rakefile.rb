@@ -6,6 +6,12 @@ HIGHLIGHT_CSS_URL = 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js'\
 S3_OPTIONS = '--acl public-read --cache-control max-age=604800,public'.freeze
 
 task scripts: :clean do
+  mkdir_p 'tmp'
+
+  cd 'tmp' do
+    sh 'curl https://fonts.googleapis.com/css?family=Noto+Sans > noto-sans.css'
+  end
+
   sh 'jekyll build'
 
   cd '_site' do

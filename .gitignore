@@ -6,3 +6,4 @@
 .terraform*
 !favicon.png
 _site
+tmp

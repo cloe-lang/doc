@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css?family=Noto+Sans");
+@import "./node_modules/highlight.js/styles/solarized-dark.css";
+@import "./tmp/noto-sans.css";
 
 body {
 	color: #333;
