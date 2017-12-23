@@ -60,8 +60,9 @@ task run: :build do
 end
 
 task :lint do
-  sh 'go get -u github.com/raviqqe/liche'
-  sh "liche -v #{Dir.glob('**/*.md').join ' '}"
+  sh 'npm install'
+  sh 'npx tslint --project .'
+  sh 'npx stylelint **/*.scss'
 end
 
 task :format do
