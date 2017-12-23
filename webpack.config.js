@@ -3,10 +3,10 @@ const webpack = require('webpack')
 const path = require('path')
 
 module.exports = {
-  entry: './main.ts',
+  entry: './index.ts',
   output: {
     path: path.join(__dirname, '_site'),
-    filename: 'main.js'
+    filename: 'index.js'
   },
   resolve: {
     extensions: ['.ts', '.js']
