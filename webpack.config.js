@@ -1,11 +1,9 @@
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const webpack = require('webpack')
-const path = require('path')
 
 module.exports = {
   entry: './index.ts',
   output: {
-    path: path.join(__dirname, '_site'),
     filename: 'index.js'
   },
   resolve: {
@@ -28,6 +26,6 @@ module.exports = {
   },
   plugins: [
     new webpack.optimize.UglifyJsPlugin(),
-    new ExtractTextPlugin('index.css')
+    new ExtractTextPlugin('_includes/index.css')
   ]
 }

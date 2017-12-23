@@ -10,11 +10,12 @@ task scripts: :clean do
     sh 'curl https://fonts.googleapis.com/css?family=Noto+Sans > noto-sans.css'
   end
 
+  sh 'npm install'
+  sh 'npx webpack'
+
   sh 'jekyll build'
 
-  sh 'npm install'
   sh 'npx workbox generate:sw'
-  sh 'npx webpack'
 end
 
 file 'favicon.png' do |_t|

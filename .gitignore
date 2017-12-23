@@ -6,4 +6,6 @@
 .terraform*
 !favicon.png
 _site
+_includes/index.css
+index.js
 tmp
