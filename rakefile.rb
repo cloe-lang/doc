@@ -6,8 +6,7 @@ HIGHLIGHT_CSS_URL = 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js'\
 HIGHLIGHT_JS_URL = 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/'\
                    '9.12.0/highlight.min.js'.freeze
 JQUERY_URL = 'https://code.jquery.com/jquery-3.2.1.min.js'.freeze
-TTL = 604_800
-S3_OPTIONS = "--acl public-read --cache-control max-age=#{TTL},public".freeze
+S3_OPTIONS = '--acl public-read --cache-control max-age=604800,public'.freeze
 
 task scripts: :clean do
   sh 'jekyll build'
@@ -33,7 +32,7 @@ task build: %w[favicon.png scripts]
 
 task default: :build do
   sh 'terraform init'
-  sh "terraform apply -auto-approve -var domain=#{DOMAIN} -var ttl=#{TTL}"
+  sh "terraform apply -auto-approve -var domain=#{DOMAIN}"
 
   bucket = `terraform output bucket`.strip
 
