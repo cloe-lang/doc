@@ -3,9 +3,6 @@ require 'xml-dsl'
 DOMAIN = 'coel-lang.org'.freeze
 HIGHLIGHT_CSS_URL = 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js'\
                     '/9.12.0/styles/solarized-dark.min.css'.freeze
-HIGHLIGHT_JS_URL = 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/'\
-                   '9.12.0/highlight.min.js'.freeze
-JQUERY_URL = 'https://code.jquery.com/jquery-3.2.1.min.js'.freeze
 S3_OPTIONS = '--acl public-read --cache-control max-age=604800,public'.freeze
 
 task scripts: :clean do
@@ -13,8 +10,6 @@ task scripts: :clean do
 
   cd '_site' do
     sh "curl #{HIGHLIGHT_CSS_URL} > highlight.css"
-    sh "curl #{HIGHLIGHT_JS_URL} > highlight.js"
-    sh "curl #{JQUERY_URL} > jquery.js"
   end
 
   sh 'npm install'
