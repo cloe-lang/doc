@@ -1,11 +1,6 @@
 *.backup
 *.tfstate
-*.map
-*.png
-*.svg
 .terraform*
-!favicon.png
 _site
 _includes/index.css
-index.js
 tmp

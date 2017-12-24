@@ -9,7 +9,7 @@ const cssLoader = {
 module.exports = {
   entry: './index.ts',
   output: {
-    filename: 'index.js'
+    filename: 'tmp/index.js'
   },
   resolve: {
     extensions: ['.ts', '.js']

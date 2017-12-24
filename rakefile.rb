@@ -32,18 +32,22 @@ file 'tmp/rouge.css' => 'tmp' do |t|
   sh "bundler exec rougify style base16.solarized.dark > #{t.name}"
 end
 
-file 'index.js' => %w[tmp/noto-sans.css tmp/rouge.css] do
+file 'tmp/index.js' => %w[tmp/noto-sans.css tmp/rouge.css] do
   sh 'npx webpack'
 end
 
-file '_includes/index.css' => 'index.js'
+file '_includes/index.css' => 'tmp/index.js'
 
-directory '_site' => %w[index.js _includes/index.css] do
+directory '_site' => %w[_includes/index.css] do
   sh 'bundler exec jekyll build'
 end
 
 file 'tmp/icon.svg' => 'tmp' do |t|
   curl 'https://github.com/coel-lang/icon/raw/master/icon.svg', t.name
+end
+
+file '_site/index.js' => 'tmp/index.js' do |t|
+  cp t.source, t.name
 end
 
 file '_site/icon.png' => %w[tmp/icon.svg _site] do |t|
@@ -57,6 +61,7 @@ end
 task build: %w[
   clean
   _site
+  _site/index.js
   _site/icon.png
   _site/favicon.png
 ] do
