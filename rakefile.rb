@@ -7,6 +7,11 @@ def curl(args, dest)
   sh "curl -sSL #{args} > #{dest}"
 end
 
+task :initialize do
+  sh 'npm install'
+  sh 'bundler install'
+end
+
 task scripts: :clean do
   mkdir_p 'tmp'
 

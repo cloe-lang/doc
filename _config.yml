@@ -1,3 +1,5 @@
+plugins:
+  - jekyll-titles-from-headings
 title: Coel programming language
 markdown: kramdown
 defaults:
@@ -6,6 +8,9 @@ defaults:
       path: ""
     values:
       layout: "default"
+titles_from_headings:
+  enabled: true
+  strip_title: true
 exclude:
   - README.md
   - node_modules
