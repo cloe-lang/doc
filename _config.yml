@@ -11,6 +11,7 @@ defaults:
 exclude:
   - README.md
   - node_modules
+  - tmp
   - tsconfig.json
   - tslint.json
   - "package*.json"
