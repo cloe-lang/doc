@@ -40,10 +40,6 @@ file '_site/favicon.png' => '_site/icon.png' do |t|
   sh "convert -resize 16x16 #{t.source} #{t.name}"
 end
 
-file '_site/service-worker.js' => '_site' do
-  sh 'npx workbox generate:sw'
-end
-
 task build: %w[
   clean
   _site
@@ -56,6 +52,8 @@ task build: %w[
 
     mv path, path.ext
   end
+
+  sh 'npx workbox generate:sw'
 end
 
 task :deploy do
