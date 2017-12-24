@@ -10,29 +10,45 @@ task :initialize do
   sh 'bundler install'
 end
 
-file 'favicon.png' do |_t|
-  sh 'wget https://raw.githubusercontent.com/coel-lang/icon/master/icon.png'
-  sh 'convert -resize 16x16 icon.png favicon.png'
+directory 'tmp'
+
+file 'tmp/noto-sans.css' => 'tmp' do |t|
+  curl 'https://fonts.googleapis.com/css?family=Noto+Sans', t.name
 end
 
-task build: %w[clean favicon.png] do
-  mkdir_p 'tmp'
-
-  cd 'tmp' do
-    curl 'https://fonts.googleapis.com/css?family=Noto+Sans', 'noto-sans.css'
-  end
-
+file 'index.js' => 'tmp/noto-sans.css' do
   sh 'npx webpack'
+end
 
+file '_includes/index.css' => 'index.js'
+
+directory '_site' => %w[index.js _includes/index.css] do
   sh 'jekyll build'
+end
 
-  cd 'tmp' do
-    curl 'https://github.com/coel-lang/icon/raw/master/icon.svg', 'icon.svg'
-    sh 'inkscape -w 192 --export-png ../_site/icon.png icon.svg'
-  end
+file 'tmp/icon.svg' => 'tmp' do |t|
+  curl 'https://github.com/coel-lang/icon/raw/master/icon.svg', t.name
+end
 
+file '_site/icon.png' => %w[tmp/icon.svg _site] do |t|
+  sh "inkscape -w 192 --export-png #{t.name} #{t.source}"
+end
+
+file '_site/favicon.png' => '_site/icon.png' do |t|
+  sh "convert -resize 16x16 #{t.source} #{t.name}"
+end
+
+file '_site/service-worker.js' => '_site' do
   sh 'npx workbox generate:sw'
 end
+
+task build: %w[
+  clean
+  _site
+  _site/icon.png
+  _site/favicon.png
+  _site/service-worker.js
+]
 
 task default: :build do
   sh 'terraform init'
