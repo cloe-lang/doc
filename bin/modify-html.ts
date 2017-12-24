@@ -2,7 +2,7 @@ import fs = require("fs");
 import jquery = require("jquery");
 import jsdom = require("jsdom");
 
-Promise.all(process.argv.slice(2).map((filename) => {
+process.argv.slice(2).map((filename) => {
     fs.readFile(filename, "utf8", (error, data) => {
         if (error) {
             throw error;
@@ -20,4 +20,4 @@ Promise.all(process.argv.slice(2).map((filename) => {
             }
         });
     });
-}));
+});
