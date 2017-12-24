@@ -57,11 +57,11 @@ code {
 	width: 16em;
 
 	@include small-width {
-		width: auto;
+		width: unset;
 		display: none;
 
 		&.shown {
-			display: block;
+			display: unset;
 		}
 	}
 }
