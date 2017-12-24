@@ -1,2 +1,3 @@
 - [Top](/)
+- [API Reference](/api-reference)
 - [Contribution Guide](/contribution-guide)
