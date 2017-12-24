@@ -10,7 +10,12 @@ task :initialize do
   sh 'bundler install'
 end
 
-task scripts: :clean do
+file 'favicon.png' do |_t|
+  sh 'wget https://raw.githubusercontent.com/coel-lang/icon/master/icon.png'
+  sh 'convert -resize 16x16 icon.png favicon.png'
+end
+
+task build: %w[clean favicon.png] do
   mkdir_p 'tmp'
 
   cd 'tmp' do
@@ -28,13 +33,6 @@ task scripts: :clean do
 
   sh 'npx workbox generate:sw'
 end
-
-file 'favicon.png' do |_t|
-  sh 'wget https://raw.githubusercontent.com/coel-lang/icon/master/icon.png'
-  sh 'convert -resize 16x16 icon.png favicon.png'
-end
-
-task build: %w[favicon.png scripts]
 
 task default: :build do
   sh 'terraform init'
