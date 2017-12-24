@@ -10,6 +10,7 @@ defaults:
       layout: "default"
 exclude:
   - README.md
+  - bin
   - firebase.json
   - node_modules
   - rouge
