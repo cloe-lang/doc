@@ -49,6 +49,10 @@ code {
 	&:last-child {
 		padding-left: 0;
 	}
+
+	@include small-width {
+		padding-bottom: 5rem;
+	}
 }
 
 .toc {
@@ -79,7 +83,7 @@ code {
 	$size: 2.2em;
 	$offset: 0.5em;
 
-	font-size: 1.8em;
+	font-size: 1.8rem;
 	color: white;
 	background: slategrey;
 	display: none;
