@@ -8,8 +8,6 @@ defaults:
       path: ""
     values:
       layout: "default"
-titles_from_headings:
-  strip_title: true
 exclude:
   - README.md
   - node_modules
