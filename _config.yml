@@ -10,6 +10,7 @@ defaults:
       layout: "default"
 exclude:
   - README.md
+  - firebase.json
   - node_modules
   - tmp
   - tsconfig.json
