@@ -3,9 +3,9 @@
 
 # Contribution Guide
 
-## Preparing environment
+## Prerequisites
 
-Install Go 1.8+ and rake and then Coel's dependnecies.
+Install Go 1.8+ and rake, and then Coel's dependnecies.
 
 ```shell
 rake install_deps
@@ -20,9 +20,8 @@ rake install_deps
 
 ## Other utilities
 
-- `rake format` formats all files including source files in Go and Ruby.
-- `rake lint` lints all source files in Go.
-- `rake clean` cleans up the repository directory deleting some binaries and
-  temporary files generated for tests.
+- `rake format` formats all files in Go and Ruby.
+- `rake lint` lints all files in Go, Ruby and Markdown.
+- `rake clean` cleans up all binaries and temporary files.
 
 For more information, see `rakefile.rb`.
