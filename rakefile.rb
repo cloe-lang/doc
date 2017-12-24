@@ -1,4 +1,6 @@
 DOMAIN = 'coel-lang.org'.freeze
+GOOGLE_SITE_VERIFICATION = 'eFao5crNXIs5MJ2iog201ZOcvjmy7SY18yOt9aEQ-e0'.freeze
+ADDRESSES = ['151.101.1.195', '151.101.65.195'].freeze
 S3_OPTIONS = '--acl public-read --cache-control max-age=604800,public'.freeze
 
 def curl(args, dest)
@@ -48,23 +50,22 @@ task build: %w[
   _site/icon.png
   _site/favicon.png
   _site/service-worker.js
-]
-
-task default: :build do
-  sh 'terraform init'
-  sh "terraform apply -auto-approve -var domain=#{DOMAIN}"
-
-  bucket = `terraform output bucket`.strip
-
-  sh "aws s3 sync #{S3_OPTIONS} --delete _site s3://#{bucket}"
-
+] do
   Dir.glob('_site/**/*.html').each do |path|
     next if File.basename(path) == 'index.html'
 
-    sh %W[aws s3 cp #{S3_OPTIONS} --content-type text/html
-          #{path}
-          s3://#{bucket}#{path[5..-1].ext}].join ' '
+    mv path, path.ext
   end
+end
+
+task :deploy do
+  sh 'firebase deploy'
+
+  sh 'terraform init'
+  sh %W[terraform apply -auto-approve
+        -var domain=#{DOMAIN}
+        -var google_site_verification=#{GOOGLE_SITE_VERIFICATION}
+        -var addresses='#{ADDRESSES}'].join ' '
 
   name_servers = `terraform output name_servers`
                  .split(/[,\s]+/)
@@ -77,6 +78,8 @@ task default: :build do
     --nameservers #{name_servers}
   ].join ' '
 end
+
+task default: %w[build deploy]
 
 task run: :build do
   cd '_site' do
