@@ -1,5 +1,3 @@
-require 'xml-dsl'
-
 DOMAIN = 'coel-lang.org'.freeze
 S3_OPTIONS = '--acl public-read --cache-control max-age=604800,public'.freeze
 
