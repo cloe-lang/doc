@@ -60,7 +60,7 @@ task build: %w[
   _site/icon.png
   _site/favicon.png
 ] do
-  sh "node bin/modify-html.js #{Dir.glob('_site/**/*.html').join ' '}"
+  sh "npx ts-node bin/modify-html.ts #{Dir.glob('_site/**/*.html').join ' '}"
   sh 'npx workbox generate:sw'
 end
 
