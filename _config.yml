@@ -9,20 +9,18 @@ defaults:
     values:
       layout: "default"
 exclude:
-  - README.md
   - bin
   - firebase.json
   - node_modules
   - rouge
+  - README.md
   - tmp
   - tsconfig.json
   - tslint.json
   - "Gemfile*"
   - "package*.json"
   - "*config.js"
-  - "*.css"
   - "*.scss"
-  - "*.map"
   - "*.rb"
   - "*.tf"
   - "*.tfstate"
