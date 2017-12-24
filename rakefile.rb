@@ -3,17 +3,28 @@ require 'xml-dsl'
 DOMAIN = 'coel-lang.org'.freeze
 S3_OPTIONS = '--acl public-read --cache-control max-age=604800,public'.freeze
 
+def curl(args, dest)
+  sh "curl -sSL #{args} > #{dest}"
+end
+
 task scripts: :clean do
   mkdir_p 'tmp'
 
   cd 'tmp' do
-    sh 'curl https://fonts.googleapis.com/css?family=Noto+Sans > noto-sans.css'
+    curl 'https://fonts.googleapis.com/css?family=Noto+Sans', 'noto-sans.css'
   end
 
   sh 'npm install'
   sh 'npx webpack'
 
   sh 'jekyll build'
+
+  cd 'tmp' do
+    curl 'https://github.com/coel-lang/icon/raw/master/icon.svg', 'icon.svg'
+    sh 'inkscape -w 192 --export-png icon.png icon.svg'
+  end
+
+  cp 'tmp/icon.png', '_site'
 
   sh 'npx workbox generate:sw'
 end
