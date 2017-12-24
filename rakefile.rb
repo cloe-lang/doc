@@ -25,10 +25,8 @@ task scripts: :clean do
 
   cd 'tmp' do
     curl 'https://github.com/coel-lang/icon/raw/master/icon.svg', 'icon.svg'
-    sh 'inkscape -w 192 --export-png icon.png icon.svg'
+    sh 'inkscape -w 192 --export-png ../_site/icon.png icon.svg'
   end
-
-  cp 'tmp/icon.png', '_site'
 
   sh 'npx workbox generate:sw'
 end
