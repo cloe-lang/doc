@@ -25,7 +25,7 @@ end
 file '_includes/index.css' => 'index.js'
 
 directory '_site' => %w[index.js _includes/index.css] do
-  sh 'jekyll build'
+  sh 'bundler exec jekyll build'
 end
 
 file 'tmp/icon.svg' => 'tmp' do |t|

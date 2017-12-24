@@ -49,6 +49,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  jekyll (~> 3.6)
   jekyll-titles-from-headings
 
 BUNDLED WITH
