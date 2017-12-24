@@ -12,6 +12,7 @@ exclude:
   - README.md
   - firebase.json
   - node_modules
+  - rouge
   - tmp
   - tsconfig.json
   - tslint.json

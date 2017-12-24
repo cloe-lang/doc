@@ -13,3 +13,5 @@ $("div.menu-button").on("click", function() {
     $("div.toc").toggleClass("shown");
     $("div.content").toggleClass("hidden");
 });
+
+$("code").addClass("highlight");

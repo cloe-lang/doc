@@ -7,7 +7,17 @@ def curl(args, dest)
   sh "curl -sSL #{args} > #{dest}"
 end
 
-task :initialize do
+def git_clone(url, dest, tag: nil)
+  sh %W[git clone #{!tag.nil? ? '-b ' + tag : ''} --single-branch --depth 1
+        #{url} #{dest}].join ' '
+end
+
+directory 'tmp/rouge' => 'tmp' do |t|
+  git_clone 'https://github.com/jneen/rouge', t.name, tag: 'v2.2.1'
+  cp 'rouge/coel.rb', 'tmp/rouge/lib/rouge/lexers'
+end
+
+task initialize: 'tmp/rouge' do
   sh 'npm install'
   sh 'bundler install'
 end
@@ -18,7 +28,11 @@ file 'tmp/noto-sans.css' => 'tmp' do |t|
   curl 'https://fonts.googleapis.com/css?family=Noto+Sans', t.name
 end
 
-file 'index.js' => 'tmp/noto-sans.css' do
+file 'tmp/rouge.css' => 'tmp' do |t|
+  sh "bundler exec rougify style base16.solarized.dark > #{t.name}"
+end
+
+file 'index.js' => %w[tmp/noto-sans.css tmp/rouge.css] do
   sh 'npx webpack'
 end
 
