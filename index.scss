@@ -75,6 +75,9 @@ code {
 
 .content {
 	@include part;
+
+	flex: 1;
+
 	@include small-width {
 		&.hidden {
 			display: none;
