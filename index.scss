@@ -1,6 +1,12 @@
 @import "./node_modules/highlight.js/styles/solarized-dark.css";
 @import "./tmp/noto-sans.css";
 
+@mixin small-width {
+	@media (max-width: 768px) {
+		@content;
+	}
+}
+
 body {
 	color: #333;
 	font: 16px "Noto Sans", sans-serif;
@@ -8,6 +14,10 @@ body {
 	margin: 0 auto;
 	padding: 1em;
 	display: flex;
+
+	@include small-width {
+		max-width: none;
+	}
 }
 
 a {
@@ -33,8 +43,51 @@ code {
 
 .toc {
 	width: 16em;
+
+	@include small-width {
+		display: none;
+		flex: 1;
+
+		&.shown {
+			display: block;
+		}
+	}
 }
 
 .content {
 	flex: 1;
+
+	@include small-width {
+		&.hidden {
+			display: none;
+		}
+	}
+}
+
+.menu-button {
+	$size: 2em;
+	$offset: 0.5em;
+
+	font-size: 1.5em;
+	color: white;
+	background: slategrey;
+	display: none;
+	justify-content: center;
+	align-items: center;
+	width: $size;
+	height: $size;
+	border-radius: $size;
+	position: fixed;
+	bottom: $offset;
+	right: $offset;
+	user-select: none;
+	transition: transform 0.1s;
+
+	&.on {
+		transform: rotate(90deg);
+	}
+
+	@include small-width {
+		display: flex;
+	}
 }
