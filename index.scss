@@ -11,8 +11,9 @@ body {
 	color: #333;
 	font: 16px "Noto Sans", sans-serif;
 	max-width: 64em;
+	height: 100vh;
+	overflow: hidden;
 	margin: 0 auto;
-	padding: 1em;
 	display: flex;
 
 	@include small-width {
@@ -41,12 +42,23 @@ code {
 	margin: 0.15em 0;
 }
 
+@mixin part {
+	padding: 1em;
+	overflow-y: auto;
+
+	&:last-child {
+		padding-left: 0;
+	}
+}
+
 .toc {
+	@include part;
+
 	width: 16em;
 
 	@include small-width {
+		width: auto;
 		display: none;
-		flex: 1;
 
 		&.shown {
 			display: block;
@@ -55,8 +67,7 @@ code {
 }
 
 .content {
-	flex: 1;
-
+	@include part;
 	@include small-width {
 		&.hidden {
 			display: none;
