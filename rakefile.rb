@@ -19,7 +19,6 @@ task scripts: :clean do
     curl 'https://fonts.googleapis.com/css?family=Noto+Sans', 'noto-sans.css'
   end
 
-  sh 'npm install'
   sh 'npx webpack'
 
   sh 'jekyll build'
@@ -76,13 +75,11 @@ task run: :build do
 end
 
 task :lint do
-  sh 'npm install'
   sh 'npx tslint --project .'
   sh 'npx stylelint **/*.scss'
 end
 
 task :format do
-  sh 'npm install'
   sh 'npx standard --fix'
 end
 
