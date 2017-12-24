@@ -46,12 +46,6 @@ task build: %w[
   _site/icon.png
   _site/favicon.png
 ] do
-  Dir.glob('_site/**/*.html').each do |path|
-    next if File.basename(path) == 'index.html'
-
-    mv path, path.ext
-  end
-
   sh 'npx workbox generate:sw'
 end
 
