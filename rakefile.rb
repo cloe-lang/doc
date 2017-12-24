@@ -45,7 +45,6 @@ task build: %w[
   _site
   _site/icon.png
   _site/favicon.png
-  _site/service-worker.js
 ] do
   Dir.glob('_site/**/*.html').each do |path|
     next if File.basename(path) == 'index.html'
