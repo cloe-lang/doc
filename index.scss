@@ -65,6 +65,7 @@ code {
 	width: 16em;
 
 	@include small-width {
+		font-size: 1.3em;
 		width: unset;
 		display: none;
 
