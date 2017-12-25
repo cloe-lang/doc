@@ -55,7 +55,7 @@ file '_site/icon.png' => %w[tmp/icon.svg _site] do |t|
 end
 
 file '_site/favicon.png' => '_site/icon.png' do |t|
-  sh "convert -resize 16x16 #{t.source} #{t.name}"
+  sh "convert -strip -resize 16x16 #{t.source} #{t.name}"
 end
 
 task build: %w[
