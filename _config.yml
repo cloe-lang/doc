@@ -1,4 +1,5 @@
 plugins:
+  - jekyll-optional-front-matter
   - jekyll-titles-from-headings
 title: Coel programming language
 markdown: kramdown
@@ -8,6 +9,8 @@ defaults:
       path: ""
     values:
       layout: "default"
+optional_front_matter:
+  remove_originals: true
 exclude:
   - bin
   - firebase.json

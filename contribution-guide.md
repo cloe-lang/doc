@@ -1,6 +1,3 @@
----
----
-
 # Contribution Guide
 
 ## Prerequisites

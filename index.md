@@ -1,6 +1,3 @@
----
----
-
 # Coel programming language
 
 Coel is a functional programming language with implicit parallelism and
