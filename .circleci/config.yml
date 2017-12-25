@@ -1,0 +1,26 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: ubuntu:artful
+    steps:
+      - checkout
+
+      - run:
+          name: OS Setup
+          command: |
+            apt -y update --fix-missing
+            apt -y install bundler curl git imagemagick inkscape nodejs npm rake
+            npm install --global npm
+
+      - run:
+          name: Initialization
+          command: rake initialize
+
+      - run:
+          name: Lint
+          command: rake lint
+
+      - run:
+          name: Build
+          command: rake build
