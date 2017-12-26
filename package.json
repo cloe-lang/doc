@@ -26,6 +26,7 @@
 		"stylelint": "^8.4.0",
 		"stylelint-config-recommended-scss": "^3.0.0",
 		"stylelint-scss": "^2.2.0",
+		"superstatic": "^5.0.1",
 		"ts-loader": "^3.2.0",
 		"ts-node": "^4.1.0",
 		"tslint": "^5.8.0",

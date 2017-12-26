@@ -93,9 +93,7 @@ end
 task default: %w[build deploy]
 
 task run: :build do
-  cd '_site' do
-    sh 'python3 -m http.server 8888'
-  end
+  sh 'npx superstatic'
 end
 
 task :lint do
