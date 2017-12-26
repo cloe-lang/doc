@@ -1,4 +1,4 @@
-- [Top](/)
+- [Home](/)
 - [Installation](/installation)
 - [API Reference](/api-reference)
 - [Contribution Guide](/contribution-guide)
