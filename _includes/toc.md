@@ -1,4 +1,5 @@
 - [Home](/)
 - [Installation](/installation)
+- [Examples](examples)
 - [API Reference](/api-reference)
 - [Contribution Guide](/contribution-guide)
