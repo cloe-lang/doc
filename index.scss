@@ -72,11 +72,11 @@ code {
 .toc {
 	@include part;
 
-	width: 16em;
+	max-width: 25%;
 
 	@include small-width {
 		font-size: 1.3em;
-		width: unset;
+		max-width: unset;
 		display: none;
 
 		&.shown {
