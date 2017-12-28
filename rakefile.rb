@@ -16,7 +16,7 @@ directory 'tmp/rouge' => 'tmp' do |t|
   git_clone 'https://github.com/jneen/rouge', t.name, tag: 'v2.2.1'
 end
 
-task initialize: 'tmp/rouge' do
+task init: 'tmp/rouge' do
   cp 'rouge/coel.rb', 'tmp/rouge/lib/rouge/lexers'
 
   sh 'npm install'

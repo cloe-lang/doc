@@ -15,7 +15,7 @@ jobs:
 
       - run:
           name: Initialization
-          command: rake initialize
+          command: rake init
 
       - run:
           name: Lint
