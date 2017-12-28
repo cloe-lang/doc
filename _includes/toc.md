@@ -2,4 +2,5 @@
 - [Installation](/installation)
 - [Examples](examples)
 - [API Reference](/api-reference)
+  - [http](/api-reference/http)
 - [Contribution Guide](/contribution-guide)
