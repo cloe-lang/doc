@@ -34,16 +34,25 @@ a {
 	}
 }
 
+$codeblock-radius: 0.2rem;
+
+pre {
+	border-radius: $codeblock-radius;
+	overflow: hidden;
+}
+
 code {
 	display: inline-block;
 	padding: 0.3em 0.4em;
 	margin: 0.15em 0;
-	border-radius: 0.2rem;
+	border-radius: $codeblock-radius;
 
 	pre & {
 		display: block;
 		overflow-x: auto;
 		padding: 0.9em 1em;
+		margin: 0;
+		border-radius: unset;
 	}
 }
 
