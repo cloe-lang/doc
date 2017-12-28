@@ -13,6 +13,14 @@ process.argv.slice(2).map((filename) => {
 
         $('a[href^="http://"], a[href^="https://"]').attr("target", "_blank");
         $("code").addClass("highlight");
+        $("pre").removeClass("highlight");
+
+        const unwrap = function() {
+            $(this).parent().replaceWith($(this).children());
+        };
+
+        $("div.highlight").each(unwrap);
+        $("div.highlighter-rouge").each(unwrap);
 
         fs.writeFile(filename, window.document.documentElement.outerHTML, (error) => {
             if (error) {
