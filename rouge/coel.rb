@@ -11,25 +11,28 @@ module Rouge
 
       mimetypes 'text/x-coel', 'application/x-coel'
 
-      KEYWORDS = Set.new %w[def import let]
+      KEYWORDS = Set.new %w[def import let type]
 
       BUILTINS = Set.new %w[
-        and catch delete dict dump error eseq first
+        and bool? catch delete dict dict? dump error eseq first function?
         if include indexOf insert ordered?
-        list map matchError max merge min mod not
-        or par partial prepend pure rally read reduce rest
-        seq size slice toList toStr typeOf write zip
+        list? map matchError max merge min mod nil? number? not
+        or par partial pure rally read reduce rest
+        seq size slice string? toList toString typeOf write zip
       ]
 
       OPERATORS = Set.new %w[+ - * / ** // = < <= > >=]
 
       CONSTANTS = Set.new %w[false nil true]
 
+      TYPES = Set.new %w[bool dict function list nil number string]
+
       def name(name)
         return Keyword if KEYWORDS.include?(name)
         return Name::Builtin if BUILTINS.include?(name)
         return Operator if OPERATORS.include?(name)
         return Name::Constant if CONSTANTS.include?(name)
+        return Keyword::Type if TYPES.include?(name)
         Name
       end
 
