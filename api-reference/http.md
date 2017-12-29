@@ -31,7 +31,7 @@ Get incoming HTTP requests as an infinite list.
 ```coel
 (def (getRequests address))
 (type (getRequests string)
-  (type (respond string . number) (effect nil))
+  (type (respond string . number) nil)
   (def (respond (body "") . (status 200)))
   [{"body" string
     "method" string
