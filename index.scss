@@ -1,6 +1,7 @@
 @import "./tmp/noto-sans.css";
 @import "./tmp/rouge.css";
 
+$codeblock-radius: 0.2rem;
 $menu-button-offset: 1rem;
 $menu-button-size: 4.5rem;
 
@@ -32,8 +33,6 @@ a {
 		text-decoration: underline;
 	}
 }
-
-$codeblock-radius: 0.2rem;
 
 pre {
 	border-radius: $codeblock-radius;
