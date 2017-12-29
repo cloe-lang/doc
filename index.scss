@@ -10,15 +10,11 @@
 body {
 	color: #333;
 	font: 16px "Noto Sans", sans-serif;
-	max-width: 80em;
 	height: 100vh;
+	margin: 0;
 	overflow: hidden;
-	margin: 0 auto;
 	display: flex;
-
-	@include small-width {
-		max-width: none;
-	}
+	justify-content: center;
 }
 
 a {
@@ -89,8 +85,11 @@ code {
 	@include part;
 
 	flex: 1;
+	max-width: 60em;
 
 	@include small-width {
+		max-width: unset;
+
 		&.hidden {
 			display: none;
 		}
