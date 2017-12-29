@@ -25,7 +25,7 @@ module Rouge
 
       CONSTANTS = Set.new %w[false nil true]
 
-      TYPES = Set.new %w[bool dict function list nil number string]
+      TYPES = Set.new %w[any bool dict function list nil number string]
 
       def name(name)
         return Keyword if KEYWORDS.include?(name)
