@@ -26,7 +26,7 @@ If `error` is `true` and  a status code is not 2xx, it raises an error.
 
 ## `getRequests`
 
-Get incoming HTTP requests as an infinite list.
+Gets incoming HTTP requests as an infinite list.
 
 ```coel
 (def (getRequests address))
