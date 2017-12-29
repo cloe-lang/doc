@@ -1,6 +1,9 @@
 @import "./tmp/noto-sans.css";
 @import "./tmp/rouge.css";
 
+$menu-button-offset: 1rem;
+$menu-button-size: 4.5rem;
+
 @mixin small-width {
 	@media (max-width: 768px) {
 		@content;
@@ -61,7 +64,7 @@ code {
 	}
 
 	@include small-width {
-		padding-bottom: 5rem;
+		padding-bottom: $menu-button-size + $menu-button-offset;
 	}
 }
 
@@ -97,21 +100,18 @@ code {
 }
 
 .menu-button {
-	$size: 2.2em;
-	$offset: 0.5em;
-
-	font-size: 1.8rem;
+	font-size: $menu-button-size / 2;
 	color: white;
 	background: slategrey;
 	display: none;
 	justify-content: center;
 	align-items: center;
-	width: $size;
-	height: $size;
-	border-radius: $size;
+	width: $menu-button-size;
+	height: $menu-button-size;
+	border-radius: $menu-button-size;
 	position: fixed;
-	bottom: $offset;
-	right: $offset;
+	bottom: $menu-button-offset;
+	right: $menu-button-offset;
 	user-select: none;
 	transition: transform 0.1s;
 
