@@ -4,4 +4,5 @@
 - [API Reference](/api-reference)
   - [json](/api-reference/json)
   - [http](/api-reference/http)
+  - [re](/api-reference/re)
 - [Contribution Guide](/contribution-guide)
