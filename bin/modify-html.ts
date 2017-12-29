@@ -11,7 +11,10 @@ process.argv.slice(2).map((filename) => {
         const { window } = new jsdom.JSDOM(data);
         const $ = jquery(window);
 
-        $('a[href^="http://"], a[href^="https://"]').attr("target", "_blank");
+        $('a[href^="http://"], a[href^="https://"]').attr({
+            rel: "noopener", // Prevent tabnabbing.
+            target: "_blank",
+        });
         $("code").addClass("highlight");
         $("pre").removeClass("highlight");
 
