@@ -1,5 +1,7 @@
 # `json`
 
+JSON encoder and decoder module.
+
 ## `encode`
 
 Encodes a value into a JSON string.

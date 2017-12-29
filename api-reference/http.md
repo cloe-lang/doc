@@ -1,5 +1,7 @@
 # `http`
 
+HTTP module.
+
 ## `get`
 
 Sends a GET request to a given URL.
