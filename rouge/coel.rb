@@ -37,6 +37,7 @@ module Rouge
       end
 
       state :root do
+        rule(/^#!.*$/, Comment)
         rule(/\s+/m, Text::Whitespace)
 
         rule(/;.*?$/, Comment::Single)
