@@ -29,10 +29,10 @@ module Rouge
 
       def name(name)
         return Keyword if KEYWORDS.include?(name)
-        return Name::Builtin if BUILTINS.include?(name)
+        return Keyword::Type if TYPES.include?(name)
         return Operator if OPERATORS.include?(name)
         return Name::Constant if CONSTANTS.include?(name)
-        return Keyword::Type if TYPES.include?(name)
+        return Name::Builtin if BUILTINS.include?(name)
         Name
       end
 
