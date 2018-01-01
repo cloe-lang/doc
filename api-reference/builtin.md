@@ -107,8 +107,8 @@ Adds, subtracts, multiplies, or devides numbers.
 Calculates a floor division.
 
 ```coel
-(def (** initial ..nums))
-(type (** number [number]) number)
+(def (// initial ..nums))
+(type (// number [number]) number)
 ```
 
 ### `**`
