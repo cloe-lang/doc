@@ -3,6 +3,10 @@ plugins:
   - jekyll-titles-from-headings
 title: Coel programming language
 markdown: kramdown
+kramdown:
+  syntax_highlighter_opts:
+    span:
+      default_lang: coel
 defaults:
   -
     scope:
