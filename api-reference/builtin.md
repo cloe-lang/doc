@@ -48,7 +48,7 @@ Treat an impure function call as a pure function call.
 
 Takes pairs of a condition and an expression and another expression,
 and returns an expression corresponding with the first condition evaluated as
-`true` or the last expression if no condition is matched.
+`true` or the last expression if no condition is met.
 
 ```coel
 (def (if ..args))
