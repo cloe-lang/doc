@@ -5,5 +5,6 @@
   - [builtin](/api-reference/builtin)
   - [json](/api-reference/json)
   - [http](/api-reference/http)
+  - [os](/api-reference/os)
   - [re](/api-reference/re)
 - [Contribution Guide](/contribution-guide)
