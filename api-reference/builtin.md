@@ -35,7 +35,7 @@ It is similar to `toString` function but converts strings into quoted ones.
 
 ### `pure`
 
-Treat an impure function call as a pure function call.
+Treats an impure function call as a pure function call.
 
 ```coel
 (def (pure arg))
@@ -57,7 +57,7 @@ and returns an expression corresponding with the first condition evaluated as
 
 ### `not`
 
-Negate an argument.
+Negates an argument.
 
 ```coel
 (def (not arg))
@@ -336,7 +336,7 @@ or a file if `string`.
 
 ### `catch`
 
-Catch an error thrown from an expression.
+Catches an error thrown from an expression.
 
 ```coel
 (def (catch arg))
