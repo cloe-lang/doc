@@ -261,6 +261,15 @@ Applies a function to each element in a list.
 (type (map function list) list)
 ```
 
+### `reduce`
+
+Accumulates values with a function which takes 2 arguments.
+
+```coel
+(def (reduce func list))
+(type (reduce function list) any)
+```
+
 ### `zip`
 
 Returns a list of lists each of which contains elements of the same index
