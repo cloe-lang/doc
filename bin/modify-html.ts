@@ -3,6 +3,23 @@ import jquery = require("jquery");
 import jsdom = require("jsdom");
 import util = require("util");
 
+function createTOC($, parentNode): string {
+    const tagName = parentNode.prop("tagName");
+    const children = parentNode.nextUntil(tagName).filter(`h${parseInt(tagName[1], 10) + 1}`).toArray();
+
+    if (children.length === 0) {
+        return "";
+    }
+
+    const entry = (node): string => (`
+        <li>
+            <a href="#${$(node).attr("id")}">${$("<div>").text($(node).text()).html()}</a>
+            ${createTOC($, $(node))}
+        </li>`);
+
+    return `<ul>${children.map(entry).join("")}</ul>`;
+}
+
 process.argv.slice(2).map(async (filename) => {
     const { window } = new jsdom.JSDOM(await util.promisify(fs.readFile)(filename, "utf8"));
     const $ = jquery(window);
@@ -20,6 +37,7 @@ process.argv.slice(2).map(async (filename) => {
 
     $("div.highlight").each(unwrap);
     $("div.highlighter-rouge").each(unwrap);
+    $("h2").first().before(createTOC($, $("h1")));
 
     await util.promisify(fs.writeFile)(filename, window.document.documentElement.outerHTML);
 });
