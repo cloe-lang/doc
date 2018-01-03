@@ -270,6 +270,25 @@ Accumulates values with a function which takes 2 arguments.
 (type (reduce function list) any)
 ```
 
+### `filter`
+
+Returns a list of elements which satisfy a condition represented by `func` argument.
+`func` argument must be a function which takes an argument and returns `bool`.
+
+```coel
+(def (filter func list))
+(type (filter function list) list)
+```
+
+### `sort`
+
+Sorts a list.
+
+```coel
+(def (sort list . less <))
+(type (sort list . function) list)
+```
+
 ### `zip`
 
 Returns a list of lists each of which contains elements of the same index
