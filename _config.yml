@@ -16,19 +16,21 @@ defaults:
 optional_front_matter:
   remove_originals: true
 exclude:
-  - bin
-  - firebase.json
-  - node_modules
-  - rouge
-  - README.md
-  - tmp
-  - tsconfig.json
-  - tslint.json
-  - "Gemfile*"
-  - "package*.json"
-  - "*config.js"
-  - "*.scss"
   - "*.rb"
+  - "*.scss"
   - "*.tf"
   - "*.tfstate"
   - "*.ts"
+  - "*config.js"
+  - "Gemfile*"
+  - "package*.json"
+  - "tsconfig*.json"
+  - LICENSE
+  - README.md
+  - bin
+  - dist
+  - firebase.json
+  - node_modules
+  - rouge
+  - tmp
+  - tslint.json
