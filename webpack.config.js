@@ -9,9 +9,10 @@ const cssLoader = {
 };
 
 module.exports = {
+	mode: 'production',
 	entry: './index.ts',
 	output: {
-		filename: 'tmp/index.js'
+		filename: 'index.js'
 	},
 	resolve: {
 		extensions: ['.ts', '.js']
@@ -19,7 +20,10 @@ module.exports = {
 	module: {
 		rules: [{
 				test: /\.ts$/,
-				loader: 'ts-loader'
+				loader: 'ts-loader',
+				options: {
+					configFile: require.resolve('./tsconfig.webpack.json')
+				}
 			},
 			{
 				test: /\.css$/,
@@ -39,8 +43,10 @@ module.exports = {
 			}
 		]
 	},
+	optimization: {
+		minimize: true
+	},
 	plugins: [
-		new webpack.optimize.UglifyJsPlugin(),
-		new ExtractTextPlugin('_includes/index.css')
+		new ExtractTextPlugin('index.css')
 	]
 };
