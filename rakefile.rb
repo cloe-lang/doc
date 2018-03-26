@@ -69,7 +69,7 @@ task build: %w[
   _site/favicon.png
 ] do
   sh "npx ts-node bin/modify-html.ts #{Dir.glob('_site/**/*.html').join ' '}"
-  sh 'npx workbox generate:sw'
+  sh 'npx workbox generateSW workbox-cli-config.js'
 end
 
 task :deploy do
