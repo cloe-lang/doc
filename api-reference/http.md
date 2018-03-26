@@ -8,7 +8,7 @@ Sends a GET request to a given URL.
 If `error` is `true` and  a status code is not 2xx, it raises an error.
 
 ```coel
-(def (get url . (error true)))
+(def (get url . error true))
 (type (get string . bool)
   {"status" number
    "body" string})
@@ -20,7 +20,7 @@ Sends a POST request to a given URL.
 If `error` is `true` and  a status code is not 2xx, it raises an error.
 
 ```coel
-(def (post url body . (contentType "text/plain") (error true)))
+(def (post url body . contentType "text/plain" error true))
 (type (post string string . string bool)
   {"status" number
    "body"   string})
@@ -33,7 +33,7 @@ Gets incoming HTTP requests as an infinite list.
 ```coel
 (def (getRequests address))
 (type (getRequests string)
-  (def (respond (body "") . (status 200)))
+  (def (respond body . status 200))
   (type (respond string . number) nil)
   [{"body" string
     "method" string

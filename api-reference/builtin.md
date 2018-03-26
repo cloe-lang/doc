@@ -345,7 +345,7 @@ Checks if an argument is the type.
 Reads stdin or a content of a file.
 
 ```coel
-(def (read (file nil)))
+(def (read . file nil))
 (type (read (or nil string)) string)
 ```
 
@@ -356,7 +356,7 @@ It writes to stdout if `file` argument is `1`, stderr if `2`,
 or a file if `string`.
 
 ```coel
-(def (write ..args . (sep " ") (end "\n") (file 1) (mode 0664)))
+(def (write ..args . sep " " end "\n" file 1 mode 0664))
 (type (write [any] . string string (or number string) number) nil)
 ```
 
