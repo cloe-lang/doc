@@ -71,7 +71,7 @@ task build: %w[
 end
 
 task :deploy do
-  sh 'firebase deploy'
+  sh 'npx firebase deploy'
 
   sh 'terraform init'
   sh %W[terraform apply -auto-approve
