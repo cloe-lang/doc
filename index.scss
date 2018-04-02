@@ -1,7 +1,7 @@
 @import "./tmp/noto-sans.css";
 @import "./tmp/rouge.css";
 
-$codeblock-radius: 0.2rem;
+$block-radius: 0.2rem;
 $menu-button-offset: 1rem;
 $menu-button-size: 4.5rem;
 
@@ -34,8 +34,24 @@ a {
 	}
 }
 
+blockquote {
+	background: lightgrey;
+	color: dimgrey;
+	padding: 0.6em;
+	margin: 0.4em;
+	border-radius: $block-radius;
+
+	> *:first-child {
+		margin-top: 0;
+	}
+
+	> *:last-child {
+		margin-bottom: 0;
+	}
+}
+
 pre {
-	border-radius: $codeblock-radius;
+	border-radius: $block-radius;
 	overflow: hidden;
 }
 
@@ -43,7 +59,7 @@ code {
 	display: inline-block;
 	padding: 0.3em 0.4em;
 	margin: 0.15em 0;
-	border-radius: $codeblock-radius;
+	border-radius: $block-radius;
 
 	pre & {
 		display: block;
