@@ -8,6 +8,14 @@ Install Go 1.8+ and rake, and then Coel's dependnecies.
 rake install_deps
 ```
 
+## Building from source
+
+In the repository directory,
+
+```
+rake build
+```
+
 ## Testing
 
 - `rake unit_test` runs unit tests. It runs `go test` internally.
