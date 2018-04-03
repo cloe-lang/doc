@@ -8,6 +8,6 @@ $("a").on("mouseover", function() {
 
 $("div.menu-button").on("click", function() {
     $(this).toggleClass("on");
-    $("div.toc").toggleClass("shown");
+    $("div.toc").toggleClass("hidden");
     $("div.content").toggleClass("hidden");
 });
