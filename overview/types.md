@@ -69,7 +69,7 @@ nil
 
 Numbers are also just like ones in mathematics.
 There is no difference between integers and floating point numbers as every
-numbers are represented in
+number is represented in
 [Double-precision floating-point format of IEEE 754](https://en.wikipedia.org/wiki/Double-precision_floating-point_format).
 
 ```coel
