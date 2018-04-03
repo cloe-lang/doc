@@ -4,6 +4,7 @@
   - [Features](/overview/features)
   - [Concept](/overview/concept)
   - [Types](/overview/types)
+  - [Pattern Matching](/overview/pattern-matching)
   - [Error Handling](/overview/error-handling)
 - [Examples](/examples)
 - [API Reference](/api-reference)
