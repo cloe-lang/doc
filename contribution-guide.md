@@ -2,10 +2,10 @@
 
 ## Prerequisites
 
-Install Go 1.8+ and rake, and then Coel's dependnecies.
+Install Go 1.8+ and rake, and then dependnecies.
 
 ```shell
-rake install_deps
+rake deps
 ```
 
 ## Building from source

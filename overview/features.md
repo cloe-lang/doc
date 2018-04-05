@@ -4,16 +4,16 @@
 
 Functional programming is a programming pradigm where functions are first-class
 values, which means functions can be passed as arguments to other functions.
-That allows programmers to express programs just by combining functions to make
-others.
+That allows programmers to express programs just by combining functions to
+create more complex ones.
 
-In such paradigm, it is encouraged to use pure functions, which must not have
-any side effects; they just compute their results from given arguments but
+In such paradigm, it is encouraged to use pure functions, which must have
+no side effect; they just compute their results from given arguments but
 cannot do anything else.
 And the counterpart is called impure functions, which have some side effects.
 Therefore, Coel distinguishes these 2 types of functions in order to prevent
-impure function calls in pure context where only pure function calls are
-permitted, and vice versa.
+impure functions from being called in pure context where only pure function
+calls are permitted, and vice versa.
 
 ```coel
 (def (foo func) (func 34))

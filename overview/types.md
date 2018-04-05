@@ -1,8 +1,8 @@
 # Types
 
 There are 7 types in the language and no user-defined types.
-The type system is quite similar to JSON's while Coel has one extra type of
-function.
+The type system is quite similar to one of [JSON](https://json.org) while Coel
+has one extra type of [function](#functions).
 Coel is also dynamically typed as types of any expressions are determined at
 runtime.
 
@@ -35,7 +35,7 @@ objects.
 
 Functions are quite similar to ones in mathematics although it can take any
 kinds of values but not only numbers.
-Most of them are pure; they cannot do anything like printing strings on
+Most of them are pure; they do not do anything like printing strings on
 terminal other than computing their results.
 
 ```coel
@@ -70,7 +70,7 @@ nil
 Numbers are also just like ones in mathematics.
 There is no difference between integers and floating point numbers as every
 number is represented in
-[Double-precision floating-point format of IEEE 754](https://en.wikipedia.org/wiki/Double-precision_floating-point_format).
+[double-precision floating-point format of IEEE 754](https://en.wikipedia.org/wiki/Double-precision_floating-point_format).
 
 ```coel
 0
