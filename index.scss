@@ -38,6 +38,10 @@ blockquote {
 	background: lightgrey;
 	color: dimgrey;
 	padding: 0.6em;
+	margin: {
+		left: 1em;
+		right: 1em;
+	};
 	border-radius: $block-radius;
 
 	> *:first-child {
