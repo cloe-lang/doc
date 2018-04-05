@@ -41,7 +41,19 @@ ones.
 
 ## Lazy evaluation
 
-> WIP
+Lazy evaluation is the "Call Me Maybe" strategy to evaluate and run programs in
+functional programming.
+In most programming languages, pieces of programs are evaluated in an eager way;
+operations in programs come in order and function calls are evaluated when
+called.
+However, in lazy evaluation, calling a function does not mean executing it right
+away but stores it in memory a chunk of the function and its arguments which
+may or may not be evaluated into its result later.
+
+It is necessary for Coel to adopt lazy evaluation because there is no other way
+to mix values available at different times.
+Otherwise it would express only one-shot programs like utility commands but not
+ones which run over time like HTTP servers.
 
 ## Parallelism & concurrency
 
