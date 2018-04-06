@@ -11,7 +11,7 @@ module Rouge
 
       mimetypes 'text/x-coel', 'application/x-coel'
 
-      KEYWORDS = Set.new %w[def import let type]
+      KEYWORDS = Set.new %w[def import let match type]
 
       BUILTINS = Set.new %w[
         and bool? catch delete dict dict? dump error eseq first function?
