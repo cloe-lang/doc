@@ -39,5 +39,9 @@ process.argv.slice(2).map(async (filename) => {
     $("div.highlighter-rouge").each(unwrap);
     $("h2").first().before(createTOC($, $("h1")));
 
+    for (const attribute of ["height", "width"]) {
+        $("svg.octicon").removeAttr(attribute);
+    }
+
     await util.promisify(fs.writeFile)(filename, window.document.documentElement.outerHTML);
 });

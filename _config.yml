@@ -1,4 +1,5 @@
 plugins:
+  - jekyll-octicons
   - jekyll-optional-front-matter
   - jekyll-titles-from-headings
 title: Coel programming language
