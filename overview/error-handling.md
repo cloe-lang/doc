@@ -14,7 +14,12 @@ function.
 
 ## Throwing errors manually
 
-> WIP
+The built-in `error` function creates an error with its name and message.
+It can be used to create and throw custom errors.
+
+```coel
+(error "MyError" "me ate sugar")
+```
 
 ## Catching errors with `catch` function
 
