@@ -107,7 +107,6 @@ code {
 }
 
 .menu-button {
-	font-size: $menu-button-size / 2;
 	color: white;
 	background: slategrey;
 	display: none;
@@ -124,6 +123,10 @@ code {
 
 	&.on {
 		transform: rotate(90deg);
+	}
+
+	> svg {
+		height: $menu-button-size * 0.6;
 	}
 
 	@include small-width {
