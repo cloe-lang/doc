@@ -33,7 +33,7 @@ file 'tmp/rouge.css' => 'tmp' do |t|
   sh "bundler exec rougify style base16.solarized.dark > #{t.name}"
 end
 
-file 'dist/index.js' => %w[tmp/noto-sans.css tmp/rouge.css] do
+file 'dist/index.js' => 'tmp/rouge.css' do
   sh 'npx webpack-cli'
 end
 
@@ -61,12 +61,17 @@ file '_site/favicon.png' => '_site/icon.png' do |t|
   sh "convert -strip -resize 16x16 #{t.source} #{t.name}"
 end
 
+file '_site/font.ttf' => 'tmp/noto-sans.css' do |t|
+  curl(/url\(([^)]+)\)/.match(File.read(t.source))[1], t.name)
+end
+
 task build: %w[
   clean
   _site
   _site/index.js
   _site/icon.png
   _site/favicon.png
+  _site/font.ttf
 ] do
   sh "npx ts-node bin/modify-html.ts #{Dir.glob('_site/**/*.html').join ' '}"
   sh 'npx workbox generateSW workbox-cli-config.js'
