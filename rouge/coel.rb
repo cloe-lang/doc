@@ -11,7 +11,7 @@ module Rouge
 
       mimetypes 'text/x-coel', 'application/x-coel'
 
-      KEYWORDS = Set.new %w[def import let match type]
+      KEYWORDS = Set.new %w[def import let match mr type \\]
 
       BUILTINS = Set.new %w[
         and bool? catch delete dict dict? dump error eseq first function?
@@ -46,9 +46,9 @@ module Rouge
         rule(/0x[0-9a-fA-F]+/, Num::Hex)
         rule(/"(\\.|[^"])*"/, Str)
 
-        rule(/[()\[\]{}.\\]/, Punctuation)
+        rule(/[()\[\]{}.]/, Punctuation)
 
-        rule(/[^()\[\]{}".;\\\s]+/) do |m|
+        rule(/[^()\[\]{}".;\s]+/) do |m|
           token name(m[0])
         end
       end
