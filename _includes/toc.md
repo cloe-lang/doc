@@ -4,6 +4,7 @@
   - [Features](/overview/features)
   - [Concept](/overview/concept)
   - [Types](/overview/types)
+  - [Variables](/overview/variables)
   - [Functions](/overview/functions)
   - [Pattern Matching](/overview/pattern-matching)
   - [Error Handling](/overview/error-handling)
