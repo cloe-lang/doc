@@ -6,6 +6,7 @@
   - [Types](/overview/types)
   - [Variables](/overview/variables)
   - [Functions](/overview/functions)
+  - [Modules](/overview/modules)
   - [Pattern Matching](/overview/pattern-matching)
   - [Error Handling](/overview/error-handling)
 - [Examples](/examples)
