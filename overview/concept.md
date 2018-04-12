@@ -1,6 +1,6 @@
 # Concept
 
-The abstrat concept lying under Coel is described here for better understanding
+The abstract concept lying under Coel is described here for better understanding
 of why the language looks so.
 
 ## Modeling programs
@@ -101,7 +101,7 @@ collecting up the inputs and effects.
   effects
 ```
 
-Finally, we obtained the totally stateless and funcitonal model of programs
+Finally, we obtained the totally stateless and functional model of programs
 and this is how programs written in Coel looks.
 
 ## Analysis
