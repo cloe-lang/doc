@@ -103,6 +103,8 @@ collecting up the inputs and effects.
 
 Finally, we obtained the totally stateless and functional model of programs
 and this is how programs written in Coel looks.
+Composing a program is equivalent to building up a pure function which maps its
+inputs to its effects.
 
 ## Analysis
 
