@@ -6,7 +6,7 @@ After installing Go 1.8+, get the Coel interpreter.
 go get github.com/coel-lang/coel/...
 ```
 
-Then, write a file `main.coel` of the content:
+To test the installation, write a file `main.coel` of the content:
 
 ```coel
 #!/usr/bin/env coel
