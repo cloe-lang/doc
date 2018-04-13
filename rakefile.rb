@@ -25,7 +25,7 @@ end
 
 directory 'tmp'
 
-file 'tmp/noto-sans.css' => 'tmp' do |t|
+file 'tmp/font.css' => 'tmp' do |t|
   curl 'https://fonts.googleapis.com/css?family=Noto+Sans', t.name
 end
 
@@ -61,7 +61,7 @@ file '_site/favicon.png' => '_site/icon.png' do |t|
   sh "convert -strip -resize 16x16 #{t.source} #{t.name}"
 end
 
-file '_site/font.ttf' => 'tmp/noto-sans.css' do |t|
+file '_site/font.ttf' => 'tmp/font.css' do |t|
   curl(/url\(([^)]+)\)/.match(File.read(t.source))[1], t.name)
 end
 
