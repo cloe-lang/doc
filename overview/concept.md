@@ -31,9 +31,9 @@ Then it is clearly visible that what we focus on are only the program and
 the others but nothing else.
 
 ```
-┌─────────┐
-│ program │
-└─────────┘
++---------+
+| program |
++---------+
 ```
 
 The next topic is what programs do and how they behave.
@@ -44,11 +44,11 @@ The other is "effects" which change something else in the universe.
 
 ```
    input
-     │
-┌────▼────┐
-│ program │
-└────▼────┘
-     │
+     |
++----v----+
+| program |
++----v----+
+     |
    effect
 ```
 
@@ -67,11 +67,11 @@ back them to the program itself.
 
 ```
  input
-   │   ┌────┐
-┌──▼───▼──┐ │
-│ program │ │ state
-└──▼───▼──┘ │
-   │   └────┘
+   |   +----+
++--v---v--+ |
+| program | | state
++--v---v--+ |
+   |   +----+
  effect
 ```
 
@@ -79,13 +79,13 @@ Then, the loop which passes states around for every input are expanded over
 time.
 
 ```
-initial   input       input       input
- state──┐   │   ┌───┐   │   ┌───┐   │   ┌─
-     ┌──▼───▼──┐│┌──▼───▼──┐│┌──▼───▼──┐│
-     │ program │││ program │││ program ││ ...
-     └──▼───▼──┘│└──▼───▼──┘│└──▼───▼──┘│
-        │   └───┘   │   └───┘   │   └───┘
-      effect      effect      effect
+            input        input        input
+              |            |            |
+initial  +----v----+  +----v----+  +----v----+
+ state --> program >--> program >--> program >-- ...
+         +----v----+  +----v----+  +----v----+
+              |            |            |
+            effect       effect       effect
 ```
 
 Simplify the diagram by integrating the initial state into the program and
@@ -93,11 +93,11 @@ collecting up the inputs and effects.
 
 ```
   inputs
-     │
-┌────▼────┐
-│ program │
-└────▼────┘
-     │
+     |
++----v----+
+| program |
++----v----+
+     |
   effects
 ```
 
