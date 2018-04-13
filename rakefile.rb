@@ -61,8 +61,13 @@ file '_site/favicon.png' => '_site/icon.png' do |t|
   sh "convert -strip -resize 16x16 #{t.source} #{t.name}"
 end
 
-file '_site/font.ttf' => 'tmp/font.css' do |t|
+file 'tmp/font.ttf' => 'tmp/font.css' do |t|
   curl(/url\(([^)]+)\)/.match(File.read(t.source))[1], t.name)
+end
+
+file '_site/font.woff' => 'tmp/font.ttf' do |t|
+  sh "npx ttf2woff #{t.source} #{t.name}"
+  sh "npx fontmin #{t.name}"
 end
 
 task build: %w[
@@ -71,7 +76,7 @@ task build: %w[
   _site/index.js
   _site/icon.png
   _site/favicon.png
-  _site/font.ttf
+  _site/font.woff
 ] do
   sh "npx ts-node bin/modify-html.ts #{Dir.glob('_site/**/*.html').join ' '}"
   sh 'npx workbox generateSW workbox-cli-config.js'
