@@ -12,6 +12,18 @@ def git_clone(url, dest, tag: nil)
         #{url} #{dest}].join ' '
 end
 
+def create_font_tasks(font_filename, url_name)
+  css_filename = File.join('tmp', url_name.ext('css'))
+
+  file css_filename => 'tmp' do |t|
+    curl "https://fonts.googleapis.com/css?family=#{url_name}", t.name
+  end
+
+  file File.join('_site', font_filename) => css_filename do |t|
+    curl(/url\(([^)]+)\)/.match(File.read(t.source))[1], t.name)
+  end
+end
+
 directory 'tmp/rouge' => 'tmp' do |t|
   git_clone 'https://github.com/jneen/rouge', t.name, tag: 'v2.2.1'
 end
@@ -24,10 +36,6 @@ task init: 'tmp/rouge' do
 end
 
 directory 'tmp'
-
-file 'tmp/noto-sans.css' => 'tmp' do |t|
-  curl 'https://fonts.googleapis.com/css?family=Noto+Sans', t.name
-end
 
 file 'tmp/rouge.css' => 'tmp' do |t|
   sh "bundler exec rougify style base16.solarized.dark > #{t.name}"
@@ -61,6 +69,9 @@ file '_site/favicon.png' => '_site/icon.png' do |t|
   sh "convert -strip -resize 16x16 #{t.source} #{t.name}"
 end
 
+create_font_tasks 'text.ttf', 'Noto+Sans'
+create_font_tasks 'code.ttf', 'Inconsolata'
+
 file '_site/font.ttf' => 'tmp/noto-sans.css' do |t|
   curl(/url\(([^)]+)\)/.match(File.read(t.source))[1], t.name)
 end
@@ -71,7 +82,8 @@ task build: %w[
   _site/index.js
   _site/icon.png
   _site/favicon.png
-  _site/font.ttf
+  _site/text.ttf
+  _site/code.ttf
 ] do
   sh "npx ts-node bin/modify-html.ts #{Dir.glob('_site/**/*.html').join ' '}"
   sh 'npx workbox generateSW workbox-cli-config.js'
