@@ -1,13 +1,19 @@
 # Concept
 
-The abstract concept lying under Coel is described here for better understanding
+Abstract concepts lying under Coel are described here for better understanding
 of why the language looks so.
 
 ## Modeling programs
 
-Hundreds of models for computer programming have been developed over decades.
-The computation models formulated pure computation theoretically while
-object-oriented programming has been adopted widely as a way of abstraction.
+Hundreds of models for computer programming in general have been developed over
+decades.
+Computation models formulated pure computation theoretically while
+object-oriented programming has been adopted widely as a way to construct and
+modularize programs.
+Although that is one of the most controversial areas, object-oriented
+programming and functional programming are 2 representative counterparts in
+terms of states of programs as they encourage stateful and stateless
+programming styles respectively.
 
 This section reveals stateful and stateless models of programs on which Coel
 is based.
@@ -26,9 +32,9 @@ world.
 (universe)
 ```
 
-To start modeling a program, let's cut it out from the universe.
+Next let's cut a program out from the universe in order to model it.
 Then it is clearly visible that what we focus on are only the program and
-the others but nothing else.
+the rest but nothing else.
 
 ```
 +---------+
@@ -36,11 +42,12 @@ the others but nothing else.
 +---------+
 ```
 
-The next topic is what programs do and how they behave.
+The next topic is how programs interact with the rest in the universe.
 For simplicity, classify the actions done by programs into 2 categories.
-One is "inputs" which are pure queries for information towards the outside of
+One is *inputs* which are pure queries for information towards the outside of
 the program.
-The other is "effects" which change something else in the universe.
+The other is *effects* which change something other than the program itself in
+the universe.
 
 ```
    input
@@ -60,10 +67,10 @@ The program may change its state every time when it receives an input.
 
 Now it's time to make the previous model stateless so that we can apply
 functional programming for it.
-The problem is that the program part is not a pure function because it is
-stateful.
-It works well to remove states out from the program and make a loop which feeds
-back them to the program itself.
+The problem is that the program part is not a pure function because having a
+state.
+It works well to remove the state out from the program and make a loop which
+feeds back the state to the program itself.
 
 ```
  input
@@ -75,7 +82,7 @@ back them to the program itself.
  effect
 ```
 
-Then, the loop which passes states around for every input are expanded over
+Then, the loop which passes states around for every input is expanded over
 time.
 
 ```
@@ -101,9 +108,9 @@ collecting up the inputs and effects.
   effects
 ```
 
-Finally, we obtained the totally stateless and functional model of programs
-and this is how programs written in Coel looks.
-Composing a program is equivalent to building up a pure function which maps its
+Finally, we obtain the totally stateless and functional model of programs and
+this is how programs written in Coel look.
+Composing a program is equivalent to doing a pure function which maps its
 inputs to its effects.
 
 ## Analysis
@@ -112,5 +119,51 @@ inputs to its effects.
 
 As inputs are just queries to the outside of programs, they do not have to be
 evaluated always but only when necessary.
+What we want is only the way to gurantee that all effects are run eventually
+before programs finish.
 
-> WIP
+### Reactiveness is easy
+
+The model shows us that implicit reactiveness of programs is exactly as same as
+evaluating effects all at once eagerly.
+As a result, programs will work in maximum reactiveness as far as computers can.
+
+### Inputs and effects are infinite in general
+
+If sticking to the model, we need some way to express and handle infinite
+number of inputs and effects although available memory is limited.
+This problem is resolved by lazy evaluation and tail recursion as the former
+has function calls be evaluated later and the latter enables infinite
+recursive function calls.
+
+### No data race
+
+There is no corrupted data race in the model because access to the same data
+occurs only on evaluation of the same function calls demanded by several
+different expressions and it can be guarded by common exclusive locks.
+
+## Caveats
+
+### Parallelism is not free
+
+Although concurrency can be implemented in quite effecient ways, implicit
+massive parallelism costs a lot on multi-core CPU machines.
+For instance, when a myriad of threads are spawned, programs will suffer from
+cache incoherence and huge memory usage, and slow down.
+
+Therefore, Coel's approach is to parallelize every side effect but
+leave anything else sequential so that users have options whether they run
+the computation in parallel or not.
+Moreover it provides a primitive function to sequentialize evaluation of
+expressions because side effects sometimes need to be run in a sequential
+order.
+
+### Observing results of effects
+
+One missing point in the model is how to observe results of effects.
+For instance, we may want to check if contents of a file are valid after
+they have been written.
+
+Coel has a function to purify the result values of impure function calls in
+cases where they have to be refered by other expressions for retries, error
+recovery, etc.
