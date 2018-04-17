@@ -3,7 +3,7 @@
 	"name": "Coel programming language",
 	"icons": [{
 		"src": "icon.png",
-		"sizes": "192x192",
+		"sizes": "512x512",
 		"type": "image/png"
 	}],
 	"start_url": "/",

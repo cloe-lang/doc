@@ -60,7 +60,7 @@ file '_site/index.js' => 'dist/index.js' do |t|
 end
 
 file 'tmp/icon.png' => 'tmp/icon.svg' do |t|
-  sh "inkscape -w 192 --export-png #{t.name} #{t.source}"
+  sh "inkscape -w 512 --export-png #{t.name} #{t.source}"
 end
 
 file 'tmp/favicon.png' => 'tmp/icon.svg' do |t|
