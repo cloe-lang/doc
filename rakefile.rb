@@ -53,13 +53,19 @@ file '_site/index.js' => 'dist/index.js' do |t|
   cp t.source, t.name
 end
 
-file '_site/icon.png' => %w[tmp/icon.svg _site] do |t|
+file 'tmp/icon.png' => 'tmp/icon.svg' do |t|
   sh "inkscape -w 192 --export-png #{t.name} #{t.source}"
 end
 
-file '_site/favicon.png' => '_site/icon.png' do |t|
+file 'tmp/favicon.png' => 'tmp/icon.png' do |t|
   sh "convert -strip -resize 16x16 #{t.source} #{t.name}"
 end
+
+file '_site/icon.png' => %w[_site tmp/favicon.png tmp/icon.png] do |t|
+  sh "npx imagemin #{t.sources[1..2].join ' '} --out-dir #{t.source}"
+end
+
+file '_site/favicon.png' => '_site/icon.png'
 
 file 'tmp/font.ttf' => 'tmp/font.css' do |t|
   curl(/url\(([^)]+)\)/.match(File.read(t.source))[1], t.name)
