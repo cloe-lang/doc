@@ -57,8 +57,8 @@ file 'tmp/icon.png' => 'tmp/icon.svg' do |t|
   sh "inkscape -w 192 --export-png #{t.name} #{t.source}"
 end
 
-file 'tmp/favicon.png' => 'tmp/icon.png' do |t|
-  sh "convert -strip -resize 16x16 #{t.source} #{t.name}"
+file 'tmp/favicon.png' => 'tmp/icon.svg' do |t|
+  sh "inkscape -w 16 --export-png #{t.name} #{t.source}"
 end
 
 file '_site/icon.png' => %w[_site tmp/favicon.png tmp/icon.png] do |t|
