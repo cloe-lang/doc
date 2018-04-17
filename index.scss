@@ -1,15 +1,9 @@
+@import "./tmp/font.css";
 @import "./tmp/rouge.css";
 
 $block-radius: 0.2rem;
 $menu-button-offset: 1rem;
 $menu-button-size: 4.5rem;
-
-@font-face {
-	font-family: DefaultFont;
-	font-style: normal;
-	font-weight: normal;
-	src: url(/font.woff) format("woff");
-}
 
 @mixin small-width {
 	@media (max-width: 768px) {
@@ -19,7 +13,7 @@ $menu-button-size: 4.5rem;
 
 body {
 	color: #333;
-	font: 16px DefaultFont;
+	font: 16px "Noto Sans", sans-serif;
 	height: 100vh;
 	margin: 0;
 	overflow: hidden;

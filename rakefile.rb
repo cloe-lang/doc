@@ -25,15 +25,21 @@ end
 
 directory 'tmp'
 
-file 'tmp/font.css' => 'tmp' do |t|
+file 'tmp/original-font.css' => 'tmp' do |t|
   curl 'https://fonts.googleapis.com/css?family=Noto+Sans', t.name
+end
+
+file 'tmp/font.css' => 'tmp/original-font.css' do |t|
+  File.write(t.name,
+             File.read(t.source).sub(/url\([^)]*\)/, 'url(/font.woff)')
+                                .sub(/format\([^)]*\)/, 'format("woff")'))
 end
 
 file 'tmp/rouge.css' => 'tmp' do |t|
   sh "bundler exec rougify style base16.solarized.dark > #{t.name}"
 end
 
-file 'dist/index.js' => 'tmp/rouge.css' do
+file 'dist/index.js' => %w[tmp/rouge.css tmp/font.css] do
   sh 'npx webpack-cli'
 end
 
@@ -67,7 +73,7 @@ end
 
 file '_site/favicon.png' => '_site/icon.png'
 
-file 'tmp/font.ttf' => 'tmp/font.css' do |t|
+file 'tmp/font.ttf' => 'tmp/original-font.css' do |t|
   curl(/url\(([^)]+)\)/.match(File.read(t.source))[1], t.name)
 end
 
