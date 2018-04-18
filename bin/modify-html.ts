@@ -43,5 +43,14 @@ process.argv.slice(2).map(async (filename) => {
         $("svg.octicon").removeAttr(attribute);
     }
 
+    $("a").each(function() {
+        const path = $(this).attr("href");
+
+        if (filename.match(`_site${path}/?index\\.html$`) ||
+            filename.match(`_site${path}(\\.html)?$`)) {
+            $(this).addClass("current");
+        }
+    });
+
     await util.promisify(fs.writeFile)(filename, window.document.documentElement.outerHTML);
 });
