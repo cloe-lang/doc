@@ -167,3 +167,15 @@ they have been written.
 Coel has a function to purify the result values of impure function calls in
 cases where they have to be refered by other expressions for retries, error
 recovery, etc.
+
+### Lack of nondeterminism
+
+As programs are just deterministic functions, the model lacks nondeterminism
+especially associated with parallelism which are injected naturally in other
+programming languages.
+This issue is not investigated thoroughly but an obvious problem caused by it
+is that we cannot sort data by times at which they become available.
+Moreover, while such sorting is realized easily by concurrent queues in other
+languages, Coel cannot adopt it because they are mutable data structures.
+A solution which is implemented and available currently is to provide a
+function to sort data by times as a built-in feature.
