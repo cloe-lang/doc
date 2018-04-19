@@ -1,4 +1,5 @@
 import fs = require("fs");
+import htmlMinifier = require("html-minifier");
 import jquery = require("jquery");
 import jsdom = require("jsdom");
 import util = require("util");
@@ -52,5 +53,11 @@ process.argv.slice(2).map(async (filename) => {
         }
     });
 
-    await util.promisify(fs.writeFile)(filename, window.document.documentElement.outerHTML);
+    await util.promisify(fs.writeFile)(
+        filename,
+        htmlMinifier.minify(window.document.documentElement.outerHTML, {
+            collapseWhitespace: true,
+            minifyJS: true,
+            minifyURLs: true,
+        }));
 });

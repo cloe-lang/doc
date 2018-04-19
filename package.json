@@ -20,6 +20,7 @@
 		"extract-text-webpack-plugin": "^4.0.0-beta.0",
 		"firebase-tools": "^3.18.4",
 		"fontmin": "^0.9.6",
+		"html-minifier": "^3.5.15",
 		"imagemin-cli": "^3.0.0",
 		"jquery": "^3.3.1",
 		"jsdom": "^11.8.0",
