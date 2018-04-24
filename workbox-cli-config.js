@@ -21,12 +21,6 @@ module.exports = {
 		return {};
 	})),
 	globDirectory: '_site',
-	globPatterns: [
-		'**/*'
-	],
-	globIgnores: [
-		'register-service-worker.js',
-		'*.map'
-	],
+	globPatterns: ['**/*'],
 	swDest: '_site/service-worker.js'
 };
