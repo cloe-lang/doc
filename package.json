@@ -2,15 +2,7 @@
 	"name": "documentation",
 	"version": "0.1.0",
 	"description": "Documentation of Coel programming language",
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/coel-lang/coel-lang.github.io.git"
-	},
 	"license": "MIT",
-	"bugs": {
-		"url": "https://github.com/coel-lang/coel-lang.github.io/issues"
-	},
-	"dependencies": {},
 	"devDependencies": {
 		"@types/node": "^9.6.6",
 		"css-loader": "^0.28.11",
