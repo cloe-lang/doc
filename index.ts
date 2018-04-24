@@ -1,13 +1,18 @@
-import $ = require("cash-dom");
-
 import "./index.scss";
 
-$("a").on("mouseover", function() {
-    $('head link[rel="prerender"]').attr("href", $(this).attr("href"));
-});
+const link = document.querySelector('link[rel="prerender"]');
 
-$("div.menu-button").on("click", function() {
-    $(this).toggleClass("on");
-    $("div.toc").toggleClass("hidden");
-    $("div.content").toggleClass("hidden");
+for (const element of Array.from(document.getElementsByTagName("a"))) {
+    element.addEventListener("mouseover", function() {
+        link.setAttribute("href", this.getAttribute("href"));
+    });
+}
+
+const toc = document.querySelector(".toc");
+const content = document.querySelector(".content");
+
+document.querySelector(".menu-button").addEventListener("click", function() {
+    this.classList.toggle("on");
+    toc.classList.toggle("hidden");
+    content.classList.toggle("hidden");
 });
