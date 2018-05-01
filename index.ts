@@ -16,3 +16,7 @@ document.querySelector(".menu-button").addEventListener("click", function() {
     toc.classList.toggle("hidden");
     content.classList.toggle("hidden");
 });
+
+if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("/service-worker.js");
+}
