@@ -8,12 +8,12 @@ That allows programmers to express programs just by combining functions to
 create more complex ones.
 
 In such paradigm, it is encouraged to use pure functions, which must have
-no side effect; they just compute their results from given arguments but
+no side effects as they just compute their results from given arguments but
 cannot do anything else.
 And the counterpart is called impure functions, which have some side effects.
 Therefore, Coel distinguishes these 2 types of functions in order to prevent
-impure functions from being called in pure context where only pure function
-calls are permitted, and vice versa.
+impure functions from being called in context where only pure function calls
+are permitted, and vice versa.
 
 ```coel
 (def (foo func) (func 34))
@@ -27,9 +27,7 @@ calls are permitted, and vice versa.
 
 As some other functional programming languages, Coel prevents variables from
 being mutated because that makes programs more predictable and functions easier
-to test.
-However, variables defined in the programs can be redefined shadowing previous
-ones.
+to test while they might be redefined shadowing previous ones.
 
 ```coel
 (let x 123)
@@ -41,19 +39,19 @@ ones.
 
 ## Lazy evaluation
 
-Lazy evaluation is the "Call Me Maybe" strategy to evaluate and run programs in
-functional programming.
+Lazy evaluation is a strategy to evaluate and run programs in functional
+programming.
 In most programming languages, pieces of programs are evaluated in an eager way;
-operations in programs come in order and function calls are evaluated when
+operations there come in order and function calls are evaluated just when
 called.
 However, in lazy evaluation, calling a function does not mean executing it right
-away but stores it in memory a chunk of the function and its arguments which
+away but stores in memory a pair of the function and its arguments which
 may or may not be evaluated into its result later.
 
-It is necessary for Coel to adopt lazy evaluation because there is no other way
-to mix values available at different times.
-Otherwise it would express only one-shot programs like utility commands but not
-ones which run over time like HTTP servers.
+Adopting such program evaluation strategy, Coel gains capability to blend
+values which become available at different time into a value.
+Otherwise it would be able to express only one-shot programs like echo commands
+but not the others which run over time like HTTP servers.
 
 ## Parallelism & concurrency
 
@@ -70,8 +68,8 @@ Top-level expressions in Coel are evaluated parallelly, which is how it
 parallelizes components of programs automatically.
 However, it may be not enough or even excessive.
 
-That's why Coel provides 2 primitive functions of `par` and `seq` with which
-you can control parallelism of your programs.
+For that cases, Coel provides 2 primitive functions of `par` and `seq` with
+which you can control parallelism of your programs.
 The former `par` evaluates given arguments in parallel while the latter `seq`
 evaluates them sequentially.
 

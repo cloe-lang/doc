@@ -10,7 +10,7 @@ rake deps
 
 ## Building from source
 
-In the repository directory,
+In the repository's directory,
 
 ```
 rake build
