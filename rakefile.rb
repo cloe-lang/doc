@@ -21,21 +21,34 @@ end
 
 directory 'tmp'
 
-file 'tmp/original-font.css' => 'tmp' do |t|
-  curl 'https://fonts.googleapis.com/css?family=Noto+Sans', t.name
+[%w[text Noto+Sans], %w[code Ubuntu+Mono]].each do |args|
+  file "tmp/#{args[0]}.css" => 'tmp' do |t|
+    curl "https://fonts.googleapis.com/css?family=#{args[1]}", t.name
+  end
 end
 
-file 'tmp/font.css' => 'tmp/original-font.css' do |t|
-  File.write(t.name,
-             File.read(t.source).sub(/url\([^)]*\)/, 'url(/font.woff)')
-                                .sub(/format\([^)]*\)/, 'format("woff")'))
+rule '-font.css' => '.css' do |t|
+  File.write(t.name, File.read(t.source)
+    .sub(/font-family:[^;]*;/,
+         "font-family: #{t.source.pathmap('%n').capitalize}Font;")
+    .sub(/url\([^)]*\)/, t.source.pathmap('url("/%n.woff")'))
+    .sub(/format\([^)]*\)/, 'format("woff")'))
+end
+
+rule '.ttf' => '.css' do |t|
+  curl(/url\(([^)]+)\)/.match(File.read(t.source))[1], t.name)
+end
+
+rule %r{_site/.*\.woff} => ->(f) { f.pathmap('tmp/%n.ttf') } do |t|
+  sh "npx ttf2woff #{t.source} #{t.name}"
+  sh "npx fontmin #{t.name}"
 end
 
 file 'tmp/rouge.css' => 'tmp' do |t|
   sh "bundler exec rougify style base16.solarized.dark > #{t.name}"
 end
 
-file 'tmp/index.js' => %w[tmp/rouge.css tmp/font.css] do
+file 'tmp/index.js' => %w[tmp/rouge.css tmp/text-font.css tmp/code-font.css] do
   sh 'npx webpack-cli'
 end
 
@@ -65,22 +78,14 @@ rule %r{_site/icon[0-9]+\.png} => \
   sh "npx imagemin #{t.source} > #{t.name}"
 end
 
-file 'tmp/font.ttf' => 'tmp/original-font.css' do |t|
-  curl(/url\(([^)]+)\)/.match(File.read(t.source))[1], t.name)
-end
-
-file '_site/font.woff' => 'tmp/font.ttf' do |t|
-  sh "npx ttf2woff #{t.source} #{t.name}"
-  sh "npx fontmin #{t.name}"
-end
-
 task build: %w[
   clean
   _site
   _site/index.js
   _site/icon512.png
   _site/icon16.png
-  _site/font.woff
+  _site/text.woff
+  _site/code.woff
 ] do
   sh "npx ts-node bin/modify-html.ts #{Dir.glob('_site/**/*.html').join ' '}"
   sh 'npx workbox generateSW workbox-cli-config.js'
