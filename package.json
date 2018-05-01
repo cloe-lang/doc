@@ -4,7 +4,7 @@
 	"description": "Documentation of Cloe programming language",
 	"license": "MIT",
 	"devDependencies": {
-		"@types/node": "^9.6.6",
+		"@types/node": "^10.0.1",
 		"css-loader": "^0.28.11",
 		"extract-text-webpack-plugin": "^4.0.0-beta.0",
 		"firebase-tools": "^3.18.4",
@@ -12,12 +12,12 @@
 		"html-minifier": "^3.5.15",
 		"imagemin-cli": "^3.0.0",
 		"jquery": "^3.3.1",
-		"jsdom": "^11.9.0",
+		"jsdom": "^11.10.0",
 		"node-sass": "^4.9.0",
 		"sass-loader": "^6.0.7",
 		"style-loader": "^0.20.3",
 		"stylelint": "^9.2.0",
-		"stylelint-scss": "^3.0.1",
+		"stylelint-scss": "^3.1.0",
 		"superstatic": "^5.0.1",
 		"ts-loader": "^4.2.0",
 		"ts-node": "^5.0.1",
@@ -25,7 +25,7 @@
 		"ttf2woff": "^2.0.1",
 		"typescript": "^2.8.3",
 		"webpack": "^4.6.0",
-		"webpack-cli": "^2.0.15",
+		"webpack-cli": "^2.1.2",
 		"workbox-cli": "^3.1.0"
 	}
 }
