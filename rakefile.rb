@@ -1,5 +1,5 @@
 DOMAIN = 'cloe-lang.org'.freeze
-GOOGLE_SITE_VERIFICATION = 'eFao5crNXIs5MJ2iog201ZOcvjmy7SY18yOt9aEQ-e0'.freeze
+GOOGLE_SITE_VERIFICATION = 'g7AjxjmCy2QG8Pi80zkshhVd0Tt2HPPBtrTea9egYow'.freeze
 ADDRESSES = ['151.101.1.195', '151.101.65.195'].freeze
 S3_OPTIONS = '--acl public-read --cache-control max-age=604800,public'.freeze
 
