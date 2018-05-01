@@ -6,7 +6,7 @@ JSON encoder and decoder module.
 
 Encodes a value into a JSON string.
 
-```coel
+```cloe
 (def (encode decoded))
 (type (encode any) string)
 ```
@@ -15,7 +15,7 @@ Encodes a value into a JSON string.
 
 Decodes a JSON string into a value.
 
-```coel
+```cloe
 (def (decode encoded))
 (type (decode string) any)
 ```

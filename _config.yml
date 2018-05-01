@@ -2,12 +2,12 @@ plugins:
   - jekyll-octicons
   - jekyll-optional-front-matter
   - jekyll-titles-from-headings
-title: Coel programming language
+title: Cloe programming language
 markdown: kramdown
 kramdown:
   syntax_highlighter_opts:
     span:
-      default_lang: coel
+      default_lang: cloe
 defaults:
   -
     scope:

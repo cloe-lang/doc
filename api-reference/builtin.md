@@ -8,7 +8,7 @@ Built-in functions and variables.
 
 Applies a function to arguments partially and creates a new function.
 
-```coel
+```cloe
 (def (partial func ..args . ..kwargs))
 (type (partial function [any] . dict) function)
 ```
@@ -18,7 +18,7 @@ Applies a function to arguments partially and creates a new function.
 Converts a value into its string representation.
 This function doesn't modify strings.
 
-```coel
+```cloe
 (def (toString arg))
 (type (toString any) string)
 ```
@@ -28,7 +28,7 @@ This function doesn't modify strings.
 Converts a value into its string representation.
 It is similar to `toString` function but converts strings into quoted ones.
 
-```coel
+```cloe
 (def (dump arg))
 (type (dump any) string)
 ```
@@ -37,7 +37,7 @@ It is similar to `toString` function but converts strings into quoted ones.
 
 Treats an impure function call as a pure function call.
 
-```coel
+```cloe
 (def (pure arg))
 (type (pure any) any)
 ```
@@ -50,7 +50,7 @@ Takes pairs of a condition and an expression and another expression,
 and returns an expression corresponding with the first condition evaluated as
 `true` or the last expression if no condition is met.
 
-```coel
+```cloe
 (def (if ..args))
 (type (if [any]) any)
 ```
@@ -59,7 +59,7 @@ and returns an expression corresponding with the first condition evaluated as
 
 Negates an argument.
 
-```coel
+```cloe
 (def (not arg))
 (type (not bool) bool)
 ```
@@ -68,7 +68,7 @@ Negates an argument.
 
 Returns `true` if all arguments are `true`, or `false` otherwise.
 
-```coel
+```cloe
 (def (and ..args))
 (type (and [bool]) bool)
 ```
@@ -77,7 +77,7 @@ Returns `true` if all arguments are `true`, or `false` otherwise.
 
 Returns `true` if at least one argument is `true`, or `false` otherwise.
 
-```coel
+```cloe
 (def (or ..args))
 (type (or [bool]) bool)
 ```
@@ -88,7 +88,7 @@ Returns `true` if at least one argument is `true`, or `false` otherwise.
 
 Adds, subtracts, multiplies, or devides numbers.
 
-```coel
+```cloe
 (def (+ ..nums))
 (type (+ [number]) number)
 
@@ -106,7 +106,7 @@ Adds, subtracts, multiplies, or devides numbers.
 
 Calculates a floor division.
 
-```coel
+```cloe
 (def (// initial ..nums))
 (type (// number [number]) number)
 ```
@@ -115,7 +115,7 @@ Calculates a floor division.
 
 Calculates a power.
 
-```coel
+```cloe
 (def (** first second))
 (type (** number number) number)
 ```
@@ -124,7 +124,7 @@ Calculates a power.
 
 Calculates a modulus.
 
-```coel
+```cloe
 (def (mod first second))
 (type (mod number number) number)
 ```
@@ -133,7 +133,7 @@ Calculates a modulus.
 
 Returns a maximum or minimum of arguments.
 
-```coel
+```cloe
 (def (max ..args))
 (type (max [number]) number)
 ```
@@ -145,7 +145,7 @@ Returns a maximum or minimum of arguments.
 Returns `true` if all arguments are equal, or `false` otherwise.
 Values of any types except `function` can be compared with this function.
 
-```coel
+```cloe
 (def (= ..args))
 (type (= [any]) bool)
 ```
@@ -157,7 +157,7 @@ or `false` otherwise.
 Their semantics are almost the same as mathematics's
 but they can compare not only `number` but also `list` and `string`.
 
-```coel
+```cloe
 (def (< ..args))
 (type (< [(or list number string)]) bool)
 ```
@@ -167,7 +167,7 @@ but they can compare not only `number` but also `list` and `string`.
 Returns `true` if an argument can be compared by ordering functions like `<`,
 or `false` otherwise.
 
-```coel
+```cloe
 (def (ordered? arg))
 (type (ordered? any) bool)
 ```
@@ -179,7 +179,7 @@ or `false` otherwise.
 Inserts elements into a collection.
 For `list` and `string`, `key` argument must be an index of `number`.
 
-```coel
+```cloe
 (def (insert collection ..keyValuePairs))
 (type (insert (or dict list string) [any])
   (or dict list string))
@@ -189,7 +189,7 @@ For `list` and `string`, `key` argument must be an index of `number`.
 
 Deletes an entry from a collection.
 
-```coel
+```cloe
 (def (delete collection elem))
 (type (delete (or dict list string) any)
   (or dict list string))
@@ -199,7 +199,7 @@ Deletes an entry from a collection.
 
 Checks if a value is included in a collection.
 
-```coel
+```cloe
 (def (include collection elem))
 (type (include (or dict list string) any) bool)
 ```
@@ -208,7 +208,7 @@ Checks if a value is included in a collection.
 
 Merges collections into one.
 
-```coel
+```cloe
 (def (merge collection ..collections))
 (type (merge (or dict list string) [(or dict list string)])
   (or dict list string))
@@ -218,7 +218,7 @@ Merges collections into one.
 
 Returns a size of a collection.
 
-```coel
+```cloe
 (def (size collection))
 (type (size (or dict list string)) number)
 ```
@@ -227,7 +227,7 @@ Returns a size of a collection.
 
 Converts a collection into its list representation.
 
-```coel
+```cloe
 (def (toList collection))
 (type (toList (or dict list string)) list)
 ```
@@ -238,7 +238,7 @@ Converts a collection into its list representation.
 
 Gets a first element in a list.
 
-```coel
+```cloe
 (def (first list))
 (type (first list) any)
 ```
@@ -247,7 +247,7 @@ Gets a first element in a list.
 
 Removes a first element from a list and returns the rest.
 
-```coel
+```cloe
 (def (rest list))
 (type (rest list) list)
 ```
@@ -256,7 +256,7 @@ Removes a first element from a list and returns the rest.
 
 Applies a function to each element in a list.
 
-```coel
+```cloe
 (def (map func list))
 (type (map function list) list)
 ```
@@ -265,7 +265,7 @@ Applies a function to each element in a list.
 
 Accumulates values with a function which takes 2 arguments.
 
-```coel
+```cloe
 (def (reduce func list))
 (type (reduce function list) any)
 ```
@@ -275,7 +275,7 @@ Accumulates values with a function which takes 2 arguments.
 Returns a list of elements which satisfy a condition represented by `func` argument.
 `func` argument must be a function which takes an argument and returns `bool`.
 
-```coel
+```cloe
 (def (filter func list))
 (type (filter function list) list)
 ```
@@ -284,7 +284,7 @@ Returns a list of elements which satisfy a condition represented by `func` argum
 
 Sorts a list.
 
-```coel
+```cloe
 (def (sort list . less <))
 (type (sort list . function) list)
 ```
@@ -294,7 +294,7 @@ Sorts a list.
 Returns a list of lists each of which contains elements of the same index
 in original lists.
 
-```coel
+```cloe
 (def (zip ..lists))
 (type (zip [list]) [list])
 ```
@@ -304,7 +304,7 @@ in original lists.
 Slices a list.
 Indices are inclusive.
 
-```coel
+```cloe
 (def (slice list))
 (type (slice list (start 1) (end nil)) list)
 ```
@@ -313,7 +313,7 @@ Indices are inclusive.
 
 Finds an element in a list and returns its index.
 
-```coel
+```cloe
 (def (indexOf list elem))
 (type (indexOf list any) number)
 ```
@@ -324,7 +324,7 @@ Finds an element in a list and returns its index.
 
 Returns a type of an argument.
 
-```coel
+```cloe
 (def (typeOf arg))
 (type (typeOf any) string)
 ```
@@ -333,7 +333,7 @@ Returns a type of an argument.
 
 Checks if an argument is the type.
 
-```coel
+```cloe
 (def (bool? arg))
 (type (bool? any) bool)
 ```
@@ -344,7 +344,7 @@ Checks if an argument is the type.
 
 Reads stdin or a content of a file.
 
-```coel
+```cloe
 (def (read . file nil))
 (type (read (or nil string)) string)
 ```
@@ -355,7 +355,7 @@ Writes values to stdout or a file.
 It writes to stdout if `file` argument is `1`, stderr if `2`,
 or a file if `string`.
 
-```coel
+```cloe
 (def (write ..args . sep " " end "\n" file 1 mode 0664))
 (type (write [any] . string string (or number string) number) nil)
 ```
@@ -366,7 +366,7 @@ or a file if `string`.
 
 Catches an error thrown from an expression.
 
-```coel
+```cloe
 (def (catch arg))
 (type (catch any) (or {"name" string "message" string} nil))
 ```
@@ -377,7 +377,7 @@ Catches an error thrown from an expression.
 
 Evaluates arguments parallelly and returns the last one.
 
-```coel
+```cloe
 (def (par ..args))
 (type (par [any]) any)
 ```
@@ -386,7 +386,7 @@ Evaluates arguments parallelly and returns the last one.
 
 Evaluates arguments sequentially and returns the last one.
 
-```coel
+```cloe
 (def (seq ..args))
 (type (seq [any]) any)
 ```
@@ -396,7 +396,7 @@ Evaluates arguments sequentially and returns the last one.
 Evaluates impure function calls sequentially and returns the last one.
 This function itself is also impure.
 
-```coel
+```cloe
 (def (seq! ..args))
 (type (seq! [any]) any)
 ```
@@ -405,7 +405,7 @@ This function itself is also impure.
 
 Sorts arguments by time when each of them is evaluated.
 
-```coel
+```cloe
 (def (rally ..args))
 (type (rally [any]) [any])
 ```

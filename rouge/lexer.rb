@@ -1,15 +1,15 @@
 module Rouge
   module Lexers
-    # Coel programming language lexer
-    class Coel < RegexLexer
-      title 'Coel'
-      desc 'Coel programming language'
+    # Cloe programming language lexer
+    class Cloe < RegexLexer
+      title 'Cloe'
+      desc 'Cloe programming language'
 
-      tag 'coel'
+      tag 'cloe'
 
-      filenames '*.coel'
+      filenames '*.cloe'
 
-      mimetypes 'text/x-coel', 'application/x-coel'
+      mimetypes 'text/x-cloe', 'application/x-cloe'
 
       KEYWORDS = Set.new %w[def import let match mr type \\]
 

@@ -6,7 +6,7 @@ Operating System functionality module.
 
 Exit a program with a status code.
 
-```coel
+```cloe
 (def (exit . status 0))
 (type (exit number) nil)
 ```

@@ -2,13 +2,13 @@
 
 ## Hello, world!
 
-```coel
+```cloe
 (write "Hello, world!")
 ```
 
 ## HTTP server
 
-```coel
+```cloe
 (import "http")
 
 ..(map

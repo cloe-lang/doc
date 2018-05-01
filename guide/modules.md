@@ -1,12 +1,12 @@
 # Modules
 
-To split programs into meaningful units of components, Coel provides a modules
+To split programs into meaningful units of components, Cloe provides a modules
 system.
 Modules are basically small parts of programs which are separated into files
 and imported by other modules.
 
 There are 2 kinds of modules in the language: main modules and submodules.
-Seen from a distance, programs in Coel are trees consisting of main modules on
+Seen from a distance, programs in Cloe are trees consisting of main modules on
 top and subtrees of submodules under them.
 
 ## Statements
@@ -19,7 +19,7 @@ variables and functions, and even import other modules.
 Used in a module, `import` statements make variables and functions in other
 modules available inside the module with their prefices.
 
-```coel
+```cloe
 (import "http") ; import a built-in module
 (import "./some_module") ; import a local module
 
@@ -48,7 +48,7 @@ Expressions with side effects like printing text on terminal or sending HTTP
 responses must be defined at the top level of main modules and these are called
 top-level expressions.
 
-```coel
+```cloe
 (write "Hello, world!")
 ```
 

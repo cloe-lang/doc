@@ -7,11 +7,11 @@ and provides destructuring of matched values.
 
 ## Introduction
 
-The `match` expressions realize pattern matching in Coel.
+The `match` expressions realize pattern matching in Cloe.
 Note that `match` keyword is not a name of a function but a special keyword to
 begin writing such expressions.
 
-```coel
+```cloe
 (match someNumber
   1 "odd"
   2 "even"
@@ -30,7 +30,7 @@ match expressions, wildcard patterns would help you.
 These patterns bind matched values to given names so that they can be used in
 the corresponding expressions.
 
-```coel
+```cloe
 (match someString
   "foo" "Yes!"
   "bar" "OK!"
@@ -47,7 +47,7 @@ in a list in another list.
 Secondly, there is another kind of pattern preceded by `..` with which you can
 put remaining elements in a list together into a variable.
 
-```coel
+```cloe
 (match someList
   []                        "Empty!"
   [1 2 3]                   "1, 2, and 3!"
@@ -63,7 +63,7 @@ with wildcard and rest patterns.
 However, there is a catch that dictionary keys are not allowed to be wildcard
 patterns but only values.
 
-```coel
+```cloe
 (match someDictionary
   {}                          "Empty!"
   {"foo" 1 "bar" 2}           "Foo!"

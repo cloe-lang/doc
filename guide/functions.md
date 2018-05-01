@@ -4,7 +4,7 @@ Functions are merely converters of data and probably combined to create more
 complex and useful ones.
 In other words, they are mappings of data; given arguments, they calculate
 results.
-For the reason that functions are the most fundamental part in Coel, this page
+For the reason that functions are the most fundamental part in Cloe, this page
 illustrates how to call and define them in detail.
 
 ## Calling functions
@@ -25,7 +25,7 @@ They are passed to functions and consumed from left to right with consideration
 of their orders.
 Lists can be expanded into required arguments preceded by `..` markers.
 
-```coel
+```cloe
 (someFunction x y)
 (someFunction ..[1 2])
 ```
@@ -39,7 +39,7 @@ them as optional arguments aligned as key-value pairs.
 Dictionaries can be expanded into optional arguments while the keys of the
 dictionaries must be all strings.
 
-```coel
+```cloe
 (someFunction . option1 42 option2 "foo")
 (someFunction . ..{"option1" 42 "option2" "foo"})
 ```
@@ -72,7 +72,7 @@ If no passed arguments can fill any required parameters on function calls,
 errors will be raised with appropriate messages about which parameters are
 missing.
 
-```coel
+```cloe
 (def (foo x) x)
 (def (bar ..rest) rest)
 ```
@@ -85,7 +85,7 @@ They must be placed after `.` in signatures with the default values like
 Passed optional arguments can also be collected into dictionary variables using
 rest parameters preceded by `..`.
 
-```coel
+```cloe
 (def (foo . x 42) x)
 (def (bar . ..rest) rest)
 ```
@@ -99,7 +99,7 @@ Interestingly, they can contain other `def` or `let` statements to define
 intermediate values which are used in subsequent statements and body
 expressions.
 
-```coel
+```cloe
 (def (foo x y)
   (+ x y))
 
@@ -124,20 +124,20 @@ expressions, which lets you write less and cleaner codes in some occasions.
 Needless to say, they cannot be recursive by themselves because they have no
 names as the name suggests.
 
-```coel
+```cloe
 (\ (x) (+ x 42))
 (\ (x ..args . y 42 ..kwargs) (+ x y))
 ```
 
 ### Mutually recursive functions
 
-Because codes in Coel are interpreted from top to bottom, it provides a special
+Because codes in Cloe are interpreted from top to bottom, it provides a special
 syntax `mr` for creation of mutually recursive functions which refer to each
 other inside themselves.
 In `mr` clauses, functions are defined in a usual way while they can use other
 functions in the clause.
 
-```coel
+```cloe
 (mr
   (def (even? n)
     (if (= n 0) true (odd? (- n 1))))

@@ -1,4 +1,4 @@
-DOMAIN = 'coel-lang.org'.freeze
+DOMAIN = 'cloe-lang.org'.freeze
 GOOGLE_SITE_VERIFICATION = 'eFao5crNXIs5MJ2iog201ZOcvjmy7SY18yOt9aEQ-e0'.freeze
 ADDRESSES = ['151.101.1.195', '151.101.65.195'].freeze
 S3_OPTIONS = '--acl public-read --cache-control max-age=604800,public'.freeze
@@ -17,7 +17,7 @@ directory 'tmp/rouge' => 'tmp' do |t|
 end
 
 task init: 'tmp/rouge' do
-  cp 'rouge/coel.rb', 'tmp/rouge/lib/rouge/lexers'
+  cp 'rouge/lexer.rb', 'tmp/rouge/lib/rouge/lexers/cloe.rb'
 
   sh 'npm install'
   sh 'bundler install'
@@ -52,7 +52,7 @@ directory '_site' => %w[_includes/index.css] do
 end
 
 file 'tmp/icon.svg' => 'tmp' do |t|
-  curl 'https://github.com/coel-lang/icon/raw/master/icon.svg', t.name
+  curl 'https://github.com/cloe-lang/icon/raw/master/icon.svg', t.name
 end
 
 file '_site/index.js' => 'dist/index.js' do |t|

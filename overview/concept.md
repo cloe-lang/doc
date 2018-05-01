@@ -1,6 +1,6 @@
 # Concept
 
-Abstract concepts lying under Coel are described here for better understanding
+Abstract concepts lying under Cloe are described here for better understanding
 of why the language looks so.
 
 ## Modeling programs
@@ -15,7 +15,7 @@ programming and functional programming are 2 representative counterparts in
 terms of states of programs as they encourage stateful and stateless
 programming styles respectively.
 
-This section reveals stateful and stateless models of programs on which Coel
+This section reveals stateful and stateless models of programs on which Cloe
 is based.
 The explanation about the former comes first as it is more straightforward and
 even natural for us to think about such models and then the latter which is
@@ -113,7 +113,7 @@ collecting up the inputs and effects.
 ```
 
 Finally, we obtain the totally stateless and functional model of programs and
-this is how programs written in Coel look.
+this is how programs written in Cloe look.
 Composing a program is equivalent to doing a pure function which maps its
 inputs to its effects.
 
@@ -155,7 +155,7 @@ massive parallelism costs a lot on multi-core CPU machines.
 For instance, when a myriad of threads are spawned, programs will suffer from
 cache incoherence and huge memory usage, and slow down.
 
-Therefore, Coel's approach is to parallelize every effect for reactiveness
+Therefore, Cloe's approach is to parallelize every effect for reactiveness
 but leave anything else sequential so that users have options of whether they
 run the computation in parallel or not.
 Meanwhile, it provides a primitive function to sequentialize evaluation of
@@ -167,7 +167,7 @@ One missing point in the model is how to observe results of effects.
 For instance, we may want to check if contents of a file are valid after it has
 been written.
 
-Coel has a function to purify the result values of impure function calls in
+Cloe has a function to purify the result values of impure function calls in
 cases where they have to be refered by other expressions for retries, error
 recovery, etc.
 
@@ -179,7 +179,7 @@ other programming languages.
 This issue is not investigated thoroughly but an obvious problem caused by it
 is that we cannot sort data by time at which they become available.
 Moreover, while such sorting is realized easily by something like concurrent
-queues in other languages, Coel cannot adopt it because they are mutable data
+queues in other languages, Cloe cannot adopt it because they are mutable data
 structures.
 A solution which is implemented and available currently is to provide a
 function to do such sorting as a built-in feature.

@@ -1,23 +1,23 @@
 # Installation
 
-After installing Go 1.8+, get the Coel interpreter.
+After installing Go 1.8+, get the Cloe interpreter.
 
 ```shell
-go get github.com/coel-lang/coel/...
+go get github.com/cloe-lang/cloe/...
 ```
 
-To test the installation, write a file `main.coel` of the content:
+To test the installation, write a file `main.cloe` of the content:
 
-```coel
-#!/usr/bin/env coel
+```cloe
+#!/usr/bin/env cloe
 
 (write "Hello, world!")
 ```
 
-Finally, run the `coel` command.
+Finally, run the `cloe` command.
 
 ```
-coel main.coel
+cloe main.cloe
 ```
 
 You will see its output like:
