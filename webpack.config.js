@@ -1,4 +1,5 @@
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const path = require('path');
 const webpack = require('webpack');
 
 const cssLoader = {
@@ -12,7 +13,8 @@ module.exports = {
 	mode: 'production',
 	entry: './index.ts',
 	output: {
-		filename: 'index.js'
+		filename: 'index.js',
+		path: path.resolve(__dirname, 'tmp')
 	},
 	resolve: {
 		extensions: ['.ts', '.js']

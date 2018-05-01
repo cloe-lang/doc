@@ -2,7 +2,7 @@
 	"short_name": "Cloe",
 	"name": "Cloe programming language",
 	"icons": [{
-		"src": "icon.png",
+		"src": "icon512.png",
 		"sizes": "512x512",
 		"type": "image/png"
 	}],

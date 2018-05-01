@@ -29,7 +29,6 @@ exclude:
   - LICENSE
   - README.md
   - bin
-  - dist
   - firebase.json
   - node_modules
   - rouge
