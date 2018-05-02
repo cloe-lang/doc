@@ -4,7 +4,7 @@ ADDRESSES = ['151.101.1.195', '151.101.65.195'].freeze
 S3_OPTIONS = '--acl public-read --cache-control max-age=604800,public'.freeze
 
 def curl(args, dest)
-  sh "curl -sSL #{args} > #{dest}"
+  sh "curl -sSL '#{args}' > #{dest}"
 end
 
 directory 'tmp/rouge' => 'tmp' do |t|
@@ -21,9 +21,14 @@ end
 
 directory 'tmp'
 
-[%w[text Noto+Sans], %w[code Ubuntu+Mono]].each do |args|
+[['text', 'Noto Sans'], ['code', 'Ubuntu Mono']].each do |args|
   file "tmp/#{args[0]}.css" => 'tmp' do |t|
-    curl "https://fonts.googleapis.com/css?family=#{args[1]}", t.name
+    query = URI.encode_www_form(
+      family: args[1],
+      text: (' '..'~').to_a.join
+    )
+
+    curl "https://fonts.googleapis.com/css?#{query}", t.name
   end
 end
 
