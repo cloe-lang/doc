@@ -1,3 +1,5 @@
+require 'base64'
+
 DOMAIN = 'cloe-lang.org'.freeze
 GOOGLE_SITE_VERIFICATION = 'g7AjxjmCy2QG8Pi80zkshhVd0Tt2HPPBtrTea9egYow'.freeze
 ADDRESSES = ['151.101.1.195', '151.101.65.195'].freeze
@@ -32,22 +34,23 @@ directory 'tmp'
   end
 end
 
-rule '-font.css' => '.css' do |t|
-  File.write(t.name, File.read(t.source)
-    .sub(/font-family:[^;]*;/,
-         "font-family: #{t.source.pathmap('%n').capitalize}Font;
-          font-display: swap;")
-    .sub(/url\([^)]*\)/, t.source.pathmap('url("/%n.woff")'))
-    .sub(/format\([^)]*\)/, 'format("woff")'))
-end
-
 rule '.ttf' => '.css' do |t|
   curl(/url\(([^)]+)\)/.match(File.read(t.source))[1], t.name)
 end
 
-rule %r{_site/.*\.woff} => ->(f) { f.pathmap('tmp/%n.ttf') } do |t|
+rule '.woff' => '.ttf' do |t|
   sh "npx ttf2woff #{t.source} #{t.name}"
   sh "npx fontmin #{t.name}"
+end
+
+rule '-font.css' => %w[.css .woff] do |t|
+  font = Base64.strict_encode64 File.read(t.sources[1])
+
+  File.write(t.name, File.read(t.source)
+    .sub(/font-family:[^;]*;/,
+         "font-family: #{t.source.pathmap('%n').capitalize}Font;")
+    .sub(/url\([^)]*\)/, %'url("data:font/woff;base64,#{font}")')
+    .sub(/format\([^)]*\)/, 'format("woff")'))
 end
 
 file 'tmp/rouge.css' => 'tmp' do |t|
@@ -90,8 +93,6 @@ task build: %w[
   _site/index.js
   _site/icon512.png
   _site/icon16.png
-  _site/text.woff
-  _site/code.woff
 ] do
   sh "npx ts-node bin/modify-html.ts #{Dir.glob('_site/**/*.html').join ' '}"
   sh 'npx workbox generateSW workbox-cli-config.js'
