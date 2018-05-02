@@ -20,7 +20,7 @@ rake build
 
 - `rake unit_test` runs unit tests. It runs `go test` internally.
 - `rake command_test` runs command tests written in
-  [Gherkin](https://cucumber.io/docs/reference).
+  [Gherkin](https://docs.cucumber.io/gherkin/reference/).
 - `rake test` runs both.
 
 ## Other utilities

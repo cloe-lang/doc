@@ -1,17 +1,17 @@
 # Variables
 
 Variables are references to data in programs.
-In spite of that variables imply something able to vary, they are constant in
-Cloe.
+In spite of that variables imply something able to be changed, they are
+constant in Cloe.
 In other words, their values can be neither modified nor replaced although they
 can be redefined.
 
 ## `let` statements
 
-The statements define variables binding given names to expressions.
-Only names of variables and functions defined already can be used in the body
-expressions otherwise the interpreter crashes printing an error about the
-missing name.
+The `let` statements define variables binding given names to expressions.
+Only names of variables and functions defined already can be used in their body
+expressions otherwise the interpreter crashes printing errors about the
+missing names.
 
 ```cloe
 (let x 42)

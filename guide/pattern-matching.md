@@ -3,11 +3,11 @@
 With pattern matching, programmers can express perplexing conditional
 expressions in a comprehensive way.
 It alleviates the hell of mind-blowing nested `if` conditionals
-and provides destructuring of matched values.
+and provides a way to destructure matched values at the same time.
 
 ## Introduction
 
-The `match` expressions realize pattern matching in Cloe.
+The `match` expressions implement pattern matching in Cloe.
 Note that `match` keyword is not a name of a function but a special keyword to
 begin writing such expressions.
 
@@ -27,8 +27,8 @@ errors.
 
 When you need to capture some values which can take any kinds of values in
 match expressions, wildcard patterns would help you.
-These patterns bind matched values to given names so that they can be used in
-the corresponding expressions.
+These patterns bind matched values to given names so that they can be used
+inside the corresponding expressions.
 
 ```cloe
 (match someString
@@ -39,11 +39,12 @@ the corresponding expressions.
 
 ## List patterns
 
-Lists can be also matched in match expressions while there are some extra stuff.
+Lists can be also matched in match expressions while there are some extra
+features about them.
 Firstly, you can use wildcard patterns inside list patterns to capture their
 elements.
-And that rule is applied in a recursive way as you can capture even elements
-in a list in another list.
+And that rule is applied in a recursive way as even elements in a list in
+another list can be referred to.
 Secondly, there is another kind of pattern preceded by `..` with which you can
 put remaining elements in a list together into a variable.
 

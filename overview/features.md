@@ -66,7 +66,7 @@ programming languages.
 
 Top-level expressions in Cloe are evaluated parallelly, which is how it
 parallelizes components of programs automatically.
-However, it may be not enough or even excessive.
+However, it may not be enough or even excessive.
 
 For that cases, Cloe provides 2 primitive functions of `par` and `seq` with
 which you can control parallelism of your programs.

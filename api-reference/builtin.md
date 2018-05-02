@@ -46,9 +46,9 @@ Treats an impure function call as a pure function call.
 
 ### `if`
 
-Takes pairs of a condition and an expression and another expression,
+Takes pairs of a condition and an expression and a fallback expression,
 and returns an expression corresponding with the first condition evaluated as
-`true` or the last expression if no condition is met.
+`true` or the last expression if no conditions are met.
 
 ```cloe
 (def (if ..args))
@@ -155,7 +155,7 @@ Values of any types except `function` can be compared with this function.
 Compares arguments and returns `true` if they are ordered properly,
 or `false` otherwise.
 Their semantics are almost the same as mathematics's
-but they can compare not only `number` but also `list` and `string`.
+but they can compare not only `number` values but also `list` and `string` ones.
 
 ```cloe
 (def (< ..args))
@@ -263,7 +263,8 @@ Applies a function to each element in a list.
 
 ### `reduce`
 
-Accumulates values with a function which takes 2 arguments.
+Accumulates values with a function which takes 2 arguments of an acumulator
+value and an element in a list.
 
 ```cloe
 (def (reduce func list))
@@ -273,7 +274,7 @@ Accumulates values with a function which takes 2 arguments.
 ### `filter`
 
 Returns a list of elements which satisfy a condition represented by `func` argument.
-`func` argument must be a function which takes an argument and returns `bool`.
+The `func` argument must be a function which takes an argument and returns `bool`.
 
 ```cloe
 (def (filter func list))
@@ -282,7 +283,7 @@ Returns a list of elements which satisfy a condition represented by `func` argum
 
 ### `sort`
 
-Sorts a list.
+Sorts elements in a list.
 
 ```cloe
 (def (sort list . less <))
@@ -403,7 +404,7 @@ This function itself is also impure.
 
 ### `rally`
 
-Sorts arguments by time when each of them is evaluated.
+Sorts arguments by time when each of them becomes available.
 
 ```cloe
 (def (rally ..args))

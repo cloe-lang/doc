@@ -1,6 +1,6 @@
 # `http`
 
-HTTP module.
+HTTP server/client module.
 
 ## `get`
 
