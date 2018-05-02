@@ -35,7 +35,8 @@ end
 rule '-font.css' => '.css' do |t|
   File.write(t.name, File.read(t.source)
     .sub(/font-family:[^;]*;/,
-         "font-family: #{t.source.pathmap('%n').capitalize}Font;")
+         "font-family: #{t.source.pathmap('%n').capitalize}Font;
+          font-display: swap;")
     .sub(/url\([^)]*\)/, t.source.pathmap('url("/%n.woff")'))
     .sub(/format\([^)]*\)/, 'format("woff")'))
 end
