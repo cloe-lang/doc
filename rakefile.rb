@@ -21,10 +21,10 @@ end
 
 directory 'tmp'
 
-[['text', 'Noto Sans'], ['code', 'Roboto Mono']].each do |args|
-  file "tmp/#{args[0]}.css" => 'tmp' do |t|
+{ text: 'Noto Sans', code: 'Roboto Mono' }.each do |kind, family|
+  file "tmp/#{kind}.css" => 'tmp' do |t|
     query = URI.encode_www_form(
-      family: args[1],
+      family: family,
       text: (' '..'~').to_a.join
     )
 
