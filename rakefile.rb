@@ -21,7 +21,7 @@ end
 
 directory 'tmp'
 
-[['text', 'Noto Sans'], ['code', 'Ubuntu Mono']].each do |args|
+[['text', 'Noto Sans'], ['code', 'Roboto Mono']].each do |args|
   file "tmp/#{args[0]}.css" => 'tmp' do |t|
     query = URI.encode_www_form(
       family: args[1],
