@@ -17,6 +17,7 @@ task init: 'tmp/rouge' do
 
   sh 'npm install'
   sh 'bundler install'
+  sh 'go get -u github.com/client9/misspell/...'
 end
 
 directory 'tmp'
@@ -127,6 +128,9 @@ end
 task :lint do
   sh 'npx tslint --project .'
   sh 'npx stylelint **/*.scss'
+
+  markdowns = Dir.glob('**/*.md').reject { |f| f =~ /node_modules|tmp/ }
+  sh "misspell -error #{markdowns.join ' '}"
 end
 
 task :clean do

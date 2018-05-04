@@ -47,7 +47,7 @@ multiple submodules.
 
 Expressions with side effects like printing text on terminal or sending HTTP
 responses must be defined at the top level of main modules and these are called
-top-level expressions when they must be guranteed to be evaluated on execution
+top-level expressions when they must be guaranteed to be evaluated on execution
 of the programs.
 
 ```cloe

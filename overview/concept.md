@@ -123,7 +123,7 @@ inputs to its effects.
 
 As inputs are just queries to the outside of programs, they do not have to be
 evaluated always but only when necessary.
-What we want is only the way to gurantee that all effects are run eventually
+What we want is only the way to guarantee that all effects are run eventually
 before programs finish.
 
 ### Reactiveness without theory
@@ -150,7 +150,7 @@ several different expressions and it can be guarded by common exclusive locks.
 
 ### Parallelism is not free
 
-Although concurrency can be implemented in quite effecient ways, implicit
+Although concurrency can be implemented in quite efficient ways, implicit
 massive parallelism costs a lot on multi-core CPU machines.
 For instance, when a myriad of threads are spawned, programs will suffer from
 cache incoherence and huge memory usage, and slow down.
@@ -168,7 +168,7 @@ For instance, we may want to check if contents of a file are valid after it has
 been written.
 
 Cloe has a function to purify the result values of impure function calls in
-cases where they have to be refered by other expressions for retries, error
+cases where they have to be referred by other expressions for retries, error
 recovery, etc.
 
 ### Lack of nondeterminism
