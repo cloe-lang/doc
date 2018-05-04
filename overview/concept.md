@@ -5,7 +5,7 @@ of why the language looks so.
 
 ## Modeling programs
 
-Hundreds of models for computer programming in general have been developed over
+Hundreds of models for computer programming in general have been proposed over
 decades.
 Computation models formulated pure computation theoretically while
 object-oriented programming has been adopted widely as a way to construct and
