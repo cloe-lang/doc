@@ -38,17 +38,19 @@ rule '-font.css' => '.css' do |t|
     .sub(/font-family:[^;]*;/,
          "font-family: #{t.source.pathmap('%n').capitalize}Font;
           font-display: swap;")
-    .sub(/url\([^)]*\)/, t.source.pathmap('url("/%n.woff")'))
-    .sub(/format\([^)]*\)/, 'format("woff")'))
+    .sub(/url\([^)]*\)/, t.source.pathmap('url("/%n.woff2")'))
+    .sub(/format\([^)]*\)/, 'format("woff2")'))
 end
 
 rule '.ttf' => '.css' do |t|
   curl(/url\(([^)]+)\)/.match(File.read(t.source))[1], t.name)
 end
 
-rule %r{_site/.*\.woff} => ->(f) { f.pathmap('tmp/%n.ttf') } do |t|
-  sh "npx ttf2woff #{t.source} #{t.name}"
-  sh "npx fontmin #{t.name}"
+rule %r{_site/.*\.woff2} => ->(f) { f.pathmap('tmp/%n.ttf') } do |t|
+  tmp_filename = t.name.pathmap 'tmp/%f'
+
+  sh "cat #{t.source} | npx ttf2woff2 > #{tmp_filename}"
+  sh "npx fontmin #{tmp_filename} > #{t.name}"
 end
 
 file 'tmp/rouge.css' => 'tmp' do |t|
@@ -91,8 +93,8 @@ task build: %w[
   _site/index.js
   _site/icon512.png
   _site/icon16.png
-  _site/text.woff
-  _site/code.woff
+  _site/text.woff2
+  _site/code.woff2
 ] do
   sh "npx ts-node bin/modify-html.ts #{Dir.glob('_site/**/*.html').join ' '}"
   sh 'npx workbox generateSW workbox-cli-config.js'
