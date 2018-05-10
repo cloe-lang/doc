@@ -4,13 +4,13 @@
 
 Functional programming is a programming pradigm where functions are first-class
 values, which means functions can be passed as arguments to other functions.
-That allows programmers to express programs just by combining functions to
-create more complex ones.
+That allows programmers to express programs by combining functions into
+more complex ones.
 
-In such paradigm, it is encouraged to use pure functions, which must have
+In such paradigm, it is encouraged to use pure functions, which have
 no side effects as they just compute their results from given arguments but
-cannot do anything else.
-And the counterpart is called impure functions, which have some side effects.
+must not do anything else.
+And the counterpart is called impure functions, which have certain side effects.
 Therefore, Cloe distinguishes these 2 types of functions in order to prevent
 impure functions from being called in context where only pure function calls
 are permitted, and vice versa.
@@ -49,8 +49,8 @@ away but stores in memory a pair of the function and its arguments which
 may or may not be evaluated into its result later.
 
 Adopting such program evaluation strategy, Cloe gains capability to blend
-values which become available at different time into a value.
-Otherwise it would be able to express only one-shot programs like echo commands
+data which become available at different time.
+Otherwise it would be able to express only one-shot programs like `echo` command
 but not the others which run over time like HTTP servers.
 
 ## Parallelism & concurrency
@@ -71,16 +71,16 @@ However, it may not be enough or even excessive.
 For that cases, Cloe provides 2 primitive functions of `par` and `seq` with
 which you can control parallelism of your programs.
 The former `par` evaluates given arguments in parallel while the latter `seq`
-evaluates them sequentially.
+does that sequentially.
 
 ### Concurrency
 
-When it comes to concurrency, programs written in Cloe are always concurrent
-thanks to its host language, [Go](https://golang.org).
+When it comes to concurrency, software built on top of Cloe is always
+concurrent thanks to its host language, [Go](https://golang.org).
 
 ## Reactiveness
 
-Given implicit parallelism, software written in Cloe is fully reactive.
+Given implicit parallelism, programs written in Cloe are fully reactive.
 The output of the following program:
 
 ```cloe
