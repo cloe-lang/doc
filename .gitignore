@@ -2,6 +2,7 @@
 *.tfstate
 .terraform*
 _includes/index.css
+_includes/icon.svg
 _site
 dist
 tmp

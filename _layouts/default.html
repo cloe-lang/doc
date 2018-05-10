@@ -19,6 +19,11 @@
 	</head>
 	<body>
 		<div class="toc hidden">
+			<div class="lang-icon">
+				<a href="/">
+					{% include icon.svg %}
+				</a>
+			</div>
 			{% capture toc %}{% include toc.md %}{% endcapture %}
 			{{ toc | markdownify }}
 			<div class="github-icon">

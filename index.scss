@@ -140,11 +140,20 @@ code {
 	}
 }
 
-.github-icon {
+@mixin icon-wrapper($height) {
 	display: flex;
+	flex-shrink: 0;
 	justify-content: center;
+
+	svg {
+		height: $height;
+	}
 }
 
-.octicon-mark-github {
-	height: 1.8em;
+.lang-icon {
+	@include icon-wrapper(4em);
+}
+
+.github-icon {
+	@include icon-wrapper(2em);
 }
