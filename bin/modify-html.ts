@@ -12,11 +12,18 @@ function createTOC($, parentNode): string {
         return "";
     }
 
-    const entry = (node): string => (`
-        <li>
-            <a href="#${$(node).attr("id")}">${$("<div>").text($(node).text()).html()}</a>
-            ${createTOC($, $(node))}
-        </li>`);
+    const entry = (node): string => {
+        const id = encodeURI(node.textContent.toLowerCase().replace(/( |,)+/g, "-"));
+
+        $(node).attr("id", id);
+
+        return `
+            <li>
+                <a href="#${id}">${$("<div>").text($(node).text()).html()}</a>
+                ${createTOC($, $(node))}
+            </li>
+        `;
+    };
 
     return `<ul>${children.map(entry).join("")}</ul>`;
 }
@@ -44,7 +51,7 @@ process.argv.slice(2).map(async (filename) => {
         $("svg.octicon").removeAttr(attribute);
     }
 
-    $("a").each(function() {
+    $(".toc a").each(function() {
         const path = $(this).attr("href");
 
         if (filename.match(`_site${path}/?index\\.html$`) ||
