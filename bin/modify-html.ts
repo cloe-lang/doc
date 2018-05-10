@@ -13,13 +13,13 @@ function createTOC($, parentNode): string {
     }
 
     const entry = (node): string => {
-        const id = encodeURI(node.textContent.toLowerCase().replace(/( |,)+/g, "-"));
+        const id = node.textContent.toLowerCase().replace(/( |,)+/g, "-");
 
         $(node).attr("id", id);
 
         return `
             <li>
-                <a href="#${id}">${$("<div>").text($(node).text()).html()}</a>
+                <a href="#${encodeURI(id)}">${$("<div>").text($(node).text()).html()}</a>
                 ${createTOC($, $(node))}
             </li>
         `;
