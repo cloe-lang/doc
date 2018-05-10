@@ -62,9 +62,12 @@ process.argv.slice(2).map(async (filename) => {
 
     await util.promisify(fs.writeFile)(
         filename,
-        htmlMinifier.minify(window.document.documentElement.outerHTML, {
-            collapseWhitespace: true,
-            minifyJS: true,
-            minifyURLs: true,
-        }));
+        htmlMinifier.minify(
+            "<!DOCTYPE html>" + window.document.documentElement.outerHTML,
+            {
+                collapseWhitespace: true,
+                minifyJS: true,
+                minifyURLs: true,
+                removeAttributeQuotes: true,
+            }));
 });
