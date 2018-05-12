@@ -7,14 +7,6 @@ values, which means functions can be passed as arguments to other functions.
 That allows programmers to express programs by combining functions into
 more complex ones.
 
-In such paradigm, it is encouraged to use pure functions, which have
-no side effects as they just compute their results from given arguments but
-must not do anything else.
-And the counterpart is called impure functions, which have certain side effects.
-Therefore, Cloe distinguishes these 2 types of functions in order to prevent
-impure functions from being called in context where only pure function calls
-are permitted, and vice versa.
-
 ```cloe
 (def (foo func) (func 34))
 
@@ -23,18 +15,26 @@ are permitted, and vice versa.
 (write (foo bar)) ; Prints "42" on terminal.
 ```
 
-## Immutable variables
+In such paradigm, it is encouraged to use pure functions, which have
+no side effects as they just compute their results from given arguments but
+must not do anything else.
+And the counterpart is called impure functions, which have certain side effects.
+Therefore, Cloe distinguishes these 2 types of functions in order to prevent
+impure functions from being called in context where only pure function calls
+are permitted, and vice versa.
+
+## Immutable data
 
 As some other functional programming languages, Cloe prevents variables from
 being mutated because that makes programs more predictable and functions easier
 to test while they might be redefined shadowing previous ones.
 
 ```cloe
-(let x 123)
-(let y x)
-(let x 456)
+(let x ["foo" "baz"])
+(let y (insert x 2 "bar"))
 
-(write x y) ; Prints "456 123" on terminal.
+(write x) ; -> ["foo" "baz"]
+(write y) ; -> ["foo" "bar" "baz"]
 ```
 
 ## Lazy evaluation
@@ -50,8 +50,11 @@ may or may not be evaluated into its result later.
 
 Adopting such program evaluation strategy, Cloe gains capability to blend
 data which become available at different time.
-Otherwise it would be able to express only one-shot programs like `echo` command
-but not the others which run over time like HTTP servers.
+For instance, Cloe can get incoming HTTP requests which a server receives
+from its launch to its termination in a list all at once.
+Or, it can express an endless stdin byte stream as an infinite list of bytes
+and process it just like other lists using common list manipulation functions,
+such as `map` and `reduce`.
 
 ## Parallelism & concurrency
 

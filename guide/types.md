@@ -2,7 +2,7 @@
 
 There are 7 built-in types and no user-defined ones in Cloe.
 Its type system is quite similar to one of [JSON](https://json.org) while it
-has one extra type of [function](#functions).
+has one extra type of [function](#function).
 Cloe is also dynamically typed as types of any expressions are determined at
 runtime.
 
@@ -30,7 +30,7 @@ This type of values can express something just like dictionaries
 {"name" "John" "age" 24 "kind" "turtle"} ; A dictionary representing a user object
 ```
 
-## Functions
+## Function
 
 Functions are quite similar to ones in mathematics although it can take any
 types of values but not only numbers.
@@ -92,4 +92,20 @@ Strings represent sequences of bytes which can be both text and binary data.
 "bar"
 "Hello!"
 "こんにちは!"
+```
+
+## Collections
+
+Dictionaries, lists, and strings are all collections which are compositions of
+other values.
+Their elements are taken out by calling them with indices or keys just like
+functions as the code below shows.
+There are also [special generic functions](/api-reference/builtin#collection)
+which manipulate such kinds of values.
+
+```cloe
+({"foo" 123 "bar" 456} "foo"); -> 123
+(["foo" "bar" "baz"] 1) ; -> "foo"
+(["foo" ["foo" "bar" "baz"] "baz"] 2 2) ; -> "bar"
+("cloe" 4) ; -> "e"
 ```

@@ -5,11 +5,8 @@ of why the language looks so.
 
 ## Modeling programs
 
-Hundreds of models in general for computer programming have been proposed over
-decades.
-Computation models formulated pure computation theoretically while
-object-oriented programming has been adopted widely as a way to construct and
-modularize programs.
+Hundreds of models and paradigms for computer programming have been proposed
+over the last decades.
 Although that is quite controversial, object-oriented and
 functional programming seem to be 2 representative counterparts in
 terms of states of programs as they encourage stateful and stateless
