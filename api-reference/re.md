@@ -11,7 +11,7 @@ otherwise.
 ```cloe
 (def (match pattern src))
 (type (match string string)
-  bool)
+  boolean)
 ```
 
 ## `find`

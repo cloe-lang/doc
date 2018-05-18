@@ -14,7 +14,7 @@ module Rouge
       KEYWORDS = Set.new %w[def import let match mr type \\]
 
       BUILTINS = Set.new %w[
-        and bool? catch delete dict dict? dump error eseq first function?
+        and boolean? catch delete dictionary dictionary? dump error eseq first function?
         if include indexOf insert ordered?
         list? map matchError max merge min mod nil? number? not
         or par partial pure rally read reduce rest
@@ -25,7 +25,7 @@ module Rouge
 
       CONSTANTS = Set.new %w[false nil true]
 
-      TYPES = Set.new %w[any bool dict function list nil number string]
+      TYPES = Set.new %w[any boolean dictionary function list nil number string]
 
       def name(name)
         return Keyword if KEYWORDS.include?(name)

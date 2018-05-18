@@ -10,7 +10,7 @@ Applies a function to arguments partially and creates a new function.
 
 ```cloe
 (def (partial func ..args . ..kwargs))
-(type (partial function [any] . dict) function)
+(type (partial function [any] . dictionary) function)
 ```
 
 ### `toString`
@@ -61,7 +61,7 @@ Negates an argument.
 
 ```cloe
 (def (not arg))
-(type (not bool) bool)
+(type (not boolean) boolean)
 ```
 
 ### `and`
@@ -70,7 +70,7 @@ Returns `true` if all arguments are `true`, or `false` otherwise.
 
 ```cloe
 (def (and ..args))
-(type (and [bool]) bool)
+(type (and [boolean]) boolean)
 ```
 
 ### `or`
@@ -79,7 +79,7 @@ Returns `true` if at least one argument is `true`, or `false` otherwise.
 
 ```cloe
 (def (or ..args))
-(type (or [bool]) bool)
+(type (or [boolean]) boolean)
 ```
 
 ## Arithmetic
@@ -147,7 +147,7 @@ Values of any types except `function` can be compared with this function.
 
 ```cloe
 (def (= ..args))
-(type (= [any]) bool)
+(type (= [any]) boolean)
 ```
 
 ### `<`, `<=`, `>`, `>=`
@@ -159,7 +159,7 @@ but they can compare not only `number` values but also `list` and `string` ones.
 
 ```cloe
 (def (< ..args))
-(type (< [(or list number string)]) bool)
+(type (< [(or list number string)]) boolean)
 ```
 
 ### `ordered?`
@@ -169,7 +169,7 @@ or `false` otherwise.
 
 ```cloe
 (def (ordered? arg))
-(type (ordered? any) bool)
+(type (ordered? any) boolean)
 ```
 
 ## Collection
@@ -181,8 +181,8 @@ For `list` and `string`, `key` argument must be an index of `number`.
 
 ```cloe
 (def (insert collection ..keyValuePairs))
-(type (insert (or dict list string) [any])
-  (or dict list string))
+(type (insert (or dictionary list string) [any])
+  (or dictionary list string))
 ```
 
 ### `delete`
@@ -191,8 +191,8 @@ Deletes an entry from a collection.
 
 ```cloe
 (def (delete collection elem))
-(type (delete (or dict list string) any)
-  (or dict list string))
+(type (delete (or dictionary list string) any)
+  (or dictionary list string))
 ```
 
 ### `include`
@@ -201,7 +201,7 @@ Checks if a value is included in a collection.
 
 ```cloe
 (def (include collection elem))
-(type (include (or dict list string) any) bool)
+(type (include (or dictionary list string) any) boolean)
 ```
 
 ### `merge`
@@ -210,8 +210,8 @@ Merges collections into one.
 
 ```cloe
 (def (merge collection ..collections))
-(type (merge (or dict list string) [(or dict list string)])
-  (or dict list string))
+(type (merge (or dictionary list string) [(or dictionary list string)])
+  (or dictionary list string))
 ```
 
 ### `size`
@@ -220,7 +220,7 @@ Returns a size of a collection.
 
 ```cloe
 (def (size collection))
-(type (size (or dict list string)) number)
+(type (size (or dictionary list string)) number)
 ```
 
 ### `toList`
@@ -229,7 +229,7 @@ Converts a collection into its list representation.
 
 ```cloe
 (def (toList collection))
-(type (toList (or dict list string)) list)
+(type (toList (or dictionary list string)) list)
 ```
 
 ## List manipulation
@@ -274,7 +274,7 @@ value and an element in a list.
 ### `filter`
 
 Returns a list of elements which satisfy a condition represented by `func` argument.
-The `func` argument must be a function which takes an argument and returns `bool`.
+The `func` argument must be a function which takes an argument and returns `boolean`.
 
 ```cloe
 (def (filter func list))
@@ -330,13 +330,13 @@ Returns a type of an argument.
 (type (typeOf any) string)
 ```
 
-### `bool?`, `dict?`, `function?`, `list?`, `nil?`, `number?`, `string?`
+### `boolean?`, `dictionary?`, `function?`, `list?`, `nil?`, `number?`, `string?`
 
 Checks if an argument is the type.
 
 ```cloe
-(def (bool? arg))
-(type (bool? any) bool)
+(def (boolean? arg))
+(type (boolean? any) boolean)
 ```
 
 ## IO

@@ -9,7 +9,7 @@ If `error` is `true` and  a status code is not 2xx, it raises an error.
 
 ```cloe
 (def (get url . error true))
-(type (get string . bool)
+(type (get string . boolean)
   {"status" number
    "body" string})
 ```
@@ -21,7 +21,7 @@ If `error` is `true` and  a status code is not 2xx, it raises an error.
 
 ```cloe
 (def (post url body . contentType "text/plain" error true))
-(type (post string string . string bool)
+(type (post string string . string boolean)
   {"status" number
    "body"   string})
 ```
