@@ -310,13 +310,13 @@ Indices are inclusive.
 (type (slice list (start 1) (end nil)) list)
 ```
 
-### `indexOf`
+### `index`
 
 Finds an element in a list and returns its index.
 
 ```cloe
-(def (indexOf list elem))
-(type (indexOf list any) number)
+(def (index list elem))
+(type (index list any) number)
 ```
 
 ## Typing

@@ -15,7 +15,7 @@ module Rouge
 
       BUILTINS = Set.new %w[
         and boolean? catch delete dictionary dictionary? dump error eseq first function?
-        if include indexOf insert ordered?
+        if include index insert ordered?
         list? map matchError max merge min mod nil? number? not
         or par partial pure rally read reduce rest
         seq size slice string? toList toString typeOf write zip
