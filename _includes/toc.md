@@ -13,6 +13,7 @@
 - [Examples](/examples)
 - [API Reference](/api-reference)
   - [builtin](/api-reference/builtin)
+  - [fs](/api-reference/fs)
   - [json](/api-reference/json)
   - [http](/api-reference/http)
   - [os](/api-reference/os)
