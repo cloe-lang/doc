@@ -4,7 +4,7 @@ File system module.
 
 ## `createDirectory`
 
-Create a directory.
+Creates a directory.
 
 ```cloe
 (def (createDirectory name))
@@ -13,7 +13,7 @@ Create a directory.
 
 ## `readDirectory`
 
-Read a directory and list up contents.
+Reads a directory and lists up contents.
 
 ```cloe
 (def (readDirectory name))
@@ -22,7 +22,7 @@ Read a directory and list up contents.
 
 ## `remove`
 
-Remove a file or directory.
+Removes a file or directory.
 
 ```cloe
 (def (remove name))
