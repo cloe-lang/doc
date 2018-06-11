@@ -17,5 +17,6 @@
   - [json](/api-reference/json)
   - [http](/api-reference/http)
   - [os](/api-reference/os)
+  - [random](/api-reference/random)
   - [re](/api-reference/re)
 - [Contribution Guide](/contribution-guide)
