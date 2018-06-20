@@ -33,10 +33,6 @@ a {
 	&:hover {
 		text-decoration: underline;
 	}
-
-	&.current {
-		color: coral;
-	}
 }
 
 blockquote {
@@ -103,6 +99,32 @@ code {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+	}
+
+
+	ul {
+		list-style-type: none;
+
+		> li {
+			color: lightseagreen;
+
+			&.current {
+				color: coral;
+
+				> a {
+					color: coral;
+
+					&:visited {
+						color: coral;
+					}
+				}
+			}
+
+			&::before {
+				content: "►";
+				margin-right: 0.3em;
+			}
+		}
 	}
 }
 

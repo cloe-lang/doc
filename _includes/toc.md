@@ -30,7 +30,7 @@
   - [Collections](/examples/collections)
   - [Parallelism](/examples/parallelism)
   - [I/O](/examples/io)
-  - [Miscellaneous Functions](/examples/miscellaneous_functions)
+  - [Misc Functions](/examples/miscellaneous_functions)
   - [Others](/examples/others)
   - [clutil command](/examples/clutil)
 - [Contribution Guide](/contribution-guide)
