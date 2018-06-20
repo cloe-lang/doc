@@ -17,7 +17,9 @@ task init: 'tmp/rouge' do
 
   sh 'npm install'
   sh 'bundler install'
-  sh 'go get -u github.com/client9/misspell/...'
+  sh %w[go get -u
+        github.com/client9/misspell/...
+        github.com/raviqqe/gherkin2markdown].join ' '
 end
 
 directory 'tmp'
@@ -73,7 +75,19 @@ file '_includes/icon.svg' => 'tmp/icon.svg' do |t|
   cp t.source, t.name
 end
 
-directory '_site' => %w[_includes/index.css _includes/icon.svg] do
+directory 'tmp/cloe' do |t|
+  sh "git clone https://github.com/cloe-lang/cloe #{t.name}"
+end
+
+directory 'examples' => 'tmp/cloe' do |t|
+  sh "gherkin2markdown #{File.join t.source, 'examples'} #{t.name}"
+  File.write(File.join(t.name, 'index.md'),
+             "# Examples\n\n" \
+             'Code examples which describes usage of the language features ' \
+             'and built-in functions and modules.')
+end
+
+directory '_site' => %w[_includes/index.css _includes/icon.svg examples] do
   sh 'bundler exec jekyll build'
 end
 

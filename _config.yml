@@ -6,8 +6,7 @@ title: Cloe programming language
 markdown: kramdown
 kramdown:
   syntax_highlighter_opts:
-    span:
-      default_lang: cloe
+    default_lang: cloe
 defaults:
   -
     scope:

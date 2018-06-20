@@ -4,5 +4,6 @@
 _includes/index.css
 _includes/icon.svg
 _site
+examples
 dist
 tmp
