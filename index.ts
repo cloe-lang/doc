@@ -9,7 +9,7 @@ document.querySelector(".menu-button").addEventListener("click", function() {
     content.classList.toggle("hidden");
 });
 
-toc.querySelector("li.current").scrollIntoView({ block: "center" });
+toc.querySelector(".current").scrollIntoView({ block: "center" });
 toc.classList.remove("invisible");
 
 const link = document.querySelector('link[rel="prerender"]');

@@ -33,6 +33,14 @@ a {
 	&:hover {
 		text-decoration: underline;
 	}
+
+	&.current {
+		color: coral;
+
+		&:visited {
+			color: coral;
+		}
+	}
 }
 
 blockquote {
@@ -75,15 +83,13 @@ code {
 	}
 }
 
-@mixin part($max-width) {
-	max-width: $max-width;
+@mixin part {
 	padding: 1em;
 	overflow-y: auto;
 
 	@include small-width {
 		padding-bottom: $menu-button-size + $menu-button-offset;
 		flex: 1;
-		max-width: unset;
 
 		&.hidden {
 			display: none;
@@ -92,7 +98,7 @@ code {
 }
 
 .toc {
-	@include part(25%);
+	@include part;
 
 	@include small-width {
 		font-size: 1.3em;
@@ -108,34 +114,14 @@ code {
 
 	ul {
 		list-style-type: none;
-
-		> li {
-			color: lightseagreen;
-
-			&.current {
-				color: coral;
-
-				> a {
-					color: coral;
-
-					&:visited {
-						color: coral;
-					}
-				}
-			}
-
-			&::before {
-				content: "►";
-				margin-right: 0.3em;
-			}
-		}
 	}
 }
 
 .content {
-	@include part(60em);
+	@include part;
 
 	flex: 1;
+	max-width: 60em;
 }
 
 .menu-button {

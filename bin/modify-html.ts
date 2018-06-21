@@ -51,8 +51,8 @@ process.argv.slice(2).map(async (filename) => {
         $("svg.octicon").removeAttr(attribute);
     }
 
-    $(".toc li").each(function() {
-        const path = $(this).children().first().attr("href");
+    $(".toc a").each(function() {
+        const path = $(this).attr("href");
 
         if (filename.match(`_site${path}/?index\\.html$`) ||
             filename.match(`_site${path}(\\.html)?$`)) {
