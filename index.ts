@@ -17,6 +17,9 @@ document.querySelector(".menu-button").addEventListener("click", function() {
     content.classList.toggle("hidden");
 });
 
+toc.querySelector("li.current").scrollIntoView({ block: "center" });
+toc.classList.remove("invisible");
+
 if ("serviceWorker" in navigator) {
     navigator.serviceWorker.register("/service-worker.js");
 }
