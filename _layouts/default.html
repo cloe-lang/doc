@@ -26,9 +26,12 @@
 			</div>
 			{% capture toc %}{% include toc.md %}{% endcapture %}
 			{{ toc | markdownify }}
-			<div class="github-icon">
+			<div class="icons">
 				<a href="https://github.com/cloe-lang/cloe">
 					{% octicon mark-github %}
+				</a>
+				<a href="https://twitter.com/intent/tweet?text=Cloe:+the+timeless+functional+programming+language&url=https://cloe-lang.org&hashtags=cloelang" class="twitter">
+					{% include twitter.svg %}
 				</a>
 			</div>
 		</div>

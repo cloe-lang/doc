@@ -1,8 +1,8 @@
 *.backup
 *.tfstate
 .terraform*
-_includes/index.css
-_includes/icon.svg
+_includes/*.css
+_includes/*.svg
 _site
 examples
 dist

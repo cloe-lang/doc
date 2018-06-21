@@ -75,6 +75,13 @@ file '_includes/icon.svg' => 'tmp/icon.svg' do |t|
   cp t.source, t.name
 end
 
+file '_includes/twitter.svg' do |t|
+  curl(
+    'https://github.com/simple-icons/simple-icons/raw/master/icons/twitter.svg',
+    t.name
+  )
+end
+
 directory 'tmp/cloe' do |t|
   sh "git clone https://github.com/cloe-lang/cloe #{t.name}"
 end
@@ -87,7 +94,12 @@ directory 'examples' => 'tmp/cloe' do |t|
              'and built-in functions and modules.')
 end
 
-directory '_site' => %w[_includes/index.css _includes/icon.svg examples] do
+directory '_site' => %w[
+  _includes/index.css
+  _includes/icon.svg
+  _includes/twitter.svg
+  examples
+] do
   sh 'bundler exec jekyll build'
 end
 

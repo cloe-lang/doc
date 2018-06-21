@@ -166,6 +166,16 @@ code {
 	@include icon-wrapper(4em);
 }
 
-.github-icon {
+.icons {
 	@include icon-wrapper(2em);
+
+	display: flex;
+
+	> * {
+		margin: 0.4em;
+	}
+
+	> .twitter {
+		fill: deepskyblue;
+	}
 }
