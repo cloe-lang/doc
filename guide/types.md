@@ -93,19 +93,3 @@ Strings represent sequences of bytes which can be both text and binary data.
 "Hello!"
 "こんにちは!"
 ```
-
-## Collections
-
-Dictionaries, lists, and strings are all collections which are compositions of
-other values.
-Their elements are taken out by calling them with indices or keys just like
-functions as the code below shows.
-There are also [special generic functions](/api-reference/builtin#collection)
-which manipulate such kinds of values.
-
-```cloe
-({"foo" 123 "bar" 456} "foo"); -> 123
-(["foo" "bar" "baz"] 1) ; -> "foo"
-(["foo" ["foo" "bar" "baz"] "baz"] 2 2) ; -> "bar"
-("cloe" 4) ; -> "e"
-```

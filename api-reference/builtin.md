@@ -174,10 +174,20 @@ or `false` otherwise.
 
 ## Collection
 
+### `@`
+
+Gets an element in a collection.
+When multiple keys are passed, the function returns an element in nested
+collections.
+
+```cloe
+(def (@ collection key ..keys))
+(type (@ (or dictionary list string) any [any]) any)
+```
+
 ### `insert`
 
 Inserts elements into a collection.
-For `list` and `string`, `key` argument must be an index of `number`.
 
 ```cloe
 (def (insert collection ..keyValuePairs))

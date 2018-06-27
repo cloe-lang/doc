@@ -14,7 +14,7 @@ infinite future as a list at once as if ignoring the concept of time.
 (import "http")
 
 (def (handler request)
-  ((request "respond") "Hello, world!"))
+  ((@ request "respond") "Hello, world!"))
 
 (let requests (http.getRequests ":8080"))
 
