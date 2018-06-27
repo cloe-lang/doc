@@ -126,7 +126,7 @@ code {
 
 .menu-button {
 	color: white;
-	background: slategrey;
+	background: tomato;
 	display: none;
 	justify-content: center;
 	align-items: center;
@@ -136,15 +136,16 @@ code {
 	position: fixed;
 	bottom: $menu-button-offset;
 	right: $menu-button-offset;
+	box-shadow: 0 0.2em 0.3em rgba(0, 0, 0, 0.4);
 	user-select: none;
-	transition: transform 0.1s;
 
-	&.on {
+	&.on > svg {
 		transform: rotate(90deg);
 	}
 
 	> svg {
 		height: $menu-button-size * 0.6;
+		transition: transform 0.1s;
 	}
 
 	@include small-width {
