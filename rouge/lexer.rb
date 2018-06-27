@@ -14,14 +14,14 @@ module Rouge
       KEYWORDS = Set.new %w[def import let match mr type \\]
 
       BUILTINS = Set.new %w[
-        and boolean? catch delete dictionary dictionary? dump error eseq first function?
-        if include index insert ordered?
+        and boolean? catch delete dictionary dictionary? dump error eseq first
+        function? if include index insert ordered?
         list? map matchError max merge min mod nil? number? not
         or par partial pure rally read reduce rest
         seq size slice string? toList toString typeOf write zip
       ]
 
-      OPERATORS = Set.new %w[+ - * / ** // = < <= > >=]
+      OPERATORS = Set.new %w[+ - * / ** // = < <= > >= @]
 
       CONSTANTS = Set.new %w[false nil true]
 
@@ -42,8 +42,8 @@ module Rouge
 
         rule(/;.*?$/, Comment::Single)
 
-        rule(/-?\d+(\.\d+)?/, Num::Float)
         rule(/0x[0-9a-fA-F]+/, Num::Hex)
+        rule(/-?\d+(\.\d+)?/, Num::Float)
         rule(/"(\\.|[^"])*"/, Str)
 
         rule(/[()\[\]{}.]/, Punctuation)
