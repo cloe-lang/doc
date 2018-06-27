@@ -1,9 +1,7 @@
 {
 	"compilerOptions": {
-		"lib": ["es5", "es6", "es7", "esnext", "dom"],
-		"target": "es5",
-		"newLine": "LF",
-		"downlevelIteration": true,
-		"experimentalDecorators": true
+		"lib": ["es7", "dom"],
+		"target": "es6",
+		"newLine": "LF"
 	}
 }
