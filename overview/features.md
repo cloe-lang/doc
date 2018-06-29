@@ -12,7 +12,7 @@ more complex ones.
 
 (def (bar num) (+ num 8))
 
-(write (foo bar)) ; Prints "42" on terminal.
+(print (foo bar)) ; Prints "42" on terminal.
 ```
 
 In such paradigm, it is encouraged to use pure functions, which have
@@ -33,8 +33,8 @@ to test while they might be redefined shadowing previous ones.
 (let x ["foo" "baz"])
 (let y (insert x 2 "bar"))
 
-(write x) ; -> ["foo" "baz"]
-(write y) ; -> ["foo" "bar" "baz"]
+(print x) ; -> ["foo" "baz"]
+(print y) ; -> ["foo" "bar" "baz"]
 ```
 
 ## Lazy evaluation
@@ -87,8 +87,8 @@ Given implicit parallelism, programs written in Cloe are fully reactive.
 The output of the following program:
 
 ```cloe
-(write 123)
-(write 456)
+(print 123)
+(print 456)
 ```
 
 can be both
@@ -105,5 +105,5 @@ or
 123
 ```
 
-as the top-level expressions, `(write 123)` and `(write 456)` are evaluated
+as the top-level expressions, `(print 123)` and `(print 456)` are evaluated
 at once and their side effects can happen out of order.

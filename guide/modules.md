@@ -25,7 +25,7 @@ other modules available there with their prefices.
 
 ; Now you can use members of the imported modules.
 (let requests (http.getRequests ":8080"))
-(write (some_module.some_function 42))
+(print (some_module.some_function 42))
 ```
 
 ### `let` statements
@@ -51,7 +51,7 @@ top-level expressions when they must be guaranteed to be evaluated on execution
 of the programs.
 
 ```cloe
-(write "Hello, world!")
+(print "Hello, world!")
 ```
 
 ## Submodules

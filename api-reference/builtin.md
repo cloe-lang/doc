@@ -360,15 +360,15 @@ Reads stdin or a content of a file.
 (type (read (or nil string)) string)
 ```
 
-### `write`
+### `print`
 
-Writes values to stdout or a file.
-It writes to stdout if `file` argument is `1`, stderr if `2`,
+Prints values to stdout or a file.
+It prints to stdout if `file` argument is `1`, stderr if `2`,
 or a file if `string`.
 
 ```cloe
-(def (write ..args . sep " " end "\n" file 1 mode 0664))
-(type (write [any] . string string (or number string) number) nil)
+(def (print ..args . sep " " end "\n" file 1 mode 0664))
+(type (print [any] . string string (or number string) number) nil)
 ```
 
 ## Error handling

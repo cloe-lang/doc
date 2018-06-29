@@ -9,7 +9,7 @@ joining a string and a list, and passing a wrong number of arguments to a
 function.
 
 ```cloe
-(write (+ 1 true)) ; Adding non-number values is invalid.
+(print (+ 1 true)) ; Adding non-number values is invalid.
 ```
 
 ## Throwing errors manually
@@ -29,5 +29,5 @@ and returns information of the errors as dictionaries.
 
 ```cloe
 ; Prints '{"name" "ValueError" "message" "\"true\" is not a number"}'.
-(write (catch (+ 1 true)))
+(print (catch (+ 1 true)))
 ```

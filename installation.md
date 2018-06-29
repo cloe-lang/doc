@@ -11,7 +11,7 @@ To test the installation, write a file `main.cloe` of the content:
 ```cloe
 #!/usr/bin/env cloe
 
-(write "Hello, world!")
+(print "Hello, world!")
 ```
 
 Finally, run the `cloe` command.
