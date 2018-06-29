@@ -18,3 +18,21 @@ missing names.
 (let y (map (\ (x) (* x 2)) [123 456 789]))
 (let x "foo") ; You can redefine variables of the same names.
 ```
+
+## `let` expressions
+
+The `let` expressions work as well as `let` statements although they behave like
+expressions.
+
+```cloe
+(print
+  (let
+    x (+ 1 2 3 4 5 6 7 8 9)
+    (** x 2)))
+
+(print
+  (let
+    xs (map (\ (x) (** x 2)) [1 2 3])
+    [y z _] xs
+    (+ y z ..xs)))
+```
