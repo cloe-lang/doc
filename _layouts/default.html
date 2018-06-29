@@ -25,11 +25,9 @@
 	</head>
 	<body>
 		<div class="toc hidden invisible">
-			<div class="lang-icon">
-				<a href="/">
-					{% include icon.svg %}
-				</a>
-			</div>
+			<a class="lang-icon" href="/">
+				{% include icon.svg %}
+			</a>
 			{% capture toc %}{% include toc.md %}{% endcapture %}
 			{{ toc | markdownify }}
 			<div class="icons">
