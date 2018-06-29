@@ -3,13 +3,18 @@ import "./index.scss";
 const toc = document.querySelector(".toc");
 const content = document.querySelector(".content");
 
+function centerToc() {
+    toc.querySelector(".current").scrollIntoView({ block: "center" });
+}
+
 document.querySelector(".menu-button").addEventListener("click", function() {
     this.classList.toggle("on");
     toc.classList.toggle("hidden");
     content.classList.toggle("hidden");
+    centerToc();
 });
 
-toc.querySelector(".current").scrollIntoView({ block: "center" });
+centerToc();
 toc.classList.remove("invisible");
 
 const link = document.querySelector('link[rel="prerender"]');
