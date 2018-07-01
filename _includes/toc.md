@@ -10,6 +10,7 @@
   - [Modules](/guide/modules)
   - [Pattern Matching](/guide/pattern-matching)
   - [Error Handling](/guide/error-handling)
+  - [clutil Command](/guide/clutil-command)
 - [API Reference](/api-reference)
   - [builtin](/api-reference/builtin)
   - [fs](/api-reference/fs)
