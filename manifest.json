@@ -3,8 +3,7 @@
 	"name": "Cloe programming language",
 	"icons": [{
 		"src": "icon512.png",
-		"sizes": "512x512",
-		"type": "image/png"
+		"sizes": "512x512"
 	}],
 	"start_url": "/",
 	"display": "standalone",

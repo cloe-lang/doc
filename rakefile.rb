@@ -122,6 +122,7 @@ task build: %w[
   _site
   _site/index.js
   _site/icon512.png
+  _site/icon192.png
   _site/icon16.png
   _site/text.woff2
   _site/code.woff2
