@@ -4,6 +4,17 @@ Built-in functions and variables.
 
 ## General
 
+### `print`
+
+Prints values to stdout or a file.
+It prints to stdout if `file` argument is `1`, stderr if `2`,
+or a file if `string`.
+
+```cloe
+(def (print ..args . sep " " end "\n" file 1 mode 0664))
+(type (print [any] . string string (or number string) number) nil)
+```
+
 ### `partial`
 
 Applies a function to arguments partially and creates a new function.
@@ -347,28 +358,6 @@ Checks if an argument is the type.
 ```cloe
 (def (boolean? arg))
 (type (boolean? any) boolean)
-```
-
-## IO
-
-### `read`
-
-Reads stdin or a content of a file.
-
-```cloe
-(def (read . file nil))
-(type (read (or nil string)) string)
-```
-
-### `print`
-
-Prints values to stdout or a file.
-It prints to stdout if `file` argument is `1`, stderr if `2`,
-or a file if `string`.
-
-```cloe
-(def (print ..args . sep " " end "\n" file 1 mode 0664))
-(type (print [any] . string string (or number string) number) nil)
 ```
 
 ## Error handling
