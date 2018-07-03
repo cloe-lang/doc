@@ -33,5 +33,5 @@
   - [I/O](/examples/io)
   - [Misc Functions](/examples/miscellaneous_functions)
   - [Others](/examples/others)
-  - [clutil command](/examples/clutil)
+  - [clutil Command](/examples/clutil)
 - [Contribution Guide](/contribution-guide)
