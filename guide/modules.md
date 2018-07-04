@@ -54,6 +54,12 @@ of the programs.
 (print "Hello, world!")
 ```
 
+You can also expand lists of effects into top-level expressions.
+
+```cloe
+..[(print "Good morning") (print "Good afternoon") (print "Good evening")]
+```
+
 ## Submodules
 
 Submodules are modules imported by other ones which can be both main modules or

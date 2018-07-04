@@ -54,6 +54,7 @@ evaluation.
 [[1 2 3] [4 5 6] [7 8 9]]
 ["foo" "bar" "baz"]
 [nil true 42 "foo"] ; You can mix different types of elements.
+[1 2 ..[3 4]] ; A list can be expanded into another.
 ```
 
 ## Nil
