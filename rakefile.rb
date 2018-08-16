@@ -1,8 +1,3 @@
-DOMAIN = 'cloe-lang.org'.freeze
-GOOGLE_SITE_VERIFICATION = 'g7AjxjmCy2QG8Pi80zkshhVd0Tt2HPPBtrTea9egYow'.freeze
-ADDRESSES = ['151.101.1.195', '151.101.65.195'].freeze
-S3_OPTIONS = '--acl public-read --cache-control max-age=604800,public'.freeze
-
 def curl(args, dest)
   sh "curl -sSL '#{args}' > #{dest}"
 end
@@ -133,23 +128,6 @@ end
 
 task :deploy do
   sh 'npx firebase deploy'
-
-  sh 'terraform init'
-  sh %W[terraform apply -auto-approve
-        -var domain=#{DOMAIN}
-        -var google_site_verification=#{GOOGLE_SITE_VERIFICATION}
-        -var addresses='#{ADDRESSES}'].join ' '
-
-  name_servers = `terraform output name_servers`
-                 .split(/[,\s]+/)
-                 .map { |s| 'Name=' + s }
-                 .join ' '
-
-  sh %W[
-    aws route53domains update-domain-nameservers
-    --domain #{DOMAIN}
-    --nameservers #{name_servers}
-  ].join ' '
 end
 
 task default: %w[build deploy]
