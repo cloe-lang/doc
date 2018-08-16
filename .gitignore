@@ -1,9 +1,10 @@
 *.backup
 *.tfstate
+.firebase
 .terraform*
 _includes/*.css
 _includes/*.svg
 _site
-examples
 dist
+examples
 tmp
