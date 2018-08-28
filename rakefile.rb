@@ -133,7 +133,7 @@ end
 task default: %w[build deploy]
 
 task run: :build do
-  sh 'npx superstatic'
+  sh 'npx superstatic --debug'
 end
 
 task :lint do
