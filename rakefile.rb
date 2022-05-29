@@ -14,8 +14,6 @@ task init: "tmp/rouge" do
 
   sh "npm install"
   sh "bundle install"
-
-  sh "go install github.com/raviqqe/gherkin2markdown"
 end
 
 directory "tmp"
@@ -87,7 +85,7 @@ directory "tmp/cloe" do |t|
 end
 
 directory "examples" => "tmp/cloe" do |t|
-  sh "gherkin2markdown #{File.join t.source, "examples"} #{t.name}"
+  sh "go run github.com/raviqqe/gherkin2markdown #{File.join t.source, "examples"} #{t.name}"
   File.write(File.join(t.name, "index.md"),
              "# Examples\n\n" \
              "Code examples which describes usage of the language features " \
