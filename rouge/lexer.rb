@@ -2,24 +2,24 @@ module Rouge
   module Lexers
     # Cloe programming language lexer
     class Cloe < RegexLexer
-      title 'Cloe'
-      desc 'Cloe programming language'
+      title "Cloe"
+      desc "Cloe programming language"
 
-      tag 'cloe'
+      tag "cloe"
 
-      filenames '*.cloe'
+      filenames "*.cloe"
 
-      mimetypes 'text/x-cloe', 'application/x-cloe'
+      mimetypes "text/x-cloe", "application/x-cloe"
 
       KEYWORDS = Set.new %w[def import let match mr type \\]
 
       BUILTINS = Set.new %w[
-        and boolean? catch delete dictionary dictionary? dump error eseq first
-        function? if include index insert ordered?
-        list? map matchError max merge min mod nil? number? not
-        or par partial pure rally read reduce rest
-        seq size slice string? toList toString typeOf write zip
-      ]
+                           and boolean? catch delete dictionary dictionary? dump error eseq first
+                           function? if include index insert ordered?
+                           list? map matchError max merge min mod nil? number? not
+                           or par partial pure rally read reduce rest
+                           seq size slice string? toList toString typeOf write zip
+                         ]
 
       OPERATORS = Set.new %w[+ - * / ** // = < <= > >= @]
 
