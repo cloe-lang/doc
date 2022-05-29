@@ -60,6 +60,7 @@ GEM
     rb-inotify (0.10.1)
       ffi (~> 1.0)
     rexml (3.2.5)
+    rufo (0.13.0)
     safe_yaml (1.0.5)
     sass (3.7.4)
       sass-listen (~> 4.0.0)
@@ -77,6 +78,7 @@ DEPENDENCIES
   jekyll-titles-from-headings
   kramdown-parser-gfm (~> 1.1)
   rouge!
+  rufo (~> 0.13.0)
 
 BUNDLED WITH
    1.16.4
