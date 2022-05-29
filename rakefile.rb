@@ -11,7 +11,7 @@ task init: 'tmp/rouge' do
   cp 'rouge/lexer.rb', 'tmp/rouge/lib/rouge/lexers/cloe.rb'
 
   sh 'npm install'
-  sh 'bundler install'
+  sh 'bundle install'
   sh %w[go get -u
         github.com/client9/misspell/...
         github.com/raviqqe/gherkin2markdown].join ' '
@@ -51,7 +51,7 @@ rule %r{_site/.*\.woff2} => ->(f) { f.pathmap('tmp/%n.ttf') } do |t|
 end
 
 file 'tmp/rouge.css' => 'tmp' do |t|
-  sh "bundler exec rougify style base16.solarized.dark > #{t.name}"
+  sh "bundle exec rougify style base16.solarized.dark > #{t.name}"
 end
 
 file 'tmp/index.js' => %w[tmp/rouge.css tmp/text-font.css tmp/code-font.css] do
@@ -95,7 +95,7 @@ directory '_site' => %w[
   _includes/twitter.svg
   examples
 ] do
-  sh 'bundler exec jekyll build'
+  sh 'bundle exec jekyll build'
 end
 
 file '_site/index.js' => 'tmp/index.js' do |t|
