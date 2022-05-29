@@ -1,12 +1,14 @@
 {
-	"short_name": "Cloe",
-	"name": "Cloe programming language",
-	"icons": [{
-		"src": "icon512.png",
-		"sizes": "512x512"
-	}],
-	"start_url": "/",
-	"display": "standalone",
-	"theme_color": "#ddd",
-	"background_color": "white"
+  "short_name": "Cloe",
+  "name": "Cloe programming language",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#ddd",
+  "background_color": "white"
 }
