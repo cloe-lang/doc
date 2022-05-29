@@ -111,23 +111,7 @@ file "_site/icon.svg" => "tmp/icon.svg" do |t|
   cp t.source, t.name
 end
 
-rule %r{tmp/icon[0-9]+\.png} => "tmp/icon.svg" do |t|
-  sh %W[inkscape -w #{t.name.match(/[0-9]+/)[0]}
-        --export-png #{t.name} #{t.source}].join " "
-end
-
-rule %r{_site/icon[0-9]+\.png} => [->(f) { f.pathmap("tmp/%f") }, "_site"] do |t|
-  sh "npx imagemin #{t.source} > #{t.name}"
-end
-
-task build: %w[
-       _site
-       _site/index.js
-       _site/icon.svg
-       _site/icon512.png
-       _site/icon192.png
-       _site/icon16.png
-     ] do
+task build: %w[_site _site/index.js _site/icon.svg] do
   sh "npx ts-node bin/modify-html.ts #{Dir.glob("_site/**/*.html").join " "}"
   sh "npx workbox generateSW workbox-cli-config.js"
 end
