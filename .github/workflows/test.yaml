@@ -10,10 +10,15 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: ruby/setup-ruby@v1
-      - run: sudo apt -y install inkscape
+      - run: rake init
+      - run: rake build
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ruby/setup-ruby@v1
       - run: rake init
       - run: rake lint
-      - run: rake build
   spell_check:
     runs-on: ubuntu-latest
     steps:
