@@ -45,10 +45,7 @@ rule ".ttf" => ".css" do |t|
 end
 
 rule %r{tmp/.*\.woff2} => ->(f) { f.pathmap("tmp/%n.ttf") } do |t|
-  tmp_filename = t.name.pathmap "tmp/%f"
-
-  sh "cat #{t.source} | npx ttf2woff2 > #{tmp_filename}"
-  sh "npx fontmin #{tmp_filename} > #{t.name}"
+  sh "npx ttf2woff2 < #{t.source} > #{t.name}"
 end
 
 file "tmp/rouge.css" => "tmp" do |t|
