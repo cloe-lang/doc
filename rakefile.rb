@@ -145,8 +145,5 @@ task :lint do
 end
 
 task :clean do
-  sh %w[git clean -dfx
-        --exclude .terraform
-        --exclude terraform.tfstate
-        --exclude node_modules].join ' '
+  sh %w[git clean -dfx --exclude node_modules].join ' '
 end
