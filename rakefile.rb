@@ -61,7 +61,10 @@ file "tmp/index.js" => %w[
   sh "npx webpack-cli"
 end
 
-file "_includes/index.css" => "tmp/index.js" do |t|
+
+file "tmp/main.css" => "tmp/index.js"
+
+file "_includes/index.css" => "tmp/main.css" do |t|
   cp t.source.ext(".css"), t.name
 end
 
