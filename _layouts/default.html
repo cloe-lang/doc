@@ -1,51 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="description" content="The timeless functional programming language" />
-		<meta name="theme-color" content="#ddd" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-		<meta property="og:title" content="Cloe programming language" />
-		<meta property="og:type" content="website" />
-		<meta property="og:url" content="https://cloe-lang.org" />
-		<meta property="og:image" content="https://cloe-lang.org/icon512.png" />
-		<meta property="og:description" content="The timeless functional programming language written in Go which aims to be simple and practical" />
-		<meta name="twitter:card" content="summary" />
-		<title>
-			{% if page.title == site.title %}
-				{{ site.title }}
-			{% else %}
-				{{ page.title }} | {{ site.title }}
-			{% endif %}
-		</title>
-		<link rel="icon" sizes="192x192" href="/icon192.png"/>
-		<link rel="icon" sizes="16x16" href="/icon16.png" />
-		<link rel="manifest" href="/manifest.json" />
-		<link rel="prerender" href="/" />
-		<style>{% include index.css %}</style>
-	</head>
-	<body>
-		<div class="toc hidden">
-			<a class="lang-icon" href="/">
-				{% include icon.svg %}
-			</a>
-			{% capture toc %}{% include toc.md %}{% endcapture %}
-			{{ toc | markdownify }}
-			<div class="icons">
-				<a href="https://github.com/cloe-lang/cloe">
-					{% octicon mark-github %}
-				</a>
-				<a href="https://twitter.com/intent/tweet?text=Cloe:+the+timeless+functional+programming+language&url=https://cloe-lang.org&hashtags=cloelang" class="twitter">
-					{% include twitter.svg %}
-				</a>
-			</div>
-		</div>
-		<div class="content">
-			{{ content }}
-		</div>
-		<div class="menu-button">
-			{% octicon three-bars fill: currentColor %}
-		</div>
-		<script async src="/index.js"></script>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="description"
+      content="The timeless functional programming language"
+    />
+    <meta name="theme-color" content="#ddd" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta property="og:title" content="Cloe programming language" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://cloe-lang.org" />
+    <meta property="og:image" content="https://cloe-lang.org/icon.svg" />
+    <meta
+      property="og:description"
+      content="The timeless functional programming language written in Go which aims to be simple and practical"
+    />
+    <meta name="twitter:card" content="summary" />
+    <title>
+      {% if page.title == site.title %} {{ site.title }} {% else %} {{
+      page.title }} | {{ site.title }} {% endif %}
+    </title>
+    <link rel="icon" href="/icon.svg" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="prerender" href="/" />
+    <style>
+      {% include index.css %}
+    </style>
+  </head>
+  <body>
+    <div class="toc hidden">
+      <a class="lang-icon" href="/"> {% include icon.svg %} </a>
+      {% capture toc %}{% include toc.md %}{% endcapture %} {{ toc | markdownify
+      }}
+      <div class="icons">
+        <a href="https://github.com/cloe-lang/cloe">
+          {% octicon mark-github %}
+        </a>
+        <a
+          href="https://twitter.com/intent/tweet?text=Cloe:+the+timeless+functional+programming+language&url=https://cloe-lang.org&hashtags=cloelang"
+          class="twitter"
+        >
+          {% include twitter.svg %}
+        </a>
+      </div>
+    </div>
+    <div class="content">{{ content }}</div>
+    <div class="menu-button">{% octicon three-bars fill: currentColor %}</div>
+    <script async src="/index.js"></script>
+  </body>
 </html>

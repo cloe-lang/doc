@@ -107,6 +107,10 @@ file "_site/index.js" => "tmp/index.js" do |t|
   cp t.source, t.name
 end
 
+file "_site/icon.svg" => "tmp/icon.svg" do |t|
+  cp t.source, t.name
+end
+
 rule %r{tmp/icon[0-9]+\.png} => "tmp/icon.svg" do |t|
   sh %W[inkscape -w #{t.name.match(/[0-9]+/)[0]}
         --export-png #{t.name} #{t.source}].join " "
@@ -119,6 +123,7 @@ end
 task build: %w[
        _site
        _site/index.js
+       _site/icon.svg
        _site/icon512.png
        _site/icon192.png
        _site/icon16.png
