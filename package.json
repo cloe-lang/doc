@@ -1,8 +1,6 @@
 {
   "name": "documentation",
   "version": "0.1.0",
-  "description": "Documentation of Cloe programming language",
-  "license": "MIT",
   "devDependencies": {
     "@types/node": "^17.0.36",
     "css-loader": "^6.7.1",
