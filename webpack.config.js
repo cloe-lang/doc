@@ -1,5 +1,6 @@
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const path = require("path");
+require("webpack");
 
 module.exports = {
   mode: "production",
@@ -21,17 +22,13 @@ module.exports = {
         },
       },
       {
-        test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, "css-loader"],
-      },
-      {
         test: /\.scss$/,
         use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
       },
     ],
   },
+  plugins: [new MiniCssExtractPlugin()],
   optimization: {
     minimize: true,
   },
-  plugins: [new MiniCssExtractPlugin()],
 };
