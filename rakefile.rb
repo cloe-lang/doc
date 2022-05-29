@@ -61,7 +61,6 @@ file "tmp/index.js" => %w[
   sh "npx webpack-cli"
 end
 
-
 file "tmp/main.css" => "tmp/index.js"
 
 file "_includes/index.css" => "tmp/main.css" do |t|
@@ -118,7 +117,6 @@ rule %r{_site/icon[0-9]+\.png} => [->(f) { f.pathmap("tmp/%f") }, "_site"] do |t
 end
 
 task build: %w[
-       clean
        _site
        _site/index.js
        _site/icon512.png
