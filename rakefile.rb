@@ -1,3 +1,5 @@
+require "uri"
+
 def curl(args, dest)
   sh "curl -sSL '#{args}' > #{dest}"
 end
@@ -135,6 +137,7 @@ task run: :build do
 end
 
 task :lint do
+  sh "rufo -c *.rb rouge/*.rb"
   sh "npx stylelint **/*.scss"
 end
 
