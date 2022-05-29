@@ -12,9 +12,8 @@ task init: 'tmp/rouge' do
 
   sh 'npm install'
   sh 'bundle install'
-  sh %w[go get -u
-        github.com/client9/misspell/...
-        github.com/raviqqe/gherkin2markdown].join ' '
+
+  sh 'go install github.com/raviqqe/gherkin2markdown'
 end
 
 directory 'tmp'

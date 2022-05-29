@@ -33,6 +33,7 @@ module Rouge
         return Operator if OPERATORS.include?(name)
         return Name::Constant if CONSTANTS.include?(name)
         return Name::Builtin if BUILTINS.include?(name)
+
         Name
       end
 
