@@ -44,7 +44,7 @@ rule ".ttf" => ".css" do |t|
   curl(/url\(([^)]+)\)/.match(File.read(t.source))[1], t.name)
 end
 
-rule %r{_site/.*\.woff2} => ->(f) { f.pathmap("tmp/%n.ttf") } do |t|
+rule %r{tmp/.*\.woff2} => ->(f) { f.pathmap("tmp/%n.ttf") } do |t|
   tmp_filename = t.name.pathmap "tmp/%f"
 
   sh "cat #{t.source} | npx ttf2woff2 > #{tmp_filename}"
@@ -55,7 +55,12 @@ file "tmp/rouge.css" => "tmp" do |t|
   sh "bundle exec rougify style base16.solarized.dark > #{t.name}"
 end
 
-file "tmp/index.js" => %w[tmp/rouge.css tmp/text-font.css tmp/code-font.css] do
+file "tmp/index.js" => %w[
+       tmp/rouge.css
+       tmp/text-font.css
+       tmp/code-font.css
+       tmp/text.woff2
+       tmp/code.woff2] do
   sh "npx webpack-cli"
 end
 
@@ -119,8 +124,6 @@ task build: %w[
        _site/icon512.png
        _site/icon192.png
        _site/icon16.png
-       _site/text.woff2
-       _site/code.woff2
      ] do
   sh "npx ts-node bin/modify-html.ts #{Dir.glob("_site/**/*.html").join " "}"
   sh "npx workbox generateSW workbox-cli-config.js"

@@ -1,16 +1,15 @@
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const path = require("path");
-const webpack = require("webpack");
 
 module.exports = {
   mode: "production",
   entry: "./index.ts",
   output: {
     filename: "index.js",
-    path: path.resolve(__dirname, "tmp")
+    path: path.resolve(__dirname, "tmp"),
   },
   resolve: {
-    extensions: [".ts", ".js"]
+    extensions: [".ts", ".js"],
   },
   module: {
     rules: [
@@ -18,25 +17,21 @@ module.exports = {
         test: /\.ts$/,
         loader: "ts-loader",
         options: {
-          configFile: require.resolve("./tsconfig.webpack.json")
-        }
+          configFile: require.resolve("./tsconfig.webpack.json"),
+        },
       },
       {
         test: /\.css$/,
-        use: ExtractTextPlugin.extract({
-          use: ["css-loader"]
-        })
+        use: [MiniCssExtractPlugin.loader, "css-loader"],
       },
       {
         test: /\.scss$/,
-        use: ExtractTextPlugin.extract({
-          use: ["css-loader", "sass-loader"]
-        })
-      }
-    ]
+        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
+      },
+    ],
   },
   optimization: {
-    minimize: true
+    minimize: true,
   },
-  plugins: [new ExtractTextPlugin("index.css")]
+  plugins: [new MiniCssExtractPlugin()],
 };
