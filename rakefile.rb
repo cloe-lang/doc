@@ -96,6 +96,7 @@ end
 task build: %w[_site _site/index.js _site/icon.svg] do
   sh "npx ts-node --esm bin/modify-html.mts #{Dir.glob("_site/**/*.html").join " "}"
   sh "npx workbox generateSW workbox-cli-config.js"
+  cp Dir.glob("tmp/webpack/*.woff2"), "_site"
 end
 
 task :deploy do
