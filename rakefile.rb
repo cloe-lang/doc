@@ -65,12 +65,8 @@ file "_includes/index.css" => "tmp/main.css" do |t|
   cp t.source.ext(".css"), t.name
 end
 
-file "tmp/icon.svg" => "tmp" do |t|
+file "_includes/icon.svg" do |t|
   curl "https://github.com/cloe-lang/icon/raw/master/icon.svg", t.name
-end
-
-file "_includes/icon.svg" => "tmp/icon.svg" do |t|
-  cp t.source, t.name
 end
 
 file "_includes/twitter.svg" do |t|
