@@ -25,10 +25,6 @@ module.exports = {
         test: /\.scss$/,
         use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
       },
-      {
-        test: /\.woff2$/,
-        type: "asset/resource",
-      },
     ],
   },
   plugins: [new MiniCssExtractPlugin()],
