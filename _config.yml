@@ -26,6 +26,7 @@ exclude:
   - README.md
   - bin
   - firebase.json
+  - go.*
   - node_modules
   - rouge
   - tmp

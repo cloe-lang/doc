@@ -1,7 +1,4 @@
-*.backup
-*.tfstate
-.firebase
-.terraform*
+.jekyll-cache
 _includes/*.css
 _includes/*.svg
 _site

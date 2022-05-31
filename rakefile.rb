@@ -1,7 +1,7 @@
 require "uri"
 
 def curl(args, dest)
-  sh "curl -sSL '#{args}' > #{dest}"
+  sh "curl -fsSL '#{args}' > #{dest}"
 end
 
 directory "tmp/rouge" => "tmp" do |t|
@@ -46,6 +46,10 @@ rule %r{tmp/.*\.woff2} => ->(f) { f.pathmap("tmp/%n.ttf") } do |t|
   sh "npx ttf2woff2 < #{t.source} > #{t.name}"
 end
 
+rule %r{_site/.*\.woff2} => ->(f) { f.pathmap("tmp/%n.woff2") } do |t|
+  cp t.source, t.name
+end
+
 file "tmp/rouge.css" => "tmp" do |t|
   sh "bundle exec rougify style base16.solarized.dark > #{t.name}"
 end
@@ -65,12 +69,8 @@ file "_includes/index.css" => "tmp/main.css" do |t|
   cp t.source.ext(".css"), t.name
 end
 
-file "tmp/icon.svg" => "tmp" do |t|
+file "_includes/icon.svg" do |t|
   curl "https://github.com/cloe-lang/icon/raw/master/icon.svg", t.name
-end
-
-file "_includes/icon.svg" => "tmp/icon.svg" do |t|
-  cp t.source, t.name
 end
 
 file "_includes/twitter.svg" do |t|
@@ -105,11 +105,11 @@ file "_site/index.js" => "tmp/index.js" do |t|
   cp t.source, t.name
 end
 
-file "_site/icon.svg" => "tmp/icon.svg" do |t|
+file "_site/icon.svg" => "_includes/icon.svg" do |t|
   cp t.source, t.name
 end
 
-task build: %w[_site _site/index.js _site/icon.svg] do
+task build: %w[_site _site/index.js _site/icon.svg _site/text.woff2 _site/code.woff2] do
   sh "npx ts-node bin/modify-html.ts #{Dir.glob("_site/**/*.html").join " "}"
   sh "npx workbox generateSW workbox-cli-config.js"
 end
