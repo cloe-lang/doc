@@ -4,7 +4,7 @@ def curl(args, dest)
   sh "curl -fsSL '#{args}' > #{dest}"
 end
 
-task init do
+task :init do
   sh "npm install"
   sh "bundle install"
 end
