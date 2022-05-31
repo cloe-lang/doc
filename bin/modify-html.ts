@@ -4,7 +4,7 @@ import jquery = require("jquery");
 import jsdom = require("jsdom");
 import util = require("util");
 
-function createTOC($, parentNode): string {
+function createToc($, parentNode): string {
   const tagName = parentNode.prop("tagName");
   const children = parentNode
     .nextUntil(tagName)
@@ -21,13 +21,13 @@ function createTOC($, parentNode): string {
     $(node).attr("id", id);
 
     return `
-            <li>
-                <a href="#${encodeURI(id)}">${$("<div>")
-      .text($(node).text())
-      .html()}</a>
-                ${createTOC($, $(node))}
-            </li>
-        `;
+      <li>
+        <a href="#${encodeURI(id)}">
+          ${$("<div>").text($(node).text()).html()}
+        </a>
+        ${createToc($, $(node))}
+      </li>
+    `;
   };
 
   return `<ul>${children.map(entry).join("")}</ul>`;
@@ -53,7 +53,7 @@ process.argv.slice(2).map(async (filename) => {
   $("div.highlight").each(unwrap);
   $("h2")
     .first()
-    .before(createTOC($, $("h1")));
+    .before(createToc($, $("h1")));
 
   for (const attribute of ["height", "width"]) {
     $("svg.octicon").removeAttr(attribute);
