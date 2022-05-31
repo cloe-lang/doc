@@ -1,7 +1,7 @@
 require "uri"
 
 def curl(args, dest)
-  sh "curl -sSL '#{args}' > #{dest}"
+  sh "curl -fsSL '#{args}' > #{dest}"
 end
 
 directory "tmp/rouge" => "tmp" do |t|
