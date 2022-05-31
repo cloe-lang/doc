@@ -4,14 +4,7 @@ def curl(args, dest)
   sh "curl -fsSL '#{args}' > #{dest}"
 end
 
-directory "tmp/rouge" => "tmp" do |t|
-  sh %W[git clone -b v2.2.1 --single-branch
-        https://github.com/jneen/rouge #{t.name}].join " "
-end
-
-task init: "tmp/rouge" do
-  cp "rouge/lexer.rb", "tmp/rouge/lib/rouge/lexers/cloe.rb"
-
+task init do
   sh "npm install"
   sh "bundle install"
 end
@@ -46,12 +39,7 @@ rule %r{tmp/.*\.woff2} => ->(f) { f.pathmap("tmp/%n.ttf") } do |t|
   sh "npx ttf2woff2 < #{t.source} > #{t.name}"
 end
 
-file "tmp/rouge.css" => "tmp" do |t|
-  sh "bundle exec rougify style base16.solarized.dark > #{t.name}"
-end
-
 file "tmp/webpack/index.js" => %w[
-       tmp/rouge.css
        tmp/text-font.css
        tmp/code-font.css
        tmp/text.woff2
@@ -122,7 +110,7 @@ task run: :build do
 end
 
 task :lint do
-  sh "rufo -c *.rb rouge/*.rb"
+  sh "rufo -c *.rb"
   sh "npx stylelint **/*.scss"
 end
 
