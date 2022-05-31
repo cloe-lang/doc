@@ -101,11 +101,11 @@ file "_site/index.js" => "tmp/index.js" do |t|
   cp t.source, t.name
 end
 
-file "_site/icon.svg" => "tmp/icon.svg" do |t|
+file "_site/icon.svg" => "_includes/icon.svg" do |t|
   cp t.source, t.name
 end
 
-task build: %w[_site _site/index.js _site/icon.svg] do
+task build: %w[_site _site/index.js _site/icon.svg _site/text.woff2 _site/code.woff2] do
   sh "npx ts-node bin/modify-html.ts #{Dir.glob("_site/**/*.html").join " "}"
   sh "npx workbox generateSW workbox-cli-config.js"
 end
