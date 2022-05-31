@@ -46,10 +46,6 @@ rule %r{tmp/.*\.woff2} => ->(f) { f.pathmap("tmp/%n.ttf") } do |t|
   sh "npx ttf2woff2 < #{t.source} > #{t.name}"
 end
 
-rule %r{_site/.*\.woff2} => ->(f) { f.pathmap("tmp/%n.woff2") } do |t|
-  cp t.source, t.name
-end
-
 file "tmp/rouge.css" => "tmp" do |t|
   sh "bundle exec rougify style base16.solarized.dark > #{t.name}"
 end
@@ -109,9 +105,10 @@ file "_site/icon.svg" => "_includes/icon.svg" do |t|
   cp t.source, t.name
 end
 
-task build: %w[_site _site/index.js _site/icon.svg _site/text.woff2 _site/code.woff2] do
+task build: %w[_site _site/index.js _site/icon.svg] do
   sh "npx ts-node bin/modify-html.ts #{Dir.glob("_site/**/*.html").join " "}"
   sh "npx workbox generateSW workbox-cli-config.js"
+  cp "tmp/webpack/*.woff2", "_site"
 end
 
 task :deploy do
