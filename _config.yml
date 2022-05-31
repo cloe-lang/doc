@@ -28,6 +28,5 @@ exclude:
   - firebase.json
   - go.*
   - node_modules
-  - rouge
   - tmp
   - tslint.json

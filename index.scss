@@ -1,6 +1,5 @@
 @import "./tmp/text-font.css";
 @import "./tmp/code-font.css";
-@import "./tmp/rouge.css";
 
 $block-radius: 0.2rem;
 $menu-button-offset: 1rem;
@@ -68,6 +67,8 @@ pre {
 }
 
 code {
+	background: darkslategrey;
+	color: white;
 	font-family: CodeFont, monospace;
 	display: inline-block;
 	padding: 0.3em 0.4em;
