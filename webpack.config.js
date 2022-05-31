@@ -7,7 +7,7 @@ module.exports = {
   entry: "./index.ts",
   output: {
     filename: "index.js",
-    path: path.resolve(__dirname, "tmp"),
+    path: path.resolve(__dirname, "tmp/webpack"),
   },
   resolve: {
     extensions: [".ts", ".js"],

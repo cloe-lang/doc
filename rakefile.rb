@@ -54,7 +54,7 @@ file "tmp/rouge.css" => "tmp" do |t|
   sh "bundle exec rougify style base16.solarized.dark > #{t.name}"
 end
 
-file "tmp/index.js" => %w[
+file "tmp/webpack/index.js" => %w[
        tmp/rouge.css
        tmp/text-font.css
        tmp/code-font.css
@@ -63,9 +63,9 @@ file "tmp/index.js" => %w[
   sh "npx webpack-cli"
 end
 
-file "tmp/main.css" => "tmp/index.js"
+file "tmp/webpack/main.css" => "tmp/webpack/index.js"
 
-file "_includes/index.css" => "tmp/main.css" do |t|
+file "_includes/index.css" => "tmp/webpack/main.css" do |t|
   cp t.source.ext(".css"), t.name
 end
 
@@ -101,7 +101,7 @@ directory "_site" => %w[
   sh "bundle exec jekyll build"
 end
 
-file "_site/index.js" => "tmp/index.js" do |t|
+file "_site/index.js" => "tmp/webpack/index.js" do |t|
   cp t.source, t.name
 end
 
