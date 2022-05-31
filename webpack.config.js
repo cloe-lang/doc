@@ -8,6 +8,7 @@ module.exports = {
   output: {
     filename: "index.js",
     path: path.resolve(__dirname, "tmp/webpack"),
+    publicPath: "/",
   },
   resolve: {
     extensions: [".ts", ".js"],
