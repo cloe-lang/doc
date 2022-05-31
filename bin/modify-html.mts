@@ -1,10 +1,10 @@
-import fs = require("fs");
-import htmlMinifier = require("html-minifier");
-import jquery = require("jquery");
-import jsdom = require("jsdom");
-import util = require("util");
+import * as fs from "fs";
+import htmlMinifier from "html-minifier";
+import jquery from "jquery";
+import { JSDOM } from "jsdom";
+import * as util from "util";
 
-function createToc($, parentNode): string {
+function createToc($: JQueryStatic, parentNode: JQuery): string {
   const tagName = parentNode.prop("tagName");
   const children = parentNode
     .nextUntil(tagName)
@@ -15,7 +15,7 @@ function createToc($, parentNode): string {
     return "";
   }
 
-  const entry = (node): string => {
+  const entry = (node: HTMLElement): string => {
     const id = node.textContent.toLowerCase().replace(/( |,)+/g, "-");
 
     $(node).attr("id", id);
@@ -34,23 +34,16 @@ function createToc($, parentNode): string {
 }
 
 process.argv.slice(2).map(async (filename) => {
-  const { window } = new jsdom.JSDOM(
+  const { window } = new JSDOM(
     await util.promisify(fs.readFile)(filename, "utf8")
   );
-  const $ = jquery(window);
+  const $ = jquery(window) as unknown as JQueryStatic;
 
   $('a[href^="http://"], a[href^="https://"]').attr({
     rel: "noopener", // Prevent tabnabbing.
     target: "_blank",
   });
-  $("code").addClass("highlight");
-  $("pre").removeClass("highlight");
 
-  const unwrap = function () {
-    $(this).parent().replaceWith($(this).children());
-  };
-
-  $("div.highlight").each(unwrap);
   $("h2")
     .first()
     .before(createToc($, $("h1")));

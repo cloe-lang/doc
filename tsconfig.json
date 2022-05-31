@@ -1,7 +1,11 @@
 {
-	"compilerOptions": {
-		"lib": ["es7", "dom"],
-		"target": "es6",
-		"newLine": "LF"
-	}
+  "compilerOptions": {
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "lib": ["es7", "dom"],
+    "module": "esnext",
+    "moduleResolution": "node",
+    "target": "es6"
+  }
 }
