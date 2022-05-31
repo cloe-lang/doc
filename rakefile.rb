@@ -46,6 +46,10 @@ rule %r{tmp/.*\.woff2} => ->(f) { f.pathmap("tmp/%n.ttf") } do |t|
   sh "npx ttf2woff2 < #{t.source} > #{t.name}"
 end
 
+rule %r{_site/.*\.woff2} => ->(f) { f.pathmap("tmp/%n.woff2") } do |t|
+  cp t.source, t.name
+end
+
 file "tmp/rouge.css" => "tmp" do |t|
   sh "bundle exec rougify style base16.solarized.dark > #{t.name}"
 end
