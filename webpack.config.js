@@ -7,7 +7,7 @@ module.exports = {
   entry: "./index.ts",
   output: {
     filename: "index.js",
-    path: path.resolve(__dirname, "tmp"),
+    path: path.resolve(__dirname, "tmp/webpack"),
   },
   resolve: {
     extensions: [".ts", ".js"],
@@ -24,10 +24,6 @@ module.exports = {
       {
         test: /\.scss$/,
         use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
-      },
-      {
-        test: /\.woff2$/,
-        type: "asset/resource",
       },
     ],
   },

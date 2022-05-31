@@ -46,15 +46,11 @@ rule %r{tmp/.*\.woff2} => ->(f) { f.pathmap("tmp/%n.ttf") } do |t|
   sh "npx ttf2woff2 < #{t.source} > #{t.name}"
 end
 
-rule %r{_site/.*\.woff2} => ->(f) { f.pathmap("tmp/%n.woff2") } do |t|
-  cp t.source, t.name
-end
-
 file "tmp/rouge.css" => "tmp" do |t|
   sh "bundle exec rougify style base16.solarized.dark > #{t.name}"
 end
 
-file "tmp/index.js" => %w[
+file "tmp/webpack/index.js" => %w[
        tmp/rouge.css
        tmp/text-font.css
        tmp/code-font.css
@@ -63,9 +59,9 @@ file "tmp/index.js" => %w[
   sh "npx webpack-cli"
 end
 
-file "tmp/main.css" => "tmp/index.js"
+file "tmp/webpack/main.css" => "tmp/webpack/index.js"
 
-file "_includes/index.css" => "tmp/main.css" do |t|
+file "_includes/index.css" => "tmp/webpack/main.css" do |t|
   cp t.source.ext(".css"), t.name
 end
 
@@ -101,7 +97,7 @@ directory "_site" => %w[
   sh "bundle exec jekyll build"
 end
 
-file "_site/index.js" => "tmp/index.js" do |t|
+file "_site/index.js" => "tmp/webpack/index.js" do |t|
   cp t.source, t.name
 end
 
@@ -109,9 +105,10 @@ file "_site/icon.svg" => "_includes/icon.svg" do |t|
   cp t.source, t.name
 end
 
-task build: %w[_site _site/index.js _site/icon.svg _site/text.woff2 _site/code.woff2] do
+task build: %w[_site _site/index.js _site/icon.svg] do
   sh "npx ts-node bin/modify-html.ts #{Dir.glob("_site/**/*.html").join " "}"
   sh "npx workbox generateSW workbox-cli-config.js"
+  cp Dir.glob("tmp/webpack/*.woff2"), "_site"
 end
 
 task :deploy do
