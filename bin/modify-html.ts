@@ -1,8 +1,8 @@
-import fs = require("fs");
-import htmlMinifier = require("html-minifier");
-import jquery = require("jquery");
-import jsdom = require("jsdom");
-import util = require("util");
+import * as fs from "fs";
+import htmlMinifier from "html-minifier";
+import jquery from "jquery";
+import jsdom from "jsdom";
+import * as util from "util";
 
 function createToc($, parentNode): string {
   const tagName = parentNode.prop("tagName");
@@ -43,14 +43,7 @@ process.argv.slice(2).map(async (filename) => {
     rel: "noopener", // Prevent tabnabbing.
     target: "_blank",
   });
-  $("code").addClass("highlight");
-  $("pre").removeClass("highlight");
 
-  const unwrap = function () {
-    $(this).parent().replaceWith($(this).children());
-  };
-
-  $("div.highlight").each(unwrap);
   $("h2")
     .first()
     .before(createToc($, $("h1")));

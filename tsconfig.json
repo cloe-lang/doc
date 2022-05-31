@@ -1,7 +1,7 @@
 {
-	"compilerOptions": {
-		"lib": ["es7", "dom"],
-		"target": "es6",
-		"newLine": "LF"
-	}
+  "compilerOptions": {
+    "lib": ["es7", "dom"],
+    "moduleResolution": "node",
+    "target": "es6"
+  }
 }
