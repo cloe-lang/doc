@@ -4,7 +4,7 @@
   "devDependencies": {
     "@types/html-minifier": "^4.0.2",
     "@types/jquery": "^3.5.14",
-    "@types/jsdom": "^16.2.14",
+    "@types/jsdom": "^16.2.15",
     "@types/node": "^18.0.6",
     "css-loader": "^6.7.1",
     "html-minifier": "^4.0.0",
