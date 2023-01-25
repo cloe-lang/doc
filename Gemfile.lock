@@ -61,7 +61,7 @@ GEM
       ffi (~> 1.0)
     rexml (3.2.5)
     rouge (4.0.1)
-    rufo (0.13.0)
+    rufo (0.14.0)
     safe_yaml (1.0.5)
     sass-embedded (1.57.1)
       google-protobuf (~> 3.21)
@@ -80,7 +80,7 @@ DEPENDENCIES
   jekyll-optional-front-matter
   jekyll-titles-from-headings
   kramdown-parser-gfm (~> 1.1)
-  rufo (~> 0.13.0)
+  rufo (~> 0.14.0)
 
 BUNDLED WITH
    1.16.4
