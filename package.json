@@ -9,7 +9,7 @@
     "css-loader": "^6.7.3",
     "html-minifier": "^4.0.0",
     "imagemin-cli": "^7.0.0",
-    "jquery": "^3.6.3",
+    "jquery": "^3.6.4",
     "jsdom": "^21.1.0",
     "mini-css-extract-plugin": "^2.7.3",
     "node-sass": "^8.0.0",
