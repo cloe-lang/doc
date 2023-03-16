@@ -11,7 +11,7 @@
     "imagemin-cli": "^7.0.0",
     "jquery": "^3.6.4",
     "jsdom": "^21.1.1",
-    "mini-css-extract-plugin": "^2.7.3",
+    "mini-css-extract-plugin": "^2.7.4",
     "node-sass": "^8.0.0",
     "sass-loader": "^13.2.0",
     "style-loader": "^3.3.2",
@@ -21,7 +21,7 @@
     "ts-loader": "^9.4.2",
     "ts-node": "^10.9.1",
     "ttf2woff2": "^5.0.0",
-    "typescript": "^4.9.5",
+    "typescript": "^5.0.2",
     "webpack": "^5.76.2",
     "webpack-cli": "^5.0.1",
     "workbox-cli": "^6.5.4"
