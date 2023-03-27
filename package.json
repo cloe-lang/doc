@@ -13,7 +13,7 @@
     "jsdom": "^21.1.1",
     "mini-css-extract-plugin": "^2.7.5",
     "node-sass": "^8.0.0",
-    "sass-loader": "^13.2.1",
+    "sass-loader": "^13.2.2",
     "style-loader": "^3.3.2",
     "stylelint": "^15.3.0",
     "stylelint-scss": "^4.5.0",
