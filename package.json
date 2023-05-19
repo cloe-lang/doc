@@ -11,7 +11,7 @@
     "imagemin-cli": "^7.0.0",
     "jquery": "^3.7.0",
     "jsdom": "^22.0.0",
-    "mini-css-extract-plugin": "^2.7.5",
+    "mini-css-extract-plugin": "^2.7.6",
     "node-sass": "^8.0.0",
     "sass-loader": "^13.2.2",
     "style-loader": "^3.3.2",
