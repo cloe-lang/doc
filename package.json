@@ -21,7 +21,7 @@
     "ts-loader": "^9.4.4",
     "ts-node": "^10.9.1",
     "ttf2woff2": "^5.0.0",
-    "typescript": "^5.1.5",
+    "typescript": "^5.1.6",
     "webpack": "^5.88.1",
     "webpack-cli": "^5.1.4",
     "workbox-cli": "^7.0.0"
