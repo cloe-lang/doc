@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "devDependencies": {
     "@types/html-minifier": "^4.0.3",
-    "@types/jquery": "^3.5.22",
+    "@types/jquery": "^3.5.24",
     "@types/jsdom": "^21.1.4",
     "@types/node": "^20.8.7",
     "css-loader": "^6.8.1",
