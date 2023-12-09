@@ -1,13 +1,12 @@
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const path = require("path");
-require("webpack");
+import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import { resolve } from "node:path";
 
-module.exports = {
+export default {
   mode: "production",
   entry: "./index.ts",
   output: {
     filename: "index.js",
-    path: path.resolve(__dirname, "tmp/webpack"),
+    path: resolve("tmp/webpack"),
     publicPath: "/",
   },
   resolve: {
@@ -19,7 +18,7 @@ module.exports = {
         test: /\.ts$/,
         loader: "ts-loader",
         options: {
-          configFile: require.resolve("./tsconfig.webpack.json"),
+          configFile: resolve("./tsconfig.webpack.json"),
         },
       },
       {
