@@ -20,7 +20,6 @@
     "stylelint-scss": "^5.3.1",
     "superstatic": "^9.0.3",
     "ts-loader": "^9.5.1",
-    "ts-node": "^10.9.1",
     "tsx": "^4.6.2",
     "ttf2woff2": "^5.0.0",
     "typescript": "^5.3.3",
