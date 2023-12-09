@@ -1,6 +1,5 @@
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import { resolve } from "node:path";
-import "webpack";
 
 export default {
   mode: "production",
