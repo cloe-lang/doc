@@ -94,7 +94,7 @@ file "_site/icon.svg" => "_includes/icon.svg" do |t|
 end
 
 task build: %w[_site _site/index.js _site/icon.svg] do
-  sh "npx ts-node --esm bin/modify-html.mts #{Dir.glob("_site/**/*.html").join " "}"
+  sh "npx tsx --esm bin/modify-html.ts #{Dir.glob("_site/**/*.html").join " "}"
   sh "npx workbox generateSW workbox-cli-config.js"
   cp Dir.glob("tmp/webpack/*.woff2"), "_site"
 end
