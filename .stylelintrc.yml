@@ -1,3 +1,0 @@
-plugins: stylelint-scss
-rules:
-  indentation: tab
