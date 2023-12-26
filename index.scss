@@ -6,176 +6,178 @@ $menu-button-offset: 1rem;
 $menu-button-size: 4.5rem;
 
 @mixin small-width {
-	@media (max-width: 768px) {
-		@content;
-	}
+  @media (max-width: 768px) {
+    @content;
+  }
 }
 
 body {
-	color: #333;
-	font: 16px TextFont, sans-serif;
-	height: 100vh;
-	margin: 0;
-	overflow: hidden;
-	display: flex;
-	justify-content: center;
+  color: #333;
+  font:
+    16px TextFont,
+    sans-serif;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
 }
 
 a {
-	color: lightseagreen;
-	text-decoration: none;
+  color: lightseagreen;
+  text-decoration: none;
 
-	&:visited {
-		color: lightseagreen;
-	}
+  &:visited {
+    color: lightseagreen;
+  }
 
-	&:hover {
-		text-decoration: underline;
-	}
+  &:hover {
+    text-decoration: underline;
+  }
 
-	&.current {
-		color: coral;
+  &.current {
+    color: coral;
 
-		&:visited {
-			color: coral;
-		}
-	}
+    &:visited {
+      color: coral;
+    }
+  }
 }
 
 blockquote {
-	background: lightgrey;
-	color: dimgrey;
-	padding: 0.6em;
-	margin: {
-		left: 1em;
-		right: 1em;
-	}
-	border-radius: $block-radius;
+  background: lightgrey;
+  color: dimgrey;
+  padding: 0.6em;
+  margin: {
+    left: 1em;
+    right: 1em;
+  }
+  border-radius: $block-radius;
 
-	> *:first-child {
-		margin-top: 0;
-	}
+  > *:first-child {
+    margin-top: 0;
+  }
 
-	> *:last-child {
-		margin-bottom: 0;
-	}
+  > *:last-child {
+    margin-bottom: 0;
+  }
 }
 
 pre {
-	border-radius: $block-radius;
-	overflow: hidden;
+  border-radius: $block-radius;
+  overflow: hidden;
 }
 
 code {
-	background: darkslategrey;
-	color: white;
-	font-family: CodeFont, monospace;
-	display: inline-block;
-	padding: 0.3em 0.4em;
-	margin: 0.15em 0;
-	border-radius: $block-radius;
+  background: darkslategrey;
+  color: white;
+  font-family: CodeFont, monospace;
+  display: inline-block;
+  padding: 0.3em 0.4em;
+  margin: 0.15em 0;
+  border-radius: $block-radius;
 
-	pre & {
-		display: block;
-		overflow-x: auto;
-		padding: 0.9em 1em;
-		margin: 0;
-		border-radius: unset;
-	}
+  pre & {
+    display: block;
+    overflow-x: auto;
+    padding: 0.9em 1em;
+    margin: 0;
+    border-radius: unset;
+  }
 }
 
 @mixin part {
-	padding: 1em;
-	overflow-y: auto;
+  padding: 1em;
+  overflow-y: auto;
 
-	@include small-width {
-		padding-bottom: $menu-button-size + $menu-button-offset;
-		flex: 1;
+  @include small-width {
+    padding-bottom: $menu-button-size + $menu-button-offset;
+    flex: 1;
 
-		&.hidden {
-			display: none;
-		}
-	}
+    &.hidden {
+      display: none;
+    }
+  }
 }
 
 .toc {
-	@include part;
+  @include part;
 
-	@include small-width {
-		font-size: 1.3em;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-	}
+  @include small-width {
+    font-size: 1.3em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-	scroll-behavior: smooth;
+  scroll-behavior: smooth;
 
-	ul {
-		list-style-type: none;
-	}
+  ul {
+    list-style-type: none;
+  }
 }
 
 .content {
-	@include part;
+  @include part;
 
-	flex: 1;
-	max-width: 60em;
+  flex: 1;
+  max-width: 60em;
 }
 
 .menu-button {
-	color: white;
-	background: tomato;
-	display: none;
-	justify-content: center;
-	align-items: center;
-	width: $menu-button-size;
-	height: $menu-button-size;
-	border-radius: $menu-button-size;
-	position: fixed;
-	bottom: $menu-button-offset;
-	right: $menu-button-offset;
-	box-shadow: 0 0.2em 0.3em rgba(0, 0, 0, 0.4);
-	user-select: none;
+  color: white;
+  background: tomato;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: $menu-button-size;
+  height: $menu-button-size;
+  border-radius: $menu-button-size;
+  position: fixed;
+  bottom: $menu-button-offset;
+  right: $menu-button-offset;
+  box-shadow: 0 0.2em 0.3em rgba(0, 0, 0, 0.4);
+  user-select: none;
 
-	&.on > svg {
-		transform: rotate(90deg);
-	}
+  &.on > svg {
+    transform: rotate(90deg);
+  }
 
-	> svg {
-		height: $menu-button-size * 0.6;
-		transition: transform 0.1s;
-	}
+  > svg {
+    height: $menu-button-size * 0.6;
+    transition: transform 0.1s;
+  }
 
-	@include small-width {
-		display: flex;
-	}
+  @include small-width {
+    display: flex;
+  }
 }
 
 @mixin icon-wrapper($height) {
-	display: flex;
-	flex-shrink: 0;
-	justify-content: center;
+  display: flex;
+  flex-shrink: 0;
+  justify-content: center;
 
-	svg {
-		height: $height;
-	}
+  svg {
+    height: $height;
+  }
 }
 
 .lang-icon {
-	@include icon-wrapper(4em);
+  @include icon-wrapper(4em);
 }
 
 .icons {
-	@include icon-wrapper(2em);
+  @include icon-wrapper(2em);
 
-	display: flex;
+  display: flex;
 
-	> * {
-		line-height: 0;
-		margin: 0.4em;
-	}
+  > * {
+    line-height: 0;
+    margin: 0.4em;
+  }
 
-	> .twitter {
-		fill: deepskyblue;
-	}
+  > .twitter {
+    fill: deepskyblue;
+  }
 }
