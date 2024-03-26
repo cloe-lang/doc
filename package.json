@@ -16,7 +16,7 @@
     "node-sass": "^9.0.0",
     "sass-loader": "^14.1.1",
     "style-loader": "^3.3.4",
-    "stylelint": "^16.3.0",
+    "stylelint": "^16.3.1",
     "stylelint-scss": "^6.2.1",
     "superstatic": "^9.0.3",
     "ts-loader": "^9.5.1",
