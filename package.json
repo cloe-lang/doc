@@ -20,7 +20,7 @@
     "stylelint-scss": "^6.3.1",
     "superstatic": "^9.0.3",
     "ts-loader": "^9.5.1",
-    "tsx": "^4.13.2",
+    "tsx": "^4.15.1",
     "ttf2woff2": "^5.0.0",
     "typescript": "^5.4.5",
     "webpack": "^5.91.0",
