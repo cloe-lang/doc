@@ -22,7 +22,7 @@
     "ts-loader": "^9.5.1",
     "tsx": "^4.19.2",
     "ttf2woff2": "^6.0.1",
-    "typescript": "^5.7.2",
+    "typescript": "^5.7.3",
     "webpack": "^5.97.1",
     "webpack-cli": "^6.0.1",
     "workbox-cli": "^7.3.0"
