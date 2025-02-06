@@ -18,7 +18,7 @@
     "style-loader": "^4.0.0",
     "stylelint": "^16.14.1",
     "stylelint-scss": "^6.11.0",
-    "superstatic": "^9.1.0",
+    "superstatic": "^9.2.0",
     "ts-loader": "^9.5.2",
     "tsx": "^4.19.2",
     "ttf2woff2": "^6.0.1",
