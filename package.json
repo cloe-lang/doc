@@ -6,7 +6,7 @@
     "@types/html-minifier": "^4.0.5",
     "@types/jquery": "^3.5.33",
     "@types/jsdom": "^27.0.0",
-    "@types/node": "^24.8.1",
+    "@types/node": "^24.9.0",
     "css-loader": "^7.1.2",
     "html-minifier": "^4.0.0",
     "imagemin-cli": "^8.0.0",
