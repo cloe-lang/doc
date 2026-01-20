@@ -6,7 +6,7 @@ on:
   pull_request:
 jobs:
   release:
-    environment: github-pages
+    environment: ${{ github.ref == 'refs/heads/main' && 'github-pages' || '' }}
     permissions:
       contents: read
       pages: write

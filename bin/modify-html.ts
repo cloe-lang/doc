@@ -1,8 +1,7 @@
-import * as fs from "fs";
 import htmlMinifier from "html-minifier";
 import jquery from "jquery";
 import { JSDOM } from "jsdom";
-import * as util from "util";
+import { readFile, writeFile } from "node:fs/promises";
 
 function createToc($: JQueryStatic, parentNode: JQuery): string {
   const tagName = parentNode.prop("tagName");
@@ -35,12 +34,12 @@ function createToc($: JQueryStatic, parentNode: JQuery): string {
 
 process.argv.slice(2).map(async (filename) => {
   const { window } = new JSDOM(
-    await util.promisify(fs.readFile)(filename, "utf8")
+    await readFile(filename, "utf-8")
   );
   const $ = jquery(window) as unknown as JQueryStatic;
 
   $('a[href^="http://"], a[href^="https://"]').attr({
-    rel: "noopener", // Prevent tabnabbing.
+    rel: "noopener", // Prevent tab nabbing.
     target: "_blank",
   });
 
@@ -63,7 +62,7 @@ process.argv.slice(2).map(async (filename) => {
     }
   });
 
-  await util.promisify(fs.writeFile)(
+  await writeFile(
     filename,
     htmlMinifier.minify(
       "<!DOCTYPE html>" + window.document.documentElement.outerHTML,
