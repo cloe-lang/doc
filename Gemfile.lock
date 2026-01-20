@@ -96,7 +96,6 @@ GEM
       parser (>= 3.3.7.2)
       prism (~> 1.7)
     ruby-progressbar (1.13.0)
-    rufo (0.18.2)
     safe_yaml (1.0.5)
     sass-embedded (1.83.4-arm64-darwin)
       google-protobuf (~> 4.29)
@@ -119,7 +118,6 @@ DEPENDENCIES
   jekyll-titles-from-headings
   kramdown-parser-gfm (~> 1.1)
   rubocop (~> 1.82)
-  rufo (~> 0.18.2)
 
 BUNDLED WITH
    2.4.10
