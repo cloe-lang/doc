@@ -8,7 +8,7 @@ end
 
 task :init do
   sh 'pnpm i'
-  sh 'bundle install'
+  sh 'bundler install'
 end
 
 directory 'tmp'
@@ -85,7 +85,7 @@ directory '_site' => %w[
   _includes/x.svg
   examples
 ] do
-  sh 'bundle exec jekyll build'
+  sh 'bundler exec jekyll build'
 end
 
 file '_site/index.js' => 'tmp/webpack/index.js' do |t|
