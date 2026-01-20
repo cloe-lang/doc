@@ -6,12 +6,14 @@
     "imagemin",
     "inkscape",
     "mimetypes",
+    "noopener",
     "noto",
+    "octicon",
     "pathmap",
+    "raviqqe",
+    "roboto",
     "rougify",
     "rufo",
-    "superstatic",
-    "raviqqe",
-    "roboto"
+    "superstatic"
   ]
 }
