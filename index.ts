@@ -23,7 +23,3 @@ for (const element of Array.from(document.getElementsByTagName("a"))) {
     link.setAttribute("href", this.getAttribute("href"));
   });
 }
-
-if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("/service-worker.js");
-}
