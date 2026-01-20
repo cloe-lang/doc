@@ -1,3 +1,5 @@
+# frozen-string_literal: true
+
 require 'uri'
 
 def curl(args, dest)
