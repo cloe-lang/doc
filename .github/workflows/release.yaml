@@ -8,9 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: ruby/setup-ruby@v1
-      - uses: actions/setup-go@v3
-      - run: rake init
+      - uses: ./.github/actions/setup
       - run: rake build
       - uses: peaceiris/actions-gh-pages@v3
         with:

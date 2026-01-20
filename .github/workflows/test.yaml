@@ -9,16 +9,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: ruby/setup-ruby@v1
-      - uses: actions/setup-go@v3
-      - run: rake init
+      - uses: ./.github/actions/setup
       - run: rake build
   lint:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: ruby/setup-ruby@v1
-      - run: rake init
+      - uses: ./.github/actions/setup
       - run: rake lint
   spell_check:
     runs-on: ubuntu-latest
