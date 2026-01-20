@@ -16,3 +16,8 @@ updates:
     directory: /
     schedule:
       interval: daily
+    groups:
+      jquery:
+        patterns:
+          - jquery-router
+          - "@types/jquery"
