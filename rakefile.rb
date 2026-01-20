@@ -98,7 +98,6 @@ end
 
 task build: %w[_site _site/index.js _site/icon.svg] do
   sh "pnpm tsx bin/modify-html.ts #{Dir.glob('_site/**/*.html').join ' '}"
-  sh 'pnpm workbox generateSW workbox-cli-config.cjs'
   cp Dir.glob('tmp/webpack/*.woff2'), '_site'
 end
 
