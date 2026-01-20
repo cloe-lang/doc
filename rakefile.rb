@@ -113,7 +113,7 @@ task run: :build do
 end
 
 task :lint do
-  sh 'rufo -c *.rb'
+  sh 'rubocop'
   sh 'npx stylelint **/*.scss'
 end
 
