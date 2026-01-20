@@ -38,7 +38,7 @@ rule '.ttf' => '.css' do |t|
 end
 
 rule %r{tmp/.*\.woff2} => ->(f) { f.pathmap('tmp/%n.ttf') } do |t|
-  sh "npx ttf2woff2 < #{t.source} > #{t.name}"
+  sh "pnpm ttf2woff2 < #{t.source} > #{t.name}"
 end
 
 file 'tmp/webpack/index.js' => %w[
@@ -47,7 +47,7 @@ file 'tmp/webpack/index.js' => %w[
   tmp/text.woff2
   tmp/code.woff2
 ] do
-  sh 'npx webpack-cli'
+  sh 'pnpm webpack-cli'
 end
 
 file 'tmp/webpack/main.css' => 'tmp/webpack/index.js'
@@ -97,24 +97,24 @@ file '_site/icon.svg' => '_includes/icon.svg' do |t|
 end
 
 task build: %w[_site _site/index.js _site/icon.svg] do
-  sh "npx tsx bin/modify-html.ts #{Dir.glob('_site/**/*.html').join ' '}"
-  sh 'npx workbox generateSW workbox-cli-config.cjs'
+  sh "pnpm tsx bin/modify-html.ts #{Dir.glob('_site/**/*.html').join ' '}"
+  sh 'pnpm workbox generateSW workbox-cli-config.cjs'
   cp Dir.glob('tmp/webpack/*.woff2'), '_site'
 end
 
 task :deploy do
-  sh 'npx firebase deploy'
+  sh 'pnpm firebase deploy'
 end
 
 task default: %w[build deploy]
 
 task run: :build do
-  sh 'npx superstatic --debug'
+  sh 'pnpm superstatic --debug'
 end
 
 task :lint do
   sh 'rubocop'
-  sh 'npx stylelint **/*.scss'
+  sh 'pnpm stylelint **/*.scss'
 end
 
 task :clean do
