@@ -9,8 +9,10 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - uses: ./.github/actions/setup
+      - uses: actions/configure-pages@v5
       - run: rake build
-      - uses: peaceiris/actions-gh-pages@v4
+      - uses: actions/upload-pages-artifact@v4
         with:
-          github_token: ${{ github.token }}
-          publish_dir: _site
+          path: doc/dist
+      - uses: actions/deploy-pages@v4
+        if: github.ref == 'refs/heads/main'
