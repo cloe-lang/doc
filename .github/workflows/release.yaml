@@ -5,12 +5,18 @@ on:
       - main
 jobs:
   release:
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
       - uses: ./.github/actions/setup
+      - uses: actions/configure-pages@v5
       - run: rake build
-      - uses: peaceiris/actions-gh-pages@v4
+      - uses: actions/upload-pages-artifact@v4
         with:
-          github_token: ${{ github.token }}
-          publish_dir: _site
+          path: _site
+      - uses: actions/deploy-pages@v4
+        if: github.ref == 'refs/heads/main'
