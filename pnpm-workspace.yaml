@@ -2,7 +2,6 @@ ignoredBuiltDependencies:
   - esbuild
   - gifsicle
   - jpegtran-bin
-  - node-sass
   - optipng-bin
   - re2
   - ttf2woff2
