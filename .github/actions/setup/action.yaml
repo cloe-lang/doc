@@ -13,3 +13,4 @@ runs:
         node-version-file: package.json
         cache: pnpm
     - run: rake init
+      shell: bash
