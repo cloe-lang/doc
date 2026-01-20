@@ -1,4 +1,5 @@
 ignoredBuiltDependencies:
+  - '@parcel/watcher'
   - esbuild
   - gifsicle
   - jpegtran-bin
