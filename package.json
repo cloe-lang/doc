@@ -11,7 +11,7 @@
     "html-minifier": "^4.0.0",
     "imagemin-cli": "^8.0.0",
     "jquery": "^3.7.1",
-    "jsdom": "^27.4.0",
+    "jsdom": "^28.0.0",
     "mini-css-extract-plugin": "^2.10.0",
     "sass": "^1.97.3",
     "sass-loader": "^16.0.6",
