@@ -4,8 +4,10 @@
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "lib": ["es7", "dom"],
-    "module": "esnext",
-    "moduleResolution": "node",
-    "target": "es6"
-  }
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "outDir": "dist",
+    "target": "es2025",
+  },
+  "exclude": ["dist"],
 }
