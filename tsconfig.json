@@ -9,5 +9,5 @@
     "outDir": "dist",
     "target": "es2025",
   },
-  "exclude": ["*.js", "dist"],
+  "exclude": ["dist"],
 }
