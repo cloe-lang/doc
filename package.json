@@ -23,7 +23,7 @@
     "tsx": "^4.21.0",
     "ttf2woff2": "^8.0.1",
     "typescript": "^6.0.2",
-    "webpack": "^5.106.1",
+    "webpack": "^5.106.2",
     "webpack-cli": "^7.0.2"
   },
   "engines": {
