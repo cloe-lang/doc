@@ -24,7 +24,7 @@
     "ttf2woff2": "^8.0.1",
     "typescript": "^6.0.3",
     "webpack": "^5.108.3",
-    "webpack-cli": "^7.0.3"
+    "webpack-cli": "^7.1.0"
   },
   "engines": {
     "node": ">=24.3.0"
