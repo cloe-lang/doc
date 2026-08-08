@@ -112,6 +112,7 @@ end
 task :lint do
   sh 'rubocop'
   sh 'pnpm stylelint **/*.scss'
+  sh 'pnpm tsc --noEmit'
 end
 
 task :clean do

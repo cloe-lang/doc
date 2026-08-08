@@ -16,9 +16,14 @@ export default {
     rules: [
       {
         test: /\.ts$/,
-        loader: "ts-loader",
+        loader: "builtin:swc-loader",
         options: {
-          configFile: resolve("./tsconfig.rspack.json"),
+          jsc: {
+            parser: {
+              syntax: "typescript",
+            },
+            target: "es2022",
+          },
         },
       },
       {
