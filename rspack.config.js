@@ -1,4 +1,4 @@
-import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import { CssExtractRspackPlugin } from "@rspack/core";
 import { resolve } from "node:path";
 
 export default {
@@ -6,7 +6,7 @@ export default {
   entry: "./index.ts",
   output: {
     filename: "index.js",
-    path: resolve("tmp/webpack"),
+    path: resolve("tmp/rspack"),
     publicPath: "/",
   },
   resolve: {
@@ -18,16 +18,16 @@ export default {
         test: /\.ts$/,
         loader: "ts-loader",
         options: {
-          configFile: resolve("./tsconfig.webpack.json"),
+          configFile: resolve("./tsconfig.rspack.json"),
         },
       },
       {
         test: /\.scss$/,
-        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
+        use: [CssExtractRspackPlugin.loader, "css-loader", "sass-loader"],
       },
     ],
   },
-  plugins: [new MiniCssExtractPlugin()],
+  plugins: [new CssExtractRspackPlugin()],
   optimization: {
     minimize: true,
   },
