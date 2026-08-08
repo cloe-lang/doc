@@ -101,11 +101,7 @@ task build: %w[_site _site/index.js _site/icon.svg] do
   cp Dir.glob('tmp/rspack/*.woff2'), '_site'
 end
 
-task :deploy do
-  sh 'pnpm firebase deploy'
-end
-
-task default: %w[build deploy]
+task default: %w[build]
 
 task run: :build do
   sh 'pnpm superstatic --debug'
