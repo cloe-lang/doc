@@ -1,7 +1,9 @@
 version: 2
 updates:
   - package-ecosystem: bundler
-    directory: /
+    directories:
+      - /
+      - /.github/actions/*
     schedule:
       interval: daily
   - package-ecosystem: github-actions
