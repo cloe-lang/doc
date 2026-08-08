@@ -99,7 +99,7 @@ file '_site/icon.svg' => '_includes/icon.svg' do |t|
 end
 
 task build: %w[_site _site/index.js _site/icon.svg] do
-  sh "pnpm tsx bin/modify-html.ts #{Dir.glob('_site/**/*.html').join ' '}"
+  sh "node bin/modify-html.ts #{Dir.glob('_site/**/*.html').join ' '}"
   cp Dir.glob('tmp/rspack/*.woff2'), '_site'
 end
 
