@@ -1,5 +1,5 @@
 import htmlMinifier from "html-minifier";
-import jquery from "jquery";
+import { jQueryFactory } from "jquery/factory";
 import { JSDOM } from "jsdom";
 import { readFile, writeFile } from "node:fs/promises";
 
@@ -36,7 +36,7 @@ process.argv.slice(2).map(async (filename) => {
   const { window } = new JSDOM(
     await readFile(filename, "utf-8")
   );
-  const $ = jquery(window) as unknown as JQueryStatic;
+  const $ = jQueryFactory(window as unknown as Window);
 
   $('a[href^="http://"], a[href^="https://"]').attr({
     rel: "noopener", // Prevent tab nabbing.
