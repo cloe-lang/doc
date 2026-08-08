@@ -73,10 +73,12 @@ end
 
 directory 'examples' => 'tmp/cloe' do |t|
   sh "go tool gherkin2markdown #{File.join t.source, 'examples'} #{t.name}"
-  File.write(File.join(t.name, 'index.md'),
-             "# Examples\n\n" \
-             'Code examples which describes usage of the language features ' \
-             'and built-in functions and modules.')
+  File.write(
+    File.join(t.name, 'index.md'),
+    "# Examples\n\n" \
+    'Code examples which describes usage of the language features ' \
+    'and built-in functions and modules.'
+  )
 end
 
 directory '_site' => %w[
