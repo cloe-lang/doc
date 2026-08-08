@@ -57,8 +57,8 @@ importers:
         specifier: ^11.0.0
         version: 11.0.0(encoding@0.1.13)(supports-color@10.2.2)
       tsx:
-        specifier: ^4.23.5
-        version: 4.23.5
+        specifier: ^4.23.6
+        version: 4.23.6
       ttf2woff2:
         specifier: ^8.0.1
         version: 8.0.1(supports-color@10.2.2)
@@ -3028,8 +3028,8 @@ packages:
     resolution: {integrity: sha512-LxhtAkPDTkVCMQjt2h6eBVY28KCjikZqZfMcC15YBeNjkgUpdCfBu5HoiOTDu86v6smE8yOjyEktJ8hlbANHQA==}
     engines: {node: '>=0.6.x'}
 
-  tsx@4.23.5:
-    resolution: {integrity: sha512-rw55FUaqOoI7RvlQwLbhO4nSDApnQ4/CykPuiQ/EPvtrX3WA9Ig55jIt9VvbBJbzJuj12ueRu4PMZ2SxPVbihg==}
+  tsx@4.23.6:
+    resolution: {integrity: sha512-D/YYGUDqKlLvXhM5fBBbiENaGICxLfU4viHnZEkgmgplnDFa+Kczy34VV7AmLJgdzisv0I/J3zitfC26JH3GXg==}
     engines: {node: '>=18.0.0'}
     hasBin: true
 
@@ -6435,7 +6435,7 @@ snapshots:
 
   tsscmp@1.0.6: {}
 
-  tsx@4.23.5:
+  tsx@4.23.6:
     dependencies:
       esbuild: 0.28.1
     optionalDependencies:
