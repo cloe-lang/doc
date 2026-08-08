@@ -5,7 +5,7 @@ outputs: {}
 runs:
   using: composite
   steps:
-    - uses: pnpm/action-setup@fc06bc1257f339d1d5d8b3a19a8cae5388b55320 # v4.4.0
+    - uses: pnpm/action-setup@0977fd99725f1db4007ccb2928dbb4e90d06cc86 # v6.0.10
     - uses: actions/setup-go@7a3fe6cf4cb3a834922a1244abfce67bcef6a0c5 # v6.2.0
     - uses: ruby/setup-ruby@c984c1a20bb35a1cbda04477c816cea024418be9 # v1.294.0
     - uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6.2.0
