@@ -41,18 +41,18 @@ rule %r{tmp/.*\.woff2} => ->(f) { f.pathmap('tmp/%n.ttf') } do |t|
   sh "pnpm ttf2woff2 < #{t.source} > #{t.name}"
 end
 
-file 'tmp/webpack/index.js' => %w[
+file 'tmp/rspack/index.js' => %w[
   tmp/text-font.css
   tmp/code-font.css
   tmp/text.woff2
   tmp/code.woff2
 ] do
-  sh 'pnpm webpack-cli'
+  sh 'pnpm rspack build'
 end
 
-file 'tmp/webpack/main.css' => 'tmp/webpack/index.js'
+file 'tmp/rspack/main.css' => 'tmp/rspack/index.js'
 
-file '_includes/index.css' => 'tmp/webpack/main.css' do |t|
+file '_includes/index.css' => 'tmp/rspack/main.css' do |t|
   cp t.source.ext('.css'), t.name
 end
 
@@ -73,10 +73,12 @@ end
 
 directory 'examples' => 'tmp/cloe' do |t|
   sh "go tool gherkin2markdown #{File.join t.source, 'examples'} #{t.name}"
-  File.write(File.join(t.name, 'index.md'),
-             "# Examples\n\n" \
-             'Code examples which describes usage of the language features ' \
-             'and built-in functions and modules.')
+  File.write(
+    File.join(t.name, 'index.md'),
+    "# Examples\n\n" \
+    'Code examples which describes usage of the language features ' \
+    'and built-in functions and modules.'
+  )
 end
 
 directory '_site' => %w[
@@ -88,7 +90,7 @@ directory '_site' => %w[
   sh 'bundler exec jekyll build'
 end
 
-file '_site/index.js' => 'tmp/webpack/index.js' do |t|
+file '_site/index.js' => 'tmp/rspack/index.js' do |t|
   cp t.source, t.name
 end
 
@@ -98,14 +100,10 @@ end
 
 task build: %w[_site _site/index.js _site/icon.svg] do
   sh "pnpm tsx bin/modify-html.ts #{Dir.glob('_site/**/*.html').join ' '}"
-  cp Dir.glob('tmp/webpack/*.woff2'), '_site'
+  cp Dir.glob('tmp/rspack/*.woff2'), '_site'
 end
 
-task :deploy do
-  sh 'pnpm firebase deploy'
-end
-
-task default: %w[build deploy]
+task default: %w[build]
 
 task run: :build do
   sh 'pnpm superstatic --debug'
@@ -114,6 +112,7 @@ end
 task :lint do
   sh 'rubocop'
   sh 'pnpm stylelint **/*.scss'
+  sh 'pnpm tsc --noEmit'
 end
 
 task :clean do
