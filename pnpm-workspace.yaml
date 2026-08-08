@@ -1,11 +1,8 @@
-ignoredBuiltDependencies:
-  - '@parcel/watcher'
-  - esbuild
-  - gifsicle
-  - jpegtran-bin
-  - optipng-bin
-  - re2
-  - ttf2woff2
-
-onlyBuiltDependencies:
-  - node-sass
+allowBuilds:
+  "@parcel/watcher": false
+  esbuild: false
+  gifsicle: false
+  jpegtran-bin: false
+  optipng-bin: false
+  re2: false
+  ttf2woff2: false
