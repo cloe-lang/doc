@@ -21,7 +21,7 @@
     "superstatic": "^11.0.0",
     "tsx": "^4.23.5",
     "ttf2woff2": "^8.0.1",
-    "typescript": "^6.0.3"
+    "typescript": "^7.0.2"
   },
   "engines": {
     "node": ">=26.7.0"
