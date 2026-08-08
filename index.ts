@@ -24,7 +24,7 @@ if (!link) {
   throw new Error("Missing link element");
 }
 
-for (const element of Array.from(document.getElementsByTagName("a"))) {
+for (const element of document.getElementsByTagName("a")) {
   element.addEventListener("mouseover", function () {
     link.setAttribute("href", this.getAttribute("href") ?? "");
   });

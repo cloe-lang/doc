@@ -2,8 +2,9 @@ import htmlMinifier from "html-minifier";
 import { jQueryFactory } from "jquery/factory";
 import { JSDOM } from "jsdom";
 import { readFile, writeFile } from "node:fs/promises";
+import { argv } from "node:process";
 
-function createToc($: JQueryStatic, parentNode: JQuery): string {
+const createToc = ($: JQueryStatic, parentNode: JQuery): string => {
   const tagName = parentNode.prop("tagName");
   const children = parentNode
     .nextUntil(tagName)
@@ -32,7 +33,7 @@ function createToc($: JQueryStatic, parentNode: JQuery): string {
   return `<ul>${children.map(entry).join("")}</ul>`;
 }
 
-process.argv.slice(2).map(async (filename) => {
+argv.slice(2).map(async (filename) => {
   const { window } = new JSDOM(
     await readFile(filename, "utf-8")
   );
