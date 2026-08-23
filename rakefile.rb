@@ -72,7 +72,7 @@ directory 'tmp/cloe' do |t|
 end
 
 directory 'examples' => 'tmp/cloe' do |t|
-  sh "go tool gherkin2markdown #{File.join t.source, 'examples'} #{t.name}"
+  sh "go tool gherkin2markdown #{File.join t.source, 'features'} #{t.name}"
   File.write(
     File.join(t.name, 'index.md'),
     "# Examples\n\n" \
