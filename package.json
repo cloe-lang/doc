@@ -4,7 +4,7 @@
   "type": "module",
   "devDependencies": {
     "@rspack/cli": "^2.2.1",
-    "@rspack/core": "^2.1.10",
+    "@rspack/core": "^2.2.1",
     "@types/html-minifier": "^4.0.6",
     "@types/jquery": "^4.0.1",
     "@types/jsdom": "^30.0.0",
