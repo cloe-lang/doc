@@ -24,8 +24,8 @@ importers:
         specifier: ^30.0.0
         version: 30.0.0
       '@types/node':
-        specifier: ^26.5.0
-        version: 26.5.0
+        specifier: ^26.5.1
+        version: 26.5.1
       css-loader:
         specifier: ^7.1.5
         version: 7.1.5(@rspack/core@2.2.3)
@@ -462,8 +462,8 @@ packages:
   '@types/keyv@3.1.4':
     resolution: {integrity: sha512-BQ5aZNSCpj7D6K2ksrRCTmKRLEpnPvWDiLPfoGyhZ++8YtiK9d/3DBKPJgry359X/P1PfruyYwvnvwFjuEiEIg==}
 
-  '@types/node@26.5.0':
-    resolution: {integrity: sha512-dVSGpriSoCgz8WnDNTuSSuSv1PC/ALXihO4ulRZt7Md8k9mlbdin3lGOcDE8SnWOgf513ByWlXd7BK4azmyg/A==}
+  '@types/node@26.5.1':
+    resolution: {integrity: sha512-CzNm2FezW4VR/LjG6yUdiEgLE/rAQ9Slj5gCu/C2VrdcW7I0ahNZ8DRbHT7zOZ6r3ONgd/bsQIeSaoDGrd1C6g==}
 
   '@types/relateurl@0.2.33':
     resolution: {integrity: sha512-bTQCKsVbIdzLqZhLkF5fcJQreE4y1ro4DIyVrlDNSCJRRwHhB8Z+4zXXa8jN6eDvc2HbRsEYgbvrnGvi54EpSw==}
@@ -3446,7 +3446,7 @@ snapshots:
 
   '@types/clean-css@4.2.11':
     dependencies:
-      '@types/node': 26.5.0
+      '@types/node': 26.5.1
       source-map: 0.6.1
 
   '@types/html-minifier@4.0.6':
@@ -3459,17 +3459,17 @@ snapshots:
 
   '@types/jsdom@30.0.0':
     dependencies:
-      '@types/node': 26.5.0
+      '@types/node': 26.5.1
       '@types/tough-cookie': 4.0.5
       parse5: 8.0.1
       undici-types: 8.10.0
 
   '@types/keyv@3.1.4':
     dependencies:
-      '@types/node': 26.5.0
+      '@types/node': 26.5.1
     optional: true
 
-  '@types/node@26.5.0':
+  '@types/node@26.5.1':
     dependencies:
       undici-types: 8.9.0
 
@@ -3477,7 +3477,7 @@ snapshots:
 
   '@types/responselike@1.0.3':
     dependencies:
-      '@types/node': 26.5.0
+      '@types/node': 26.5.1
     optional: true
 
   '@types/tough-cookie@4.0.5': {}
