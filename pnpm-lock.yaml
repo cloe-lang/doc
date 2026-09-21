@@ -9,8 +9,8 @@ importers:
   .:
     devDependencies:
       '@rspack/cli':
-        specifier: ^2.2.4
-        version: 2.2.4(@rspack/core@2.2.4)
+        specifier: ^2.2.6
+        version: 2.2.6(@rspack/core@2.2.4)
       '@rspack/core':
         specifier: ^2.2.4
         version: 2.2.4
@@ -411,8 +411,8 @@ packages:
   '@rspack/binding@2.2.4':
     resolution: {integrity: sha512-KoH5Wofyt1+egnqWF3pr8ItiYQiLgrHYLHOAn4YpzIMsGc8zDur3dCIhrhJ1uhbD3O7zkKqav4he3bo1kAmX9Q==}
 
-  '@rspack/cli@2.2.4':
-    resolution: {integrity: sha512-14ItRehZ983xA9g7MD+enl8/KYWZuuz9LJchTHxHvQ8MOVouKk7h0J06LrzH2b99dAAKH/wO3ojkCpOB9XSdFQ==}
+  '@rspack/cli@2.2.6':
+    resolution: {integrity: sha512-A2Bb+5iGMrAp+YKgm3cN/3XfJfXed4GnoPlPRsjybyxrR+FyQmYMhxhKUfcQbD9JDHwXpQTOetwEBfzHSGJf+Q==}
     hasBin: true
     peerDependencies:
       '@rspack/core': ^2.0.0-0
@@ -3435,7 +3435,7 @@ snapshots:
       '@rspack/binding-win32-ia32-msvc': 2.2.4
       '@rspack/binding-win32-x64-msvc': 2.2.4
 
-  '@rspack/cli@2.2.4(@rspack/core@2.2.4)':
+  '@rspack/cli@2.2.6(@rspack/core@2.2.4)':
     dependencies:
       '@rspack/core': 2.2.4
 
