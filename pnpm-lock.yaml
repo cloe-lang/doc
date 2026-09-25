@@ -42,11 +42,11 @@ importers:
         specifier: ^30.1.0
         version: 30.1.0
       sass:
-        specifier: ^1.104.1
-        version: 1.104.1
+        specifier: ^1.105.0
+        version: 1.105.0
       sass-loader:
         specifier: ^17.0.1
-        version: 17.0.1(@rspack/core@2.2.6)(sass@1.104.1)
+        version: 17.0.1(@rspack/core@2.2.6)(sass@1.105.0)
       stylelint:
         specifier: ^17.15.0
         version: 17.15.0(supports-color@10.2.2)(typescript@7.0.2)
@@ -2561,8 +2561,8 @@ packages:
       webpack:
         optional: true
 
-  sass@1.104.1:
-    resolution: {integrity: sha512-yDA+1aIG3EHgN4V/BvuhCvu61FF6hEd4e+9DxikUm9U0CAGuvdIZ/UYy7qbOxjhbbWQraoyLlMuzdRGOSV5Bmw==}
+  sass@1.105.0:
+    resolution: {integrity: sha512-4EjSuRTyG8M4yRXXY1PT9OUV5zz23xBxJkbIAprohKHqf6HOU4MCpE3U3vAC+iO1gxobBjESNbcj8rYAQZWnyA==}
     engines: {node: '>=20.19.0'}
     hasBin: true
 
@@ -5797,12 +5797,12 @@ snapshots:
   safer-buffer@2.1.2:
     optional: true
 
-  sass-loader@17.0.1(@rspack/core@2.2.6)(sass@1.104.1):
+  sass-loader@17.0.1(@rspack/core@2.2.6)(sass@1.105.0):
     optionalDependencies:
       '@rspack/core': 2.2.6
-      sass: 1.104.1
+      sass: 1.105.0
 
-  sass@1.104.1:
+  sass@1.105.0:
     dependencies:
       chokidar: 5.0.0
       immutable: 5.1.9
