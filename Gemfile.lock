@@ -81,7 +81,7 @@ GEM
       jekyll (>= 3.0, < 5.0)
     jekyll-sass-converter (3.1.0)
       sass-embedded (~> 1.75)
-    jekyll-titles-from-headings (0.5.5)
+    jekyll-titles-from-headings (0.5.7)
       jekyll (>= 3.3, < 5.0)
     jekyll-watch (2.2.1)
       listen (~> 3.0)
@@ -236,7 +236,7 @@ CHECKSUMS
   jekyll-octicons (19.38.0) sha256=e154e003b8852463a5c7bd42676c87b9b705f862f840f15fd5effac28b963032
   jekyll-optional-front-matter (0.3.4) sha256=aa1c34bbc2abde4c5a9f039ff1b7bbd04c563def9e792d76bace8fd907dd0f2d
   jekyll-sass-converter (3.1.0) sha256=83925d84f1d134410c11d0c6643b0093e82e3a3cf127e90757a85294a3862443
-  jekyll-titles-from-headings (0.5.5) sha256=d0280e6206064cc08a6744afadd2e3cc282bff28b2a810d625af370a8978bfb9
+  jekyll-titles-from-headings (0.5.7) sha256=927437000037da3433e0d4c8f509c56be811ab123ea70548acb914df0dd7a33d
   jekyll-watch (2.2.1) sha256=bc44ed43f5e0a552836245a54dbff3ea7421ecc2856707e8a1ee203a8387a7e1
   json (2.21.2) sha256=1f1d3b7cf2b3ba1a69beca0bb6db13d5438b80bff3cd54cdaaa620b9b07c1c6a
   kramdown (2.5.2) sha256=1ba542204c66b6f9111ff00dcc26075b95b220b07f2905d8261740c82f7f02fa
