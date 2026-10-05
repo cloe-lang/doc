@@ -77,7 +77,7 @@ GEM
     jekyll-octicons (19.38.0)
       jekyll (>= 3.6, < 5.0)
       octicons (= 19.38.0)
-    jekyll-optional-front-matter (0.3.3)
+    jekyll-optional-front-matter (0.3.4)
       jekyll (>= 3.0, < 5.0)
     jekyll-sass-converter (3.1.0)
       sass-embedded (~> 1.75)
@@ -234,7 +234,7 @@ CHECKSUMS
   i18n (1.15.2) sha256=00f9eb62412fe593b2a65a97daa75300d37abb8f7202ec748e94b6d46a9dd1b5
   jekyll (4.4.1) sha256=4c1144d857a5b2b80d45b8cf5138289579a9f8136aadfa6dd684b31fe2bc18c1
   jekyll-octicons (19.38.0) sha256=e154e003b8852463a5c7bd42676c87b9b705f862f840f15fd5effac28b963032
-  jekyll-optional-front-matter (0.3.3) sha256=fc96976ffaa5515b3ad7d553199011aa98782c13694dfbd1a6278ede88212a6e
+  jekyll-optional-front-matter (0.3.4) sha256=aa1c34bbc2abde4c5a9f039ff1b7bbd04c563def9e792d76bace8fd907dd0f2d
   jekyll-sass-converter (3.1.0) sha256=83925d84f1d134410c11d0c6643b0093e82e3a3cf127e90757a85294a3862443
   jekyll-titles-from-headings (0.5.5) sha256=d0280e6206064cc08a6744afadd2e3cc282bff28b2a810d625af370a8978bfb9
   jekyll-watch (2.2.1) sha256=bc44ed43f5e0a552836245a54dbff3ea7421ecc2856707e8a1ee203a8387a7e1
