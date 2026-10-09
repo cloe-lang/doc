@@ -74,9 +74,9 @@ GEM
       safe_yaml (~> 1.0)
       terminal-table (>= 1.8, < 4.0)
       webrick (~> 1.7)
-    jekyll-octicons (19.38.0)
+    jekyll-octicons (19.39.0)
       jekyll (>= 3.6, < 5.0)
-      octicons (= 19.38.0)
+      octicons (= 19.39.0)
     jekyll-optional-front-matter (0.3.4)
       jekyll (>= 3.0, < 5.0)
     jekyll-sass-converter (3.1.0)
@@ -99,7 +99,7 @@ GEM
       rb-inotify (~> 0.9, >= 0.9.10)
     logger (1.7.0)
     mercenary (0.4.0)
-    octicons (19.38.0)
+    octicons (19.39.0)
     parallel (2.2.0)
     parser (3.3.12.0)
       ast (~> 2.4.1)
@@ -233,7 +233,7 @@ CHECKSUMS
   http_parser.rb (0.8.1) sha256=9ae8df145b39aa5398b2f90090d651c67bd8e2ebfe4507c966579f641e11097a
   i18n (1.15.2) sha256=00f9eb62412fe593b2a65a97daa75300d37abb8f7202ec748e94b6d46a9dd1b5
   jekyll (4.4.1) sha256=4c1144d857a5b2b80d45b8cf5138289579a9f8136aadfa6dd684b31fe2bc18c1
-  jekyll-octicons (19.38.0) sha256=e154e003b8852463a5c7bd42676c87b9b705f862f840f15fd5effac28b963032
+  jekyll-octicons (19.39.0) sha256=d766e9387e16ac2f85cde13fd82556202575a7f05fe96f9b186238a6df1249d1
   jekyll-optional-front-matter (0.3.4) sha256=aa1c34bbc2abde4c5a9f039ff1b7bbd04c563def9e792d76bace8fd907dd0f2d
   jekyll-sass-converter (3.1.0) sha256=83925d84f1d134410c11d0c6643b0093e82e3a3cf127e90757a85294a3862443
   jekyll-titles-from-headings (0.5.7) sha256=927437000037da3433e0d4c8f509c56be811ab123ea70548acb914df0dd7a33d
@@ -247,7 +247,7 @@ CHECKSUMS
   listen (3.10.1) sha256=4c3f32855657f348747da4dd2372ff3790d90a6b1d3e4f21a3706adb2d04783c
   logger (1.7.0) sha256=196edec7cc44b66cfb40f9755ce11b392f21f7967696af15d274dde7edff0203
   mercenary (0.4.0) sha256=b25a1e4a59adca88665e08e24acf0af30da5b5d859f7d8f38fba52c28f405138
-  octicons (19.38.0) sha256=4d9652d6b02776512770e701c1c43166909753af6e5d875f5e59592c98541373
+  octicons (19.39.0) sha256=a0c6eb54fa99de7e50f3fd146defb564ce6f8ab5b200cc0bcbb6bd55e7b859cb
   parallel (2.2.0) sha256=e1059c5fd7b649558a0aec38a769f06a42942bdb40503d005a59c352fe011cd8
   parser (3.3.12.0) sha256=21a6d7f755d5a24dfbdc6e6b772e4e879a52e7631a88bc5a3a134606052c9828
   pathutil (0.16.2) sha256=e43b74365631cab4f6d5e4228f812927efc9cb2c71e62976edcb252ee948d589
