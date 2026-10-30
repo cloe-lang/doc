@@ -15,7 +15,7 @@
     "jquery": "^4.0.0",
     "jsdom": "^30.1.3",
     "sass": "^1.106.1",
-    "sass-loader": "^17.0.1",
+    "sass-loader": "^17.1.0",
     "stylelint": "^17.16.0",
     "stylelint-scss": "^7.4.0",
     "superstatic": "^11.1.0",
