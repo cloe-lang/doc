@@ -5,12 +5,11 @@
   "devDependencies": {
     "@rspack/cli": "^2.3.1",
     "@rspack/core": "^2.3.1",
-    "@types/html-minifier": "^4.0.6",
+    "@swc/html": "^1.16.22",
     "@types/jquery": "^4.0.1",
     "@types/jsdom": "^30.0.0",
     "@types/node": "^26.6.6",
     "css-loader": "^7.1.5",
-    "html-minifier": "^4.0.0",
     "imagemin-cli": "^8.0.0",
     "jquery": "^4.0.0",
     "jsdom": "^30.1.3",

@@ -1,4 +1,4 @@
-import htmlMinifier from "html-minifier";
+import { minify } from "@swc/html";
 import { jQueryFactory } from "jquery/factory";
 import { JSDOM } from "jsdom";
 import { readFile, writeFile } from "node:fs/promises";
@@ -65,14 +65,11 @@ argv.slice(2).map(async (filename) => {
 
   await writeFile(
     filename,
-    htmlMinifier.minify(
-      "<!DOCTYPE html>" + window.document.documentElement.outerHTML,
-      {
-        collapseWhitespace: true,
-        minifyJS: true,
-        minifyURLs: true,
-        removeAttributeQuotes: true,
-      }
-    )
+    (
+      await minify(
+        "<!DOCTYPE html>" + window.document.documentElement.outerHTML,
+        { collapseWhitespaces: "smart" }
+      )
+    ).code
   );
 });
