@@ -60,13 +60,6 @@ file '_includes/icon.svg' do |t|
   curl 'https://github.com/cloe-lang/icon/raw/master/icon.svg', t.name
 end
 
-file '_includes/x.svg' do |t|
-  curl(
-    'https://github.com/simple-icons/simple-icons/raw/master/icons/x.svg',
-    t.name
-  )
-end
-
 directory 'tmp/cloe' do |t|
   sh "git clone https://github.com/cloe-lang/cloe #{t.name}"
 end
@@ -84,7 +77,6 @@ end
 directory '_site' => %w[
   _includes/index.css
   _includes/icon.svg
-  _includes/x.svg
   examples
 ] do
   sh 'bundler exec jekyll build'
